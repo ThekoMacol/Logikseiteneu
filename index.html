@@ -539,35 +539,43 @@
 
   <!-- MODAL TEMPLATES -->
   <template id="modal-crm">
-    <div class="modal__label label label--accent">Best Practice</div>
-    <h3>CRM Prozessoptimierung:<br>Von unter 15% auf über 80% Opt-in.</h3>
-    <p>Die meisten CRM-Probleme sind keine Tool-Probleme. Sie sind Strukturprobleme. Falsche Reihenfolge, zu viel Reibung, zu früh zu viel verlangt.</p>
-    <div class="modal__case">
-      <div class="modal__case-row">
-        <span class="modal__case-label">Ausgangslage</span>
-        <p>Lead-Magnet-Funnel mit solidem Traffic. Opt-in-Rate: unter 15%. Die übliche Diagnose: Angebot zu schwach. Die übliche Lösung: neues Angebot, neues Design, neue Texte.</p>
-        <p><strong>Falsch.</strong></p>
+    <div class="case-study">
+      <div class="case-study__header">
+        <span class="label label--accent">Best Practice</span>
+        <h3>Opt-in-Rate von unter 15% auf über 80%.<br>Eine einzige Prozessänderung.</h3>
       </div>
-      <div class="modal__case-row">
-        <span class="modal__case-label">Tatsächliches Problem</span>
-        <p>Das Formular war das Problem - nicht das Angebot. Drei Felder statt einem. Sichtbar noch vor dem Aufbau von Vertrauen. Falsche Informationsreihenfolge.</p>
+      <div class="case-study__body">
+        <div class="case-study__situation">
+          <h4>Ausgangslage</h4>
+          <p>Ein Lead-Magnet-Funnel mit solidem Traffic und einem relevanten Angebot. Opt-in-Rate: unter 15%. Die Standarddiagnose: "Das Angebot ist nicht gut genug." Die Standardlösung: Neues Angebot, neue Copy, neues Design.</p>
+          <p>Falsch.</p>
+        </div>
+        <div class="case-study__diagnosis">
+          <h4>Diagnose: Form Friction</h4>
+          <p>Das Formular war das Problem - nicht das Angebot. Sichtbar im Viewport noch vor dem Aufbau von Vertrauen. Suboptimale Reihenfolge der Informationsarchitektur.</p>
+          <p>Nutzer entscheiden in Millisekunden, ob sie konvertieren - basierend auf der wahrgenommenen Reibung, nicht auf dem rationalen Wert des Angebots. Form Friction ist ein Verhaltensphänomen, kein Design-Problem.</p>
+        </div>
+        <div class="case-study__action">
+          <h4>Maßnahme</h4>
+          <ul class="action-list">
+            <li>Reduktion von drei Feldern auf eines im initialen Schritt</li>
+            <li>Verlagerung des Formulars hinter den Trust-Building-Content</li>
+            <li>Neustrukturierung der Informationsarchitektur nach Entscheidungslogik</li>
+            <li>Keine neuen Texte. Kein neues Design. Keine neuen Angebote.</li>
+          </ul>
+        </div>
+        <div class="case-study__result">
+          <div class="result-box">
+            <span class="result-box__number">&gt;80%</span>
+            <span class="result-box__label">E-Mail Opt-in Rate</span>
+            <p class="result-box__note">Selbe Seite. Selbes Angebot. Selber Traffic. Andere Prozessstruktur.</p>
+          </div>
+        </div>
       </div>
-      <div class="modal__case-row">
-        <span class="modal__case-label">Maßnahme</span>
-        <ul class="modal__list">
-          <li>Reduktion von drei Feldern auf eines im ersten Schritt</li>
-          <li>Formular hinter den Trust-Building-Content verschoben</li>
-          <li>Informationsarchitektur nach Entscheidungslogik neu strukturiert</li>
-          <li>Keine neuen Texte. Kein neues Design. Keine neuen Angebote.</li>
-        </ul>
-      </div>
-      <div class="modal__result">
-        <span class="modal__result-number">&gt;80%</span>
-        <span class="modal__result-label">Opt-in Rate</span>
-        <p>Selbe Seite. Selbes Angebot. Andere Systemstruktur.</p>
+      <div class="case-study__lesson">
+        <p>Das ist kein Ausreißer. Das ist ein Muster. Wer Verhaltensmechaniken versteht, braucht keine Magie - nur präzise Diagnose und die richtigen Hebel.</p>
       </div>
     </div>
-    <a href="mailto:hallo@log1k.de?subject=CRM Prozessoptimierung" class="btn btn--primary">Mein CRM analysieren</a>
   </template>
 
   <template id="modal-automatisierung">
