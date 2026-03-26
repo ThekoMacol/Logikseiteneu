@@ -91,6 +91,14 @@ if (vfTrigger && vfPanel && vfClose) {
     vfPanel.classList.contains('open') ? close() : open();
   });
   vfClose.addEventListener('click', close);
+
+  // Any element with data-open-vf opens the chat
+  document.addEventListener('click', e => {
+    if (e.target.closest('[data-open-vf]')) {
+      e.preventDefault();
+      open();
+    }
+  });
 }
 
 // Modal
