@@ -274,6 +274,10 @@ a {
   color: var(--text);
 }
 
+.nav__links a.active {
+  color: var(--accent);
+}
+
 .nav__burger {
   display: none;
   flex-direction: column;

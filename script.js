@@ -1,5 +1,29 @@
 // Nav: scroll state
 const nav = document.getElementById('nav');
+
+// Nav: active link on scroll (scroll-spy)
+const navSections = ['problem', 'proof', 'framework', 'masterclass', 'prozess'];
+const navLinkMap = {};
+navSections.forEach(id => {
+  const el = document.querySelector(`.nav__links a[href="#${id}"]`);
+  if (el) navLinkMap[id] = el;
+});
+
+function setActiveNav(id) {
+  Object.values(navLinkMap).forEach(a => a.classList.remove('active'));
+  if (id && navLinkMap[id]) navLinkMap[id].classList.add('active');
+}
+
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) setActiveNav(entry.target.id);
+  });
+}, { rootMargin: '-40% 0px -55% 0px' });
+
+navSections.forEach(id => {
+  const sec = document.getElementById(id);
+  if (sec) sectionObserver.observe(sec);
+});
 if (nav) {
   const onScroll = () => {
     nav.classList.toggle('scrolled', window.scrollY > 20);
@@ -30,10 +54,12 @@ if (burger && mobileMenu) {
   });
 }
 
-// Smooth scroll for anchor links
+// Smooth scroll for anchor links + set active nav on click
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const href = this.getAttribute('href');
+    const sectionId = href && href.startsWith('#') ? href.slice(1) : null;
+    if (sectionId && navLinkMap[sectionId]) setActiveNav(sectionId);
     if (!href || href === '#') return;
     const target = document.querySelector(href);
     if (!target) return;
