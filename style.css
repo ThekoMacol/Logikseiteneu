@@ -617,6 +617,27 @@ a {
   font-style: italic;
 }
 
+.proof__examples {
+  margin-bottom: var(--space-lg);
+}
+
+.proof__examples-label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 0.8rem;
+  max-width: none;
+}
+
+.proof__example-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
 .proof__cta {
   text-align: center;
 }
