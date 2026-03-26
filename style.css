@@ -618,10 +618,26 @@ a {
 }
 
 .proof__example-btns {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 0.6rem;
   margin-bottom: var(--space-xl);
+}
+
+.proof__btn {
+  width: 100%;
+  font-size: 0.82rem;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .proof__example-btns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .proof__example-btns .proof__btn:last-child:nth-child(odd) {
+    grid-column: span 2;
+  }
 }
 
 /* === MODALS === */
