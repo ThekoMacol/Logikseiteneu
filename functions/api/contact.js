@@ -21,7 +21,7 @@ export async function onRequestPost(context) {
 
   // Honeypot check — silently succeed
   if (body.website) {
-    return new Response(JSON.stringify({ ok: true }), {
+    return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { 'Content-Type': 'application/json', ...corsHeaders },
     });
@@ -60,7 +60,6 @@ export async function onRequestPost(context) {
   // Read env vars
   const RESEND_API_KEY = env.RESEND_API_KEY;
   const CONTACT_TO_EMAIL = env.CONTACT_TO_EMAIL;
-  const CONTACT_FROM_EMAIL = env.CONTACT_FROM_EMAIL || 'kontakt@log1k.de';
 
   if (!RESEND_API_KEY) {
     return new Response(JSON.stringify({ error: 'Serverkonfigurationsfehler.' }), {
@@ -157,10 +156,10 @@ export async function onRequestPost(context) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: CONTACT_FROM_EMAIL,
+        from: 'Log1k <noreply@log1k.de>',
         to: [CONTACT_TO_EMAIL],
         reply_to: email.trim(),
-        subject: `Neue Anfrage von ${name.trim()} – log1k.de`,
+        subject: 'Neue Anfrage über log1k.de',
         html: htmlBody,
       }),
     });
@@ -183,7 +182,7 @@ export async function onRequestPost(context) {
     });
   }
 
-  return new Response(JSON.stringify({ ok: true }), {
+  return new Response(JSON.stringify({ success: true }), {
     status: 200,
     headers: { 'Content-Type': 'application/json', ...corsHeaders },
   });

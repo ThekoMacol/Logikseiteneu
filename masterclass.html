@@ -503,7 +503,7 @@
           })
           .then(function (result) {
             setLoading(false);
-            if (result.data && result.data.ok) {
+            if (result.data && result.data.success) {
               form.style.display = 'none';
               formSuccess.classList.add('visible');
             } else {
