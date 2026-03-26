@@ -33,7 +33,9 @@ if (burger && mobileMenu) {
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
-    const target = document.querySelector(this.getAttribute('href'));
+    const href = this.getAttribute('href');
+    if (!href || href === '#') return;
+    const target = document.querySelector(href);
     if (!target) return;
     e.preventDefault();
     const navHeight = nav ? nav.offsetHeight : 0;
@@ -71,21 +73,22 @@ const modalBody    = document.getElementById('modalBody');
 const modalClose   = document.getElementById('modalClose');
 
 function openModal(key) {
-  const tpl = document.getElementById('modal-' + key);
-  if (!tpl || !modalOverlay || !modalBody) return;
-  modalBody.innerHTML = '';
-  modalBody.appendChild(tpl.content.cloneNode(true));
-  modalOverlay.classList.add('open');
-  modalOverlay.setAttribute('aria-hidden', 'false');
+  const src = document.getElementById('modal-' + key);
+  if (!src || !modalOverlay || !modalBody) return;
+  modalBody.innerHTML = src.innerHTML;
+  modalOverlay.style.display = 'flex';
+  requestAnimationFrame(() => modalOverlay.classList.add('open'));
   document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
   if (!modalOverlay) return;
   modalOverlay.classList.remove('open');
-  modalOverlay.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
+  setTimeout(() => { modalOverlay.style.display = 'none'; }, 220);
 }
+
+if (modalOverlay) modalOverlay.style.display = 'none';
 
 document.querySelectorAll('[data-modal]').forEach(btn => {
   btn.addEventListener('click', () => openModal(btn.dataset.modal));

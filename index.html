@@ -526,7 +526,7 @@
   </div>
 
   <!-- MODAL OVERLAY -->
-  <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+  <div class="modal-overlay" id="modalOverlay">
     <div class="modal" id="modal" role="dialog" aria-modal="true">
       <button class="modal__close" id="modalClose" aria-label="Schließen">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -537,8 +537,8 @@
     </div>
   </div>
 
-  <!-- MODAL TEMPLATES -->
-  <template id="modal-crm">
+  <!-- MODAL CONTENT (hidden) -->
+  <div id="modal-crm" hidden>
     <div class="case-study">
       <div class="case-study__header">
         <span class="label label--accent">Best Practice</span>
@@ -576,9 +576,9 @@
         <p>Das ist kein Ausreißer. Das ist ein Muster. Wer Verhaltensmechaniken versteht, braucht keine Magie - nur präzise Diagnose und die richtigen Hebel.</p>
       </div>
     </div>
-  </template>
+  </div>
 
-  <template id="modal-automatisierung">
+  <div id="modal-automatisierung" hidden>
     <div class="modal__label label label--accent">Automatisierung</div>
     <h3>Wiederkehrende Arbeit einmal einrichten.<br>Dann läuft sie.</h3>
     <p>Automatisierung lohnt sich, wenn ein Prozess klar definiert ist. Wer kaputte Prozesse automatisiert, produziert kaputte Ergebnisse - nur schneller.</p>
@@ -604,9 +604,9 @@
       </div>
     </div>
     <a href="mailto:hallo@log1k.de?subject=Automatisierung" class="btn btn--primary">Prozess automatisieren</a>
-  </template>
+  </div>
 
-  <template id="modal-text2image">
+  <div id="modal-text2image" hidden>
     <div class="modal__label label label--accent">Text to Image</div>
     <h3>Konsistente Bildwelten.<br>Ohne Briefing. Ohne Agentur.</h3>
     <p>KI-Bildgenerierung funktioniert zuverlässig, wenn Prompts als System aufgebaut sind - nicht als Einzeleingaben.</p>
@@ -630,9 +630,9 @@
       </div>
     </div>
     <a href="mailto:hallo@log1k.de?subject=Text to Image System" class="btn btn--primary">Image-System aufbauen</a>
-  </template>
+  </div>
 
-  <template id="modal-image2video">
+  <div id="modal-image2video" hidden>
     <div class="modal__label label label--accent">Image to Video</div>
     <h3>Statische Assets zu bewegtem Content.<br>Skalierbar.</h3>
     <p>Image-to-Video-Workflows verbinden bestehende Bildbestände mit KI-Videomodellen - strukturiert, nicht zufällig.</p>
@@ -656,9 +656,9 @@
       </div>
     </div>
     <a href="mailto:hallo@log1k.de?subject=Image to Video Workflow" class="btn btn--primary">Workflow aufbauen</a>
-  </template>
+  </div>
 
-  <template id="modal-vibecoding">
+  <div id="modal-vibecoding" hidden>
     <div class="modal__label label label--accent">Vibecoding</div>
     <h3>Software bauen ohne Programmierkenntnisse.<br>Mit System.</h3>
     <p>Vibecoding bedeutet: KI schreibt den Code, du gibst die Richtung vor. Das funktioniert - wenn die Anweisungen präzise sind und das System eine klare Architektur hat.</p>
@@ -683,7 +683,7 @@
       </div>
     </div>
     <a href="mailto:hallo@log1k.de?subject=Vibecoding Projekt" class="btn btn--primary">Projekt starten</a>
-  </template>
+  </div>
 
   <script src="script.js"></script>
 </body>
