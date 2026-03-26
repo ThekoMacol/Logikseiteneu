@@ -1,5 +1,5 @@
 /* =========================================
-   KORNELIUS THELEN — LOG1K.DE
+   KORNELIUS THELEN - LOG1K.DE
    Premium Dark Design System
    ========================================= */
 
@@ -567,7 +567,7 @@ a {
 }
 
 .action-list li::before {
-  content: '—';
+  content: '-';
   position: absolute;
   left: 0;
   color: var(--accent);
@@ -709,7 +709,7 @@ a {
 }
 
 .pillar__points li::before {
-  content: '—';
+  content: '-';
   position: absolute;
   left: 0;
   color: var(--border-2);
