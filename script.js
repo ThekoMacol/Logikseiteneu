@@ -42,6 +42,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Voiceflow chat widget
+const vfTrigger = document.getElementById('vfTrigger');
+const vfPanel   = document.getElementById('vfPanel');
+const vfClose   = document.getElementById('vfClose');
+
+if (vfTrigger && vfPanel && vfClose) {
+  const open = () => {
+    vfPanel.classList.add('open');
+    vfPanel.setAttribute('aria-hidden', 'false');
+    vfTrigger.setAttribute('aria-expanded', 'true');
+  };
+  const close = () => {
+    vfPanel.classList.remove('open');
+    vfPanel.setAttribute('aria-hidden', 'true');
+    vfTrigger.setAttribute('aria-expanded', 'false');
+  };
+
+  vfTrigger.addEventListener('click', () => {
+    vfPanel.classList.contains('open') ? close() : open();
+  });
+  vfClose.addEventListener('click', close);
+}
+
 // Intersection Observer: fade-in sections
 const observer = new IntersectionObserver(
   (entries) => {

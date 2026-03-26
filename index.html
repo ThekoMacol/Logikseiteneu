@@ -523,6 +523,43 @@
     </div>
   </footer>
 
+  <!-- VOICEFLOW CHAT WIDGET -->
+  <div class="vf-widget" id="vfWidget">
+    <div class="vf-panel" id="vfPanel" aria-hidden="true">
+      <div class="vf-panel__header">
+        <div class="vf-panel__title">
+          <span class="vf-online-dot"></span>
+          <span>AI Operator</span>
+          <span class="vf-online-label">Online</span>
+        </div>
+        <button class="vf-panel__close" id="vfClose" aria-label="Chat schliessen">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <iframe
+        id="vfIframe"
+        src="https://creator.voiceflow.com/prototype/68834c24abb7872e2620cd77"
+        title="AI Operator Chat"
+        allow="microphone"
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <button class="vf-trigger" id="vfTrigger" aria-label="AI Operator öffnen" aria-expanded="false">
+      <span class="vf-trigger__inner">
+        <span class="vf-online-dot"></span>
+        <span class="vf-trigger__text">AI Operator <span class="vf-online-label">Online</span></span>
+      </span>
+      <span class="vf-trigger__icon" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 11.5C2 12.328 2.672 13 3.5 13H5.5L8 15.5L10.5 13H12.5C13.328 13 14 12.328 14 11.5V3.5C14 2.672 13.328 2 12.5 2H3.5C2.672 2 2 2.672 2 3.5V11.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </button>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
