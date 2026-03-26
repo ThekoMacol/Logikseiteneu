@@ -16,6 +16,58 @@
       padding-top: calc(5rem + var(--space-3xl));
       padding-bottom: var(--space-3xl);
     }
+    .mc-form-box {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl) var(--space-2xl);
+      width: 100%;
+      max-width: 520px;
+      position: relative;
+    }
+    .mc-form-box h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin: var(--space-sm) 0 var(--space-xs);
+      color: var(--text);
+    }
+    .mc-price {
+      font-family: var(--mono);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: var(--space-lg);
+    }
+    .mc-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: var(--space-md);
+    }
+    .mc-field label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-2);
+      letter-spacing: 0.03em;
+    }
+    .mc-field input,
+    .mc-field textarea {
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.75rem 1rem;
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      width: 100%;
+      outline: none;
+      transition: border-color var(--transition);
+      resize: vertical;
+    }
+    .mc-field input:focus,
+    .mc-field textarea:focus {
+      border-color: var(--accent);
+    }
   </style>
 </head>
 <body>
@@ -154,12 +206,37 @@
         </div>
 
         <div class="masterclass__cta">
-          <a href="mailto:kornelius.thelen@log1k.de?subject=KI Masterclass" class="btn btn--primary btn--large">Jetzt Zugang sichern</a>
+          <button class="btn btn--primary btn--large" id="mcFormOpen">Jetzt Zugang sichern</button>
           <p class="masterclass__cta-note">Kein Upsell. Kein Abo. Kein Bullshit.</p>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- MASTERCLASS ANFRAGE MODAL -->
+  <div class="modal-overlay" id="mcModal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="mcModalTitle">
+    <div class="modal-box mc-form-box">
+      <button class="modal__close" id="mcModalClose" aria-label="Schließen">&times;</button>
+      <div class="modal__label label label--accent">Masterclass</div>
+      <h2 id="mcModalTitle">Masterclass Zugang Anfragen</h2>
+      <div class="mc-price">3.000 €</div>
+      <form id="mcForm" novalidate>
+        <div class="mc-field">
+          <label for="mcName">Name</label>
+          <input type="text" id="mcName" name="name" placeholder="Dein Name" required>
+        </div>
+        <div class="mc-field">
+          <label for="mcEmail">E-Mail</label>
+          <input type="email" id="mcEmail" name="email" placeholder="deine@email.de" required>
+        </div>
+        <div class="mc-field">
+          <label for="mcTools">KI Tools mit denen ich bereits arbeite</label>
+          <textarea id="mcTools" name="tools" rows="4" placeholder="z. B. ChatGPT, Claude, Midjourney, n8n ..."></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--large" style="width:100%;">Absenden</button>
+      </form>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -188,5 +265,48 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    const mcModal   = document.getElementById('mcModal');
+    const mcOpen    = document.getElementById('mcFormOpen');
+    const mcClose   = document.getElementById('mcModalClose');
+    const mcForm    = document.getElementById('mcForm');
+
+    function openMcModal() {
+      mcModal.style.display = 'flex';
+      requestAnimationFrame(() => mcModal.classList.add('open'));
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMcModal() {
+      mcModal.classList.remove('open');
+      mcModal.addEventListener('transitionend', () => {
+        mcModal.style.display = 'none';
+      }, { once: true });
+      document.body.style.overflow = '';
+    }
+
+    mcOpen.addEventListener('click', openMcModal);
+    mcClose.addEventListener('click', closeMcModal);
+    mcModal.addEventListener('click', e => { if (e.target === mcModal) closeMcModal(); });
+
+    mcForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const name  = document.getElementById('mcName').value.trim();
+      const email = document.getElementById('mcEmail').value.trim();
+      const tools = document.getElementById('mcTools').value.trim();
+
+      if (!name || !email) {
+        document.getElementById(!name ? 'mcName' : 'mcEmail').focus();
+        return;
+      }
+
+      const subject = encodeURIComponent('Masterclass Zugang Anfragen');
+      const body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'E-Mail: ' + email + '\n\n' +
+        'KI Tools mit denen ich bereits arbeite:\n' + (tools || '-')
+      );
+      window.location.href = 'mailto:kornelius.thelen@log1k.de?subject=' + subject + '&body=' + body;
+    });
+  </script>
 </body>
 </html>
