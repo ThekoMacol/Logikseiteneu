@@ -104,6 +104,40 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();
 });
 
+// Lightbox for photo cards (delegated - works after modal injects content)
+const lightbox    = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+function openLightbox(src, alt) {
+  if (!lightbox || !lightboxImg) return;
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || '';
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  if (!lightbox) return;
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+if (lightbox) lightbox.addEventListener('click', e => { if (e.target === lightbox || e.target === lightboxImg) closeLightbox(); });
+
+// Delegated: card clicks inside modal
+document.addEventListener('click', e => {
+  const card = e.target.closest('[data-lightbox]');
+  if (!card) return;
+  const img = card.querySelector('img');
+  if (img) openLightbox(img.src, img.alt);
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeLightbox();
+});
+
 // Intersection Observer: fade-in sections
 const observer = new IntersectionObserver(
   (entries) => {
