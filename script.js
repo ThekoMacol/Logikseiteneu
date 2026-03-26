@@ -79,7 +79,7 @@ const observer = new IntersectionObserver(
 );
 
 document.querySelectorAll(
-  '.problem__item, .module, .step, .pillar, .case-study, .about__stat'
+  '.uc__item, .clarity__step, .cs__block, .logic__item, .step, .angebot__option'
 ).forEach(el => {
   el.classList.add('fade-target');
   observer.observe(el);
