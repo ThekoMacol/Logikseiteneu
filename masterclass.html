@@ -68,6 +68,56 @@
     .mc-field textarea:focus {
       border-color: var(--accent);
     }
+    .mc-contact {
+      margin-top: var(--space-3xl);
+      padding-top: var(--space-3xl);
+      border-top: 1px solid var(--border);
+    }
+    .mc-contact h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      margin-bottom: var(--space-sm);
+      color: var(--text);
+    }
+    .mc-contact .mc-contact__sub {
+      color: var(--text-2);
+      margin-bottom: var(--space-xl);
+      font-size: 1rem;
+    }
+    .mc-contact-form {
+      max-width: 560px;
+    }
+    .mc-field-error {
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-top: 0.25rem;
+      display: none;
+    }
+    .mc-field.has-error .mc-field-error { display: block; }
+    .mc-field.has-error input,
+    .mc-field.has-error textarea { border-color: var(--accent); }
+    .mc-form-error {
+      background: rgba(255,59,48,0.08);
+      border: 1px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 0.75rem 1rem;
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-bottom: var(--space-md);
+      display: none;
+    }
+    .mc-form-error.visible { display: block; }
+    .mc-form-success {
+      background: rgba(52,199,89,0.08);
+      border: 1px solid #34C759;
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      text-align: center;
+      display: none;
+    }
+    .mc-form-success.visible { display: block; }
+    .mc-form-success h3 { color: #34C759; margin-bottom: var(--space-sm); }
+    .mc-form-success p { color: var(--text-2); }
   </style>
 </head>
 <body>
@@ -211,6 +261,55 @@
         </div>
       </div>
     </section>
+
+    <section class="mc-contact section">
+      <div class="container">
+        <h2>Direkt Kontakt aufnehmen</h2>
+        <p class="mc-contact__sub">Du hast eine Frage zur Masterclass oder willst direkt durchstarten? Schreib mir.</p>
+
+        <div class="mc-form-success" id="contactSuccess">
+          <h3>Nachricht gesendet!</h3>
+          <p>Ich melde mich so schnell wie möglich bei dir.</p>
+        </div>
+
+        <form class="mc-contact-form" id="contactForm" novalidate>
+          <!-- Honeypot -->
+          <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none">
+
+          <div class="mc-field" id="field-name">
+            <label for="contactName">Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="contactName" name="name" placeholder="Dein Name" required autocomplete="name">
+            <span class="mc-field-error" id="err-name">Bitte gib deinen Namen ein.</span>
+          </div>
+
+          <div class="mc-field" id="field-email">
+            <label for="contactEmail">E-Mail <span aria-hidden="true">*</span></label>
+            <input type="email" id="contactEmail" name="email" placeholder="deine@email.de" required autocomplete="email">
+            <span class="mc-field-error" id="err-email">Bitte gib eine gültige E-Mail-Adresse ein.</span>
+          </div>
+
+          <div class="mc-field" id="field-firma">
+            <label for="contactFirma">Firma <span style="font-weight:400;opacity:.6;">(optional)</span></label>
+            <input type="text" id="contactFirma" name="firma" placeholder="Dein Unternehmen" autocomplete="organization">
+          </div>
+
+          <div class="mc-field" id="field-telefon">
+            <label for="contactTelefon">Telefon <span style="font-weight:400;opacity:.6;">(optional)</span></label>
+            <input type="tel" id="contactTelefon" name="telefon" placeholder="+49 123 456789" autocomplete="tel">
+          </div>
+
+          <div class="mc-field" id="field-message">
+            <label for="contactMessage">Nachricht <span aria-hidden="true">*</span></label>
+            <textarea id="contactMessage" name="message" rows="5" placeholder="Deine Frage oder Nachricht …" required></textarea>
+            <span class="mc-field-error" id="err-message">Bitte schreib eine Nachricht.</span>
+          </div>
+
+          <div class="mc-form-error" id="contactFormError" role="alert"></div>
+
+          <button type="submit" class="btn btn--primary btn--large" id="contactSubmit" style="width:100%;">Nachricht senden</button>
+        </form>
+      </div>
+    </section>
   </main>
 
   <!-- MASTERCLASS ANFRAGE MODAL -->
@@ -307,6 +406,119 @@
       );
       window.location.href = 'mailto:kornelius.thelen@log1k.de?subject=' + subject + '&body=' + body;
     });
+  </script>
+
+  <script>
+    (function () {
+      var form        = document.getElementById('contactForm');
+      var submitBtn   = document.getElementById('contactSubmit');
+      var formError   = document.getElementById('contactFormError');
+      var formSuccess = document.getElementById('contactSuccess');
+
+      var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      function setFieldError(fieldId, errId, show) {
+        var field = document.getElementById(fieldId);
+        var err   = document.getElementById(errId);
+        if (!field || !err) return;
+        var wrap = field.closest('.mc-field');
+        if (show) {
+          wrap && wrap.classList.add('has-error');
+        } else {
+          wrap && wrap.classList.remove('has-error');
+        }
+      }
+
+      function validateForm(name, email, message) {
+        var valid = true;
+        if (!name) { setFieldError('contactName', 'err-name', true); valid = false; }
+        else        { setFieldError('contactName', 'err-name', false); }
+        if (!email || !EMAIL_RE.test(email)) { setFieldError('contactEmail', 'err-email', true); valid = false; }
+        else                                 { setFieldError('contactEmail', 'err-email', false); }
+        if (!message) { setFieldError('contactMessage', 'err-message', true); valid = false; }
+        else          { setFieldError('contactMessage', 'err-message', false); }
+        return valid;
+      }
+
+      function showFormError(msg) {
+        formError.textContent = msg;
+        formError.classList.add('visible');
+      }
+
+      function hideFormError() {
+        formError.classList.remove('visible');
+        formError.textContent = '';
+      }
+
+      function setLoading(loading) {
+        submitBtn.disabled = loading;
+        submitBtn.textContent = loading ? 'Wird gesendet\u2026' : 'Nachricht senden';
+      }
+
+      // Live validation on blur
+      ['contactName', 'contactEmail', 'contactMessage'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('blur', function () {
+          var val = el.value.trim();
+          if (id === 'contactName') setFieldError(id, 'err-name', !val);
+          if (id === 'contactEmail') setFieldError(id, 'err-email', !val || !EMAIL_RE.test(val));
+          if (id === 'contactMessage') setFieldError(id, 'err-message', !val);
+        });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        hideFormError();
+
+        var name    = document.getElementById('contactName').value.trim();
+        var email   = document.getElementById('contactEmail').value.trim();
+        var firma   = document.getElementById('contactFirma').value.trim();
+        var telefon = document.getElementById('contactTelefon').value.trim();
+        var message = document.getElementById('contactMessage').value.trim();
+        var website = form.querySelector('input[name="website"]').value;
+
+        if (!validateForm(name, email, message)) {
+          // Focus first errored field
+          var firstErr = form.querySelector('.mc-field.has-error input, .mc-field.has-error textarea');
+          if (firstErr) firstErr.focus();
+          return;
+        }
+
+        setLoading(true);
+
+        var payload = { name: name, email: email, message: message, website: website };
+        if (firma)   payload.firma   = firma;
+        if (telefon) payload.telefon = telefon;
+
+        fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        })
+          .then(function (res) {
+            return res.json().then(function (data) {
+              return { status: res.status, data: data };
+            });
+          })
+          .then(function (result) {
+            setLoading(false);
+            if (result.data && result.data.ok) {
+              form.style.display = 'none';
+              formSuccess.classList.add('visible');
+            } else {
+              var msg = (result.data && result.data.error)
+                ? result.data.error
+                : 'Ein unbekannter Fehler ist aufgetreten. Bitte versuche es sp\u00e4ter erneut.';
+              showFormError(msg);
+            }
+          })
+          .catch(function () {
+            setLoading(false);
+            showFormError('Netzwerkfehler. Bitte pr\u00fcfe deine Internetverbindung und versuche es erneut.');
+          });
+      });
+    })();
   </script>
 </body>
 </html>
