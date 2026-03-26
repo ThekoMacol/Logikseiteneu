@@ -261,78 +261,55 @@
         </div>
       </div>
     </section>
-
-    <section class="mc-contact section">
-      <div class="container">
-        <h2>Direkt Kontakt aufnehmen</h2>
-        <p class="mc-contact__sub">Du hast eine Frage zur Masterclass oder willst direkt durchstarten? Schreib mir.</p>
-
-        <div class="mc-form-success" id="contactSuccess">
-          <h3>Nachricht gesendet!</h3>
-          <p>Ich melde mich so schnell wie möglich bei dir.</p>
-        </div>
-
-        <form class="mc-contact-form" id="contactForm" novalidate>
-          <!-- Honeypot -->
-          <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none">
-
-          <div class="mc-field" id="field-name">
-            <label for="contactName">Name <span aria-hidden="true">*</span></label>
-            <input type="text" id="contactName" name="name" placeholder="Dein Name" required autocomplete="name">
-            <span class="mc-field-error" id="err-name">Bitte gib deinen Namen ein.</span>
-          </div>
-
-          <div class="mc-field" id="field-email">
-            <label for="contactEmail">E-Mail <span aria-hidden="true">*</span></label>
-            <input type="email" id="contactEmail" name="email" placeholder="deine@email.de" required autocomplete="email">
-            <span class="mc-field-error" id="err-email">Bitte gib eine gültige E-Mail-Adresse ein.</span>
-          </div>
-
-          <div class="mc-field" id="field-firma">
-            <label for="contactFirma">Firma <span style="font-weight:400;opacity:.6;">(optional)</span></label>
-            <input type="text" id="contactFirma" name="firma" placeholder="Dein Unternehmen" autocomplete="organization">
-          </div>
-
-          <div class="mc-field" id="field-telefon">
-            <label for="contactTelefon">Telefon <span style="font-weight:400;opacity:.6;">(optional)</span></label>
-            <input type="tel" id="contactTelefon" name="telefon" placeholder="+49 123 456789" autocomplete="tel">
-          </div>
-
-          <div class="mc-field" id="field-message">
-            <label for="contactMessage">Nachricht <span aria-hidden="true">*</span></label>
-            <textarea id="contactMessage" name="message" rows="5" placeholder="Deine Frage oder Nachricht …" required></textarea>
-            <span class="mc-field-error" id="err-message">Bitte schreib eine Nachricht.</span>
-          </div>
-
-          <div class="mc-form-error" id="contactFormError" role="alert"></div>
-
-          <button type="submit" class="btn btn--primary btn--large" id="contactSubmit" style="width:100%;">Nachricht senden</button>
-        </form>
-      </div>
-    </section>
   </main>
 
-  <!-- MASTERCLASS ANFRAGE MODAL -->
-  <div class="modal-overlay" id="mcModal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="mcModalTitle">
+  <!-- KONTAKT MODAL -->
+  <div class="modal-overlay" id="contactModal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
     <div class="modal-box mc-form-box">
-      <button class="modal__close" id="mcModalClose" aria-label="Schließen">&times;</button>
+      <button class="modal__close" id="contactModalClose" aria-label="Schließen">&times;</button>
       <div class="modal__label label label--accent">Masterclass</div>
-      <h2 id="mcModalTitle">Masterclass Zugang Anfragen</h2>
+      <h2 id="contactModalTitle">Zugang anfragen</h2>
       <div class="mc-price">3.000 €</div>
-      <form id="mcForm" novalidate>
-        <div class="mc-field">
-          <label for="mcName">Name</label>
-          <input type="text" id="mcName" name="name" placeholder="Dein Name" required>
+
+      <div class="mc-form-success" id="contactSuccess" style="display:none;">
+        <h3>Nachricht gesendet!</h3>
+        <p>Ich melde mich so schnell wie möglich bei dir.</p>
+      </div>
+
+      <form id="contactForm" novalidate>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none">
+
+        <div class="mc-field" id="field-name">
+          <label for="contactName">Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="contactName" name="name" placeholder="Dein Name" required autocomplete="name">
+          <span class="mc-field-error" id="err-name">Bitte gib deinen Namen ein.</span>
         </div>
-        <div class="mc-field">
-          <label for="mcEmail">E-Mail</label>
-          <input type="email" id="mcEmail" name="email" placeholder="deine@email.de" required>
+
+        <div class="mc-field" id="field-email">
+          <label for="contactEmail">E-Mail <span aria-hidden="true">*</span></label>
+          <input type="email" id="contactEmail" name="email" placeholder="deine@email.de" required autocomplete="email">
+          <span class="mc-field-error" id="err-email">Bitte gib eine gültige E-Mail-Adresse ein.</span>
         </div>
-        <div class="mc-field">
-          <label for="mcTools">KI Tools mit denen ich bereits arbeite</label>
-          <textarea id="mcTools" name="tools" rows="4" placeholder="z. B. ChatGPT, Claude, Midjourney, n8n ..."></textarea>
+
+        <div class="mc-field" id="field-firma">
+          <label for="contactFirma">Firma <span style="font-weight:400;opacity:.6;">(optional)</span></label>
+          <input type="text" id="contactFirma" name="firma" placeholder="Dein Unternehmen" autocomplete="organization">
         </div>
-        <button type="submit" class="btn btn--primary btn--large" style="width:100%;">Absenden</button>
+
+        <div class="mc-field" id="field-telefon">
+          <label for="contactTelefon">Telefon <span style="font-weight:400;opacity:.6;">(optional)</span></label>
+          <input type="tel" id="contactTelefon" name="telefon" placeholder="+49 123 456789" autocomplete="tel">
+        </div>
+
+        <div class="mc-field" id="field-message">
+          <label for="contactMessage">Nachricht <span aria-hidden="true">*</span></label>
+          <textarea id="contactMessage" name="message" rows="4" placeholder="Deine Frage oder Nachricht …" required></textarea>
+          <span class="mc-field-error" id="err-message">Bitte schreib eine Nachricht.</span>
+        </div>
+
+        <div class="mc-form-error" id="contactFormError" role="alert"></div>
+
+        <button type="submit" class="btn btn--primary btn--large" id="contactSubmit" style="width:100%;">Nachricht senden</button>
       </form>
     </div>
   </div>
@@ -365,128 +342,82 @@
 
   <script src="script.js"></script>
   <script>
-    const mcModal   = document.getElementById('mcModal');
-    const mcOpen    = document.getElementById('mcFormOpen');
-    const mcClose   = document.getElementById('mcModalClose');
-    const mcForm    = document.getElementById('mcForm');
-
-    function openMcModal() {
-      mcModal.style.display = 'flex';
-      requestAnimationFrame(() => mcModal.classList.add('open'));
-      document.body.style.overflow = 'hidden';
-    }
-    function closeMcModal() {
-      mcModal.classList.remove('open');
-      mcModal.addEventListener('transitionend', () => {
-        mcModal.style.display = 'none';
-      }, { once: true });
-      document.body.style.overflow = '';
-    }
-
-    mcOpen.addEventListener('click', openMcModal);
-    mcClose.addEventListener('click', closeMcModal);
-    mcModal.addEventListener('click', e => { if (e.target === mcModal) closeMcModal(); });
-
-    mcForm.addEventListener('submit', e => {
-      e.preventDefault();
-      const name  = document.getElementById('mcName').value.trim();
-      const email = document.getElementById('mcEmail').value.trim();
-      const tools = document.getElementById('mcTools').value.trim();
-
-      if (!name || !email) {
-        document.getElementById(!name ? 'mcName' : 'mcEmail').focus();
-        return;
-      }
-
-      const subject = encodeURIComponent('Masterclass Zugang Anfragen');
-      const body = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'E-Mail: ' + email + '\n\n' +
-        'KI Tools mit denen ich bereits arbeite:\n' + (tools || '-')
-      );
-      window.location.href = 'mailto:kornelius.thelen@log1k.de?subject=' + subject + '&body=' + body;
-    });
-  </script>
-
-  <script>
     (function () {
-      var form        = document.getElementById('contactForm');
-      var submitBtn   = document.getElementById('contactSubmit');
-      var formError   = document.getElementById('contactFormError');
-      var formSuccess = document.getElementById('contactSuccess');
+      var modal      = document.getElementById('contactModal');
+      var openBtn    = document.getElementById('mcFormOpen');
+      var closeBtn   = document.getElementById('contactModalClose');
+      var form       = document.getElementById('contactForm');
+      var submitBtn  = document.getElementById('contactSubmit');
+      var formError  = document.getElementById('contactFormError');
+      var formSuccess= document.getElementById('contactSuccess');
+      var EMAIL_RE   = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      function setFieldError(fieldId, errId, show) {
-        var field = document.getElementById(fieldId);
-        var err   = document.getElementById(errId);
-        if (!field || !err) return;
-        var wrap = field.closest('.mc-field');
-        if (show) {
-          wrap && wrap.classList.add('has-error');
-        } else {
-          wrap && wrap.classList.remove('has-error');
-        }
+      function openModal() {
+        modal.style.display = 'flex';
+        requestAnimationFrame(function () { modal.classList.add('open'); });
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        modal.classList.remove('open');
+        modal.addEventListener('transitionend', function () {
+          modal.style.display = 'none';
+        }, { once: true });
+        document.body.style.overflow = '';
       }
 
-      function validateForm(name, email, message) {
-        var valid = true;
-        if (!name) { setFieldError('contactName', 'err-name', true); valid = false; }
-        else        { setFieldError('contactName', 'err-name', false); }
-        if (!email || !EMAIL_RE.test(email)) { setFieldError('contactEmail', 'err-email', true); valid = false; }
-        else                                 { setFieldError('contactEmail', 'err-email', false); }
-        if (!message) { setFieldError('contactMessage', 'err-message', true); valid = false; }
-        else          { setFieldError('contactMessage', 'err-message', false); }
-        return valid;
+      openBtn.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+
+      function setFieldError(fieldId, show) {
+        var el = document.getElementById(fieldId);
+        if (!el) return;
+        var wrap = el.closest('.mc-field');
+        wrap && wrap.classList[show ? 'add' : 'remove']('has-error');
       }
 
-      function showFormError(msg) {
-        formError.textContent = msg;
-        formError.classList.add('visible');
+      function validate(name, email, message) {
+        var ok = true;
+        setFieldError('contactName',    !name);    if (!name) ok = false;
+        setFieldError('contactEmail',   !email || !EMAIL_RE.test(email)); if (!email || !EMAIL_RE.test(email)) ok = false;
+        setFieldError('contactMessage', !message); if (!message) ok = false;
+        return ok;
       }
 
-      function hideFormError() {
-        formError.classList.remove('visible');
-        formError.textContent = '';
+      function setLoading(on) {
+        submitBtn.disabled = on;
+        submitBtn.textContent = on ? 'Wird gesendet\u2026' : 'Nachricht senden';
       }
 
-      function setLoading(loading) {
-        submitBtn.disabled = loading;
-        submitBtn.textContent = loading ? 'Wird gesendet\u2026' : 'Nachricht senden';
-      }
-
-      // Live validation on blur
       ['contactName', 'contactEmail', 'contactMessage'].forEach(function (id) {
         var el = document.getElementById(id);
         if (!el) return;
         el.addEventListener('blur', function () {
-          var val = el.value.trim();
-          if (id === 'contactName') setFieldError(id, 'err-name', !val);
-          if (id === 'contactEmail') setFieldError(id, 'err-email', !val || !EMAIL_RE.test(val));
-          if (id === 'contactMessage') setFieldError(id, 'err-message', !val);
+          var v = el.value.trim();
+          if (id === 'contactName')    setFieldError(id, !v);
+          if (id === 'contactEmail')   setFieldError(id, !v || !EMAIL_RE.test(v));
+          if (id === 'contactMessage') setFieldError(id, !v);
         });
       });
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        hideFormError();
+        formError.classList.remove('visible');
 
         var name    = document.getElementById('contactName').value.trim();
         var email   = document.getElementById('contactEmail').value.trim();
         var firma   = document.getElementById('contactFirma').value.trim();
         var telefon = document.getElementById('contactTelefon').value.trim();
         var message = document.getElementById('contactMessage').value.trim();
-        var website = form.querySelector('input[name="website"]').value;
+        var website = form.querySelector('[name="website"]').value;
 
-        if (!validateForm(name, email, message)) {
-          // Focus first errored field
-          var firstErr = form.querySelector('.mc-field.has-error input, .mc-field.has-error textarea');
-          if (firstErr) firstErr.focus();
+        if (!validate(name, email, message)) {
+          var first = form.querySelector('.mc-field.has-error input, .mc-field.has-error textarea');
+          if (first) first.focus();
           return;
         }
 
         setLoading(true);
-
         var payload = { name: name, email: email, message: message, website: website };
         if (firma)   payload.firma   = firma;
         if (telefon) payload.telefon = telefon;
@@ -496,26 +427,21 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
         })
-          .then(function (res) {
-            return res.json().then(function (data) {
-              return { status: res.status, data: data };
-            });
-          })
-          .then(function (result) {
+          .then(function (res) { return res.json().then(function (d) { return { ok: res.ok, d: d }; }); })
+          .then(function (r) {
             setLoading(false);
-            if (result.data && result.data.success) {
+            if (r.d && r.d.success) {
               form.style.display = 'none';
-              formSuccess.classList.add('visible');
+              formSuccess.style.display = 'block';
             } else {
-              var msg = (result.data && result.data.error)
-                ? result.data.error
-                : 'Ein unbekannter Fehler ist aufgetreten. Bitte versuche es sp\u00e4ter erneut.';
-              showFormError(msg);
+              formError.textContent = (r.d && r.d.error) || 'Fehler beim Senden. Bitte versuche es erneut.';
+              formError.classList.add('visible');
             }
           })
           .catch(function () {
             setLoading(false);
-            showFormError('Netzwerkfehler. Bitte pr\u00fcfe deine Internetverbindung und versuche es erneut.');
+            formError.textContent = 'Netzwerkfehler. Bitte pr\u00fcfe deine Verbindung.';
+            formError.classList.add('visible');
           });
       });
     })();
