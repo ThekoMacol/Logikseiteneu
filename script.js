@@ -65,6 +65,42 @@ if (vfTrigger && vfPanel && vfClose) {
   vfClose.addEventListener('click', close);
 }
 
+// Modal
+const modalOverlay = document.getElementById('modalOverlay');
+const modalBody    = document.getElementById('modalBody');
+const modalClose   = document.getElementById('modalClose');
+
+function openModal(key) {
+  const tpl = document.getElementById('modal-' + key);
+  if (!tpl || !modalOverlay || !modalBody) return;
+  modalBody.innerHTML = '';
+  modalBody.appendChild(tpl.content.cloneNode(true));
+  modalOverlay.classList.add('open');
+  modalOverlay.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  if (!modalOverlay) return;
+  modalOverlay.classList.remove('open');
+  modalOverlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('[data-modal]').forEach(btn => {
+  btn.addEventListener('click', () => openModal(btn.dataset.modal));
+});
+
+if (modalClose) modalClose.addEventListener('click', closeModal);
+if (modalOverlay) {
+  modalOverlay.addEventListener('click', e => {
+    if (e.target === modalOverlay) closeModal();
+  });
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+
 // Intersection Observer: fade-in sections
 const observer = new IntersectionObserver(
   (entries) => {
