@@ -1334,7 +1334,7 @@ a {
 
 .cta-options {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: var(--space-lg);
   justify-content: center;
   flex-wrap: wrap;
@@ -1349,6 +1349,9 @@ a {
   text-align: left;
   flex: 1;
   min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
 }
 
 .cta-option h3 {
@@ -1362,6 +1365,7 @@ a {
   color: var(--text-2);
   margin-bottom: var(--space-md);
   max-width: none;
+  flex: 1;
 }
 
 .cta-option__divider {
