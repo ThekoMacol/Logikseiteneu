@@ -674,24 +674,29 @@
           <div class="cfield" id="field-name">
             <label for="contactName">Name</label>
             <input type="text" id="contactName" name="name" placeholder="Dein Name" required autocomplete="name">
-            <span class="cfield__error">Bitte gib deinen Namen ein.</span>
+            <span class="cfield__error" style="display:none">Bitte gib deinen Namen ein.</span>
           </div>
 
           <div class="cfield" id="field-email">
             <label for="contactEmail">E-Mail</label>
             <input type="email" id="contactEmail" name="email" placeholder="deine@email.de" required autocomplete="email">
-            <span class="cfield__error">Bitte gib eine gültige E-Mail-Adresse ein.</span>
+            <span class="cfield__error" style="display:none">Bitte gib eine gültige E-Mail-Adresse ein.</span>
           </div>
 
           <div class="cfield" id="field-message">
             <label for="contactMessage">Nachricht</label>
             <textarea id="contactMessage" name="message" rows="4" placeholder="Deine Frage oder Nachricht …" required></textarea>
-            <span class="cfield__error">Bitte schreib eine Nachricht.</span>
+            <span class="cfield__error" style="display:none">Bitte schreib eine Nachricht.</span>
           </div>
 
-          <div class="cform-error" id="contactFormError" role="alert"></div>
+          <div class="cfield-check" id="field-datenschutz">
+            <input type="checkbox" id="contactDatenschutz" required>
+            <label for="contactDatenschutz">Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.</label>
+          </div>
 
-          <button type="submit" class="btn btn--primary" id="contactSubmit" style="width:100%;">Nachricht senden</button>
+          <div class="cform-error" id="contactFormError" role="alert" style="display:none"></div>
+
+          <button type="submit" class="btn btn--primary" id="contactSubmit" style="width:100%;margin-top:0.5rem;">Nachricht senden</button>
         </form>
       </div>
     </div>
@@ -739,14 +744,24 @@
         var el = document.getElementById(id);
         if (!el) return;
         var wrap = el.closest('.cfield');
-        wrap && wrap.classList[show ? 'add' : 'remove']('has-error');
+        if (!wrap) return;
+        wrap.classList[show ? 'add' : 'remove']('has-error');
+        var err = wrap.querySelector('.cfield__error');
+        if (err) err.style.display = show ? 'block' : 'none';
       }
 
       function validate(name, email, message) {
         var ok = true;
+        var check = document.getElementById('contactDatenschutz');
         setFieldError('contactName',    !name);    if (!name) ok = false;
         setFieldError('contactEmail',   !email || !EMAIL_RE.test(email)); if (!email || !EMAIL_RE.test(email)) ok = false;
         setFieldError('contactMessage', !message); if (!message) ok = false;
+        if (check && !check.checked) {
+          check.closest('.cfield-check').classList.add('has-error');
+          ok = false;
+        } else if (check) {
+          check.closest('.cfield-check').classList.remove('has-error');
+        }
         return ok;
       }
 
@@ -768,7 +783,7 @@
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        formError.classList.remove('visible');
+        formError.style.display = 'none';
         var name    = document.getElementById('contactName').value.trim();
         var email   = document.getElementById('contactEmail').value.trim();
         var message = document.getElementById('contactMessage').value.trim();
@@ -795,13 +810,13 @@
               formSuccess.style.display = 'block';
             } else {
               formError.textContent = (r.d && r.d.error) || 'Fehler beim Senden. Bitte versuche es erneut.';
-              formError.classList.add('visible');
+              formError.style.display = 'block';
             }
           })
           .catch(function () {
             setLoading(false);
             formError.textContent = 'Netzwerkfehler. Bitte pr\u00fcfe deine Verbindung.';
-            formError.classList.add('visible');
+            formError.style.display = 'block';
           });
       });
     })();
