@@ -122,7 +122,6 @@ function closeModal() {
   setTimeout(() => { modalOverlay.style.display = 'none'; }, 220);
 }
 
-if (modalOverlay) modalOverlay.style.display = 'none';
 
 document.querySelectorAll('[data-modal]').forEach(btn => {
   btn.addEventListener('click', () => openModal(btn.dataset.modal));
