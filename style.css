@@ -1713,12 +1713,14 @@ a {
   flex-direction: column;
   align-items: flex-end;
   gap: 12px;
+  pointer-events: none;
 }
 
 .vf-trigger {
   display: flex;
   align-items: center;
   gap: 10px;
+  pointer-events: auto;
   padding: 0 18px 0 14px;
   height: 46px;
   background: var(--bg-3);
@@ -1803,7 +1805,7 @@ a {
 .vf-panel.open {
   opacity: 1;
   transform: translateY(0) scale(1);
-  pointer-events: all;
+  pointer-events: auto;
 }
 
 .vf-panel__header {
