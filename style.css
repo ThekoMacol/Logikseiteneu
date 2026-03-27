@@ -920,6 +920,12 @@ a {
   gap: 0.5rem;
 }
 
+.modal__ideal p {
+  font-size: 0.95rem;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
 /* Modal: example block with link */
 .modal__example {
   background: var(--bg-3);
