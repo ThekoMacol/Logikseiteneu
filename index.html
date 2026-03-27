@@ -673,31 +673,31 @@
           <input type="hidden" name="subject" id="contactSubject">
 
           <div class="cfield" id="field-name">
-            <label for="contactName">Name</label>
-            <input type="text" id="contactName" name="name" placeholder="Dein Name" required autocomplete="name">
+            <input type="text" id="contactName" name="name" placeholder="Name" required autocomplete="name"
+              style="background:#141414!important;color:#E8E8E8!important;width:100%;display:block;">
             <span class="cfield__error" style="display:none">Bitte gib deinen Namen ein.</span>
           </div>
 
           <div class="cfield" id="field-email">
-            <label for="contactEmail">E-Mail</label>
-            <input type="email" id="contactEmail" name="email" placeholder="deine@email.de" required autocomplete="email">
+            <input type="email" id="contactEmail" name="email" placeholder="E-Mail" required autocomplete="email"
+              style="background:#141414!important;color:#E8E8E8!important;width:100%;display:block;">
             <span class="cfield__error" style="display:none">Bitte gib eine gültige E-Mail-Adresse ein.</span>
           </div>
 
           <div class="cfield" id="field-message">
-            <label for="contactMessage">Nachricht</label>
-            <textarea id="contactMessage" name="message" rows="4" placeholder="Deine Frage oder Nachricht …" required></textarea>
+            <textarea id="contactMessage" name="message" rows="4" placeholder="Nachricht" required
+              style="background:#141414!important;color:#E8E8E8!important;width:100%;display:block;"></textarea>
             <span class="cfield__error" style="display:none">Bitte schreib eine Nachricht.</span>
           </div>
 
           <div class="cfield-check" id="field-datenschutz">
             <input type="checkbox" id="contactDatenschutz" required>
-            <label for="contactDatenschutz">Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.</label>
+            <label for="contactDatenschutz">Ich stimme der Verarbeitung meiner Daten zu. <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a></label>
           </div>
 
           <div class="cform-error" id="contactFormError" role="alert" style="display:none"></div>
 
-          <button type="submit" class="btn btn--primary" id="contactSubmit" style="width:100%;margin-top:0.5rem;">Nachricht senden</button>
+          <button type="submit" class="btn btn--primary" id="contactSubmit" style="width:100%;margin-top:0.25rem;">Nachricht senden</button>
         </form>
       </div>
     </div>
