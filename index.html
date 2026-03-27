@@ -29,7 +29,7 @@
         <li><a href="#framework">Framework</a></li>
         <li><a href="#prozess">Prozess</a></li>
       </ul>
-      <a href="mailto:hallo@log1k.de?subject=Kontakt" class="btn btn--nav">Kontakt</a>
+      <a href="#" class="btn btn--nav" data-open-contact="Kontakt anfragen">Kontakt</a>
       <button class="nav__burger" id="navBurger" aria-label="Menu öffnen" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -39,7 +39,7 @@
       <a href="#proof">Proof</a>
       <a href="#framework">Framework</a>
       <a href="#prozess">Prozess</a>
-      <a href="mailto:hallo@log1k.de?subject=Kontakt" class="btn btn--primary">Kontakt aufnehmen</a>
+      <a href="#" class="btn btn--primary" data-open-contact="Kontakt anfragen">Kontakt aufnehmen</a>
     </div>
   </nav>
 
@@ -791,6 +791,7 @@
         var message = document.getElementById('contactMessage').value.trim();
         var subject = subjectEl.value;
         var website = form.querySelector('[name="website"]').value;
+        var fullMessage = (subject ? 'CTA: ' + subject + '\n\n' : '') + message;
 
         if (!validate(name, email, message)) {
           var first = form.querySelector('.cfield.has-error input, .cfield.has-error textarea');
@@ -802,7 +803,7 @@
         fetch('/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: name, email: email, message: message, subject: subject, website: website }),
+          body: JSON.stringify({ name: name, email: email, message: fullMessage, subject: subject, website: website }),
         })
           .then(function (res) { return res.json().then(function (d) { return { ok: res.ok, d: d }; }); })
           .then(function (r) {

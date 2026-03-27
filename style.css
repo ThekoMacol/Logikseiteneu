@@ -1410,6 +1410,7 @@ a {
   resize: none;
   -webkit-appearance: none;
   appearance: none;
+  text-align: center;
 }
 
 .cfield textarea {
@@ -1425,6 +1426,7 @@ a {
 .cfield input::placeholder,
 .cfield textarea::placeholder {
   color: #444 !important;
+  text-align: center;
 }
 
 /* Force dark on autofill */
@@ -1452,6 +1454,10 @@ a {
   display: flex;
   align-items: flex-start;
   gap: 0.55rem;
+  background: rgba(255, 59, 48, 0.06);
+  border: 1px solid rgba(255, 59, 48, 0.2);
+  border-radius: 6px;
+  padding: 0.65rem 0.75rem;
 }
 
 .cfield-check input[type="checkbox"] {
