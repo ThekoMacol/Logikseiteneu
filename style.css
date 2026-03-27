@@ -901,11 +901,13 @@ a {
 
 .modal__property .modal__list {
   gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 .modal__property .modal__list li {
   font-size: 0.9rem;
-  color: var(--text-2);
+  color: var(--text);
+  font-weight: 700;
 }
 
 .modal__property .modal__list li::before {
