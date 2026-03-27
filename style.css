@@ -796,8 +796,8 @@ a {
   font-family: var(--mono);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--text-3);
-  font-weight: 600;
+  color: #fff;
+  font-weight: 800;
   margin-bottom: 0.7rem;
 }
 
@@ -891,22 +891,21 @@ a {
 .modal__property-claim {
   font-size: clamp(1.25rem, 3.5vw, 1.75rem);
   font-weight: 800;
-  color: #fff;
+  color: var(--text);
   max-width: none;
   line-height: 1.25;
   letter-spacing: -0.03em;
+  text-transform: uppercase;
   font-family: var(--mono);
 }
 
 .modal__property .modal__list {
   gap: 0.5rem;
-  margin-top: 1.75rem;
 }
 
 .modal__property .modal__list li {
   font-size: 0.9rem;
-  color: #fff;
-  font-weight: 700;
+  color: var(--text-2);
 }
 
 .modal__property .modal__list li::before {
