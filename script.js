@@ -2,7 +2,7 @@
 const nav = document.getElementById('nav');
 
 // Nav: active link on scroll (scroll-spy)
-const navSections = ['problem', 'proof', 'framework', 'masterclass', 'prozess'];
+const navSections = ['problem', 'proof', 'framework', 'prozess'];
 const navLinkMap = {};
 navSections.forEach(id => {
   const el = document.querySelector(`.nav__links a[href="#${id}"]`);

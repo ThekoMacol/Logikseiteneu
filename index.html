@@ -28,9 +28,8 @@
         <li><a href="#proof">Proof</a></li>
         <li><a href="#framework">Framework</a></li>
         <li><a href="#prozess">Prozess</a></li>
-        <li><a href="/masterclass">Masterclass</a></li>
       </ul>
-      <a href="/masterclass" class="btn btn--nav">Masterclass ansehen</a>
+      <a href="mailto:hallo@log1k.de?subject=Kontakt" class="btn btn--nav">Kontakt</a>
       <button class="nav__burger" id="navBurger" aria-label="Menu öffnen" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -40,8 +39,7 @@
       <a href="#proof">Proof</a>
       <a href="#framework">Framework</a>
       <a href="#prozess">Prozess</a>
-      <a href="/masterclass">Masterclass</a>
-      <a href="/masterclass" class="btn btn--primary">Masterclass ansehen</a>
+      <a href="mailto:hallo@log1k.de?subject=Kontakt" class="btn btn--primary">Kontakt aufnehmen</a>
     </div>
   </nav>
 
@@ -61,9 +59,15 @@
         Das ist der Unterschied zwischen einer Demo und einem Ergebnis.</p>
       </div>
       <div class="hero__cta">
-        <a href="/masterclass" class="btn btn--primary">KI Masterclass ansehen</a>
         <a href="#proof" class="btn btn--ghost">Ergebnisse sehen</a>
       </div>
+      <form class="email-form" onsubmit="window.location='mailto:hallo@log1k.de?subject='+encodeURIComponent('KI System aufbauen')+'&body='+encodeURIComponent('Meine E-Mail: '+this.email.value);return false;">
+        <div class="email-form__row">
+          <input type="email" name="email" class="email-form__input" placeholder="deine@email.de" required>
+          <button type="submit" class="btn btn--primary">KI System aufbauen →</button>
+        </div>
+        <p class="email-form__note">Direkt per E-Mail — keine Warteliste, kein Newsletter</p>
+      </form>
     </div>
   </section>
 
@@ -111,7 +115,13 @@
           Du brauchst keinen weiteren Tool-Kurs.<br>
           Du brauchst ein System, das denkt.
         </p>
-        <a href="#" class="btn btn--primary" data-open-vf style="margin-top: var(--space-lg);">Gespräch anfragen</a>
+        <form class="email-form" style="margin-top: var(--space-lg);" onsubmit="window.location='mailto:hallo@log1k.de?subject='+encodeURIComponent('Gespräch anfragen')+'&body='+encodeURIComponent('Meine E-Mail: '+this.email.value);return false;">
+          <div class="email-form__row">
+            <input type="email" name="email" class="email-form__input" placeholder="deine@email.de" required>
+            <button type="submit" class="btn btn--primary">Gespräch anfragen →</button>
+          </div>
+          <p class="email-form__note">Direkt per E-Mail — kein Formular, keine Warteliste</p>
+        </form>
       </div>
     </div>
   </section>
@@ -136,7 +146,13 @@
       </div>
 
       <div class="proof__cta">
-        <a href="/masterclass" class="btn btn--primary">Das System lernen</a>
+        <form class="email-form" onsubmit="window.location='mailto:hallo@log1k.de?subject='+encodeURIComponent('System aufbauen')+'&body='+encodeURIComponent('Meine E-Mail: '+this.email.value);return false;">
+          <div class="email-form__row">
+            <input type="email" name="email" class="email-form__input" placeholder="deine@email.de" required>
+            <button type="submit" class="btn btn--primary">System aufbauen →</button>
+          </div>
+          <p class="email-form__note">Direkt per E-Mail — kein Formular, keine Warteliste</p>
+        </form>
       </div>
     </div>
   </section>
@@ -284,21 +300,15 @@
       <div class="cta-block__inner">
         <h2>Du hast genug Theorie.<br>
         <span class="accent">Hier ist der nächste Schritt.</span></h2>
-        <p>Wenn du KI-Systeme verstehen, aufbauen und deployen willst - nicht nur davon reden -, dann gibt es zwei Wege:</p>
+        <p>Ich baue das System für dich. Diagnose, Design, Build, Deploy. Für Unternehmer und Entscheider, die Ergebnisse brauchen, nicht Lernzeit.</p>
 
-        <div class="cta-options">
-          <div class="cta-option">
-            <h3>KI Masterclass</h3>
-            <p>Strukturiertes Selbststudium. Alle fünf Module. Deploybare Systeme am Ende jedes Moduls. Für alle, die Systeme selbst bauen wollen.</p>
-            <a href="/masterclass" class="btn btn--primary">Zur Masterclass</a>
+        <form class="email-form" onsubmit="window.location='mailto:hallo@log1k.de?subject='+encodeURIComponent('Direkte Zusammenarbeit')+'&body='+encodeURIComponent('Meine E-Mail: '+this.email.value);return false;">
+          <div class="email-form__row">
+            <input type="email" name="email" class="email-form__input" placeholder="deine@email.de" required>
+            <button type="submit" class="btn btn--primary">Direkte Zusammenarbeit anfragen →</button>
           </div>
-          <div class="cta-option__divider">oder</div>
-          <div class="cta-option">
-            <h3>Direkte Zusammenarbeit</h3>
-            <p>Ich baue das System für dich. Diagnose, Design, Build, Deploy. Für Unternehmer und Entscheider, die Ergebnisse brauchen, nicht Lernzeit.</p>
-            <a href="#" class="btn btn--outline" data-open-vf>Gespräch anfragen</a>
-          </div>
-        </div>
+          <p class="email-form__note">Direkt per E-Mail — kein Formular, keine Warteliste</p>
+        </form>
       </div>
     </div>
   </section>
@@ -348,7 +358,6 @@
           <a href="#problem">Problem</a>
           <a href="#proof">Proof</a>
           <a href="#framework">Framework</a>
-          <a href="/masterclass">Masterclass</a>
           <a href="#prozess">Prozess</a>
           <a href="mailto:hallo@log1k.de">Kontakt</a>
         </div>
@@ -451,7 +460,12 @@
       <div class="modal__example-label">Live-Beispiel</div>
       <p>AI Operator auf dieser Webseite - automatisierte Erstqualifizierung und Kontaktaufnahme via Voiceflow Agent.</p>
     </div>
-    <a href="#" class="btn btn--primary" data-open-vf>Mein CRM analysieren</a>
+    <form class="email-form" onsubmit="window.location='mailto:hallo@log1k.de?subject='+encodeURIComponent('Mein CRM analysieren')+'&body='+encodeURIComponent('Meine E-Mail: '+this.email.value);return false;">
+      <div class="email-form__row">
+        <input type="email" name="email" class="email-form__input" placeholder="deine@email.de" required>
+        <button type="submit" class="btn btn--primary">Mein CRM analysieren →</button>
+      </div>
+    </form>
   </div>
 
   <div id="modal-automatisierung" hidden>
@@ -503,7 +517,12 @@
         @AI.Fantasy_ASMR/shorts
       </a>
     </div>
-    <a href="#" class="btn btn--primary" data-open-vf>Shorts-System aufbauen</a>
+    <form class="email-form" onsubmit="window.location='mailto:hallo@log1k.de?subject='+encodeURIComponent('Shorts-System aufbauen')+'&body='+encodeURIComponent('Meine E-Mail: '+this.email.value);return false;">
+      <div class="email-form__row">
+        <input type="email" name="email" class="email-form__input" placeholder="deine@email.de" required>
+        <button type="submit" class="btn btn--primary">Shorts-System aufbauen →</button>
+      </div>
+    </form>
   </div>
 
   <div id="modal-text2image" hidden>
@@ -541,19 +560,17 @@
       <div class="modal__block">
         <h4>Mechanik</h4>
         <ul class="modal__list">
-          <li>Keine physischen Shootings</li>
-          <li>Keine Terminabhängigkeit</li>
-          <li>Output on demand</li>
-          <li>Stil = reproduzierbar</li>
+          <li>Identität einmal definiert → beliebig reproduzierbar</li>
+          <li>Output unabhängig von Verfügbarkeit</li>
+          <li>Variationen ohne Qualitätsverlust</li>
         </ul>
       </div>
       <div class="modal__block">
         <h4>Ergebnis</h4>
         <ul class="modal__list">
-          <li>Höherer Content-Output</li>
-          <li>Deutlich niedrigere Produktionskosten</li>
-          <li>Skalierbare Content-Pipeline</li>
-          <li>Unabhängige digitale Identität</li>
+          <li>Content ohne Abstimmungsschleifen</li>
+          <li>Keine Ausfälle durch Personen</li>
+          <li>Vollständige Kontrolle über Darstellung</li>
         </ul>
       </div>
     </div>
@@ -572,7 +589,12 @@
         @zaya.the.baddie
       </a>
     </div>
-    <a href="#" class="btn btn--primary" data-open-vf>Content-System aufbauen</a>
+    <form class="email-form" onsubmit="window.location='mailto:hallo@log1k.de?subject='+encodeURIComponent('Content-System aufbauen')+'&body='+encodeURIComponent('Meine E-Mail: '+this.email.value);return false;">
+      <div class="email-form__row">
+        <input type="email" name="email" class="email-form__input" placeholder="deine@email.de" required>
+        <button type="submit" class="btn btn--primary">Content-System aufbauen →</button>
+      </div>
+    </form>
   </div>
 
   <!-- LIGHTBOX -->
@@ -585,7 +607,7 @@
 
   <div id="modal-image2video" hidden>
     <div class="modal__label label label--accent">Image to Video</div>
-    <h3>Video-Output ohne Produktion.<br>Aus einem Bild. Skalierbar.</h3>
+    <h3>Creatives in Minuten testen, nicht in Wochen produzieren.</h3>
     <div class="modal__blocks">
       <div class="modal__block">
         <h4>Ausgangslage</h4>
@@ -624,9 +646,19 @@
     </div>
     <div class="modal__example">
       <div class="modal__example-label">System-Eigenschaft</div>
-      <p>Ein Bild wird zum Content-Multiplikator - mehr Assets, mehr Tests, mehr Reichweite.</p>
+      <p>Ein Asset erzeugt Varianten, nicht ein Video.</p>
+      <ul class="modal__list" style="margin-top: 0.5rem;">
+        <li>Mehr Tests</li>
+        <li>Schnellere Learnings</li>
+        <li>Bessere Performance</li>
+      </ul>
     </div>
-    <a href="#" class="btn btn--primary" data-open-vf>Video-System aufbauen</a>
+    <form class="email-form" onsubmit="window.location='mailto:hallo@log1k.de?subject='+encodeURIComponent('Video-System aufbauen')+'&body='+encodeURIComponent('Meine E-Mail: '+this.email.value);return false;">
+      <div class="email-form__row">
+        <input type="email" name="email" class="email-form__input" placeholder="deine@email.de" required>
+        <button type="submit" class="btn btn--primary">Video-System aufbauen →</button>
+      </div>
+    </form>
   </div>
 
   <div id="modal-vibecoding" hidden>
@@ -660,7 +692,12 @@
         <li>Sidequest - Habit-Tracker Gamification App für Android</li>
       </ul>
     </div>
-    <a href="mailto:hallo@log1k.de?subject=Vibecoding Projekt" class="btn btn--primary">Projekt starten</a>
+    <form class="email-form" onsubmit="window.location='mailto:hallo@log1k.de?subject='+encodeURIComponent('Vibecoding Projekt')+'&body='+encodeURIComponent('Meine E-Mail: '+this.email.value);return false;">
+      <div class="email-form__row">
+        <input type="email" name="email" class="email-form__input" placeholder="deine@email.de" required>
+        <button type="submit" class="btn btn--primary">Projekt starten →</button>
+      </div>
+    </form>
   </div>
 
   <script src="script.js"></script>
