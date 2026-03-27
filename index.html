@@ -653,46 +653,47 @@
 
   <!-- CONTACT MODAL -->
   <div class="modal-overlay" id="contactModal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
-    <div class="modal-box mc-form-box">
+    <div class="modal">
       <button class="modal__close" id="contactModalClose" aria-label="Schließen">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
           <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </button>
-      <div class="modal__label label label--accent">Kontakt</div>
-      <h2 id="contactModalTitle">Anfrage</h2>
+      <div class="modal__body">
+        <div class="modal__label label label--accent">Kontakt</div>
+        <h3 id="contactModalTitle">Anfrage</h3>
 
-      <div class="mc-form-success" id="contactSuccess">
-        <h3>Nachricht gesendet!</h3>
-        <p>Ich melde mich so schnell wie möglich bei dir.</p>
+        <div class="contact-success" id="contactSuccess" style="display:none;">
+          <p><strong>Nachricht gesendet.</strong><br>Ich melde mich so schnell wie möglich bei dir.</p>
+        </div>
+
+        <form id="contactForm" novalidate>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none">
+          <input type="hidden" name="subject" id="contactSubject">
+
+          <div class="cfield" id="field-name">
+            <label for="contactName">Name</label>
+            <input type="text" id="contactName" name="name" placeholder="Dein Name" required autocomplete="name">
+            <span class="cfield__error">Bitte gib deinen Namen ein.</span>
+          </div>
+
+          <div class="cfield" id="field-email">
+            <label for="contactEmail">E-Mail</label>
+            <input type="email" id="contactEmail" name="email" placeholder="deine@email.de" required autocomplete="email">
+            <span class="cfield__error">Bitte gib eine gültige E-Mail-Adresse ein.</span>
+          </div>
+
+          <div class="cfield" id="field-message">
+            <label for="contactMessage">Nachricht</label>
+            <textarea id="contactMessage" name="message" rows="4" placeholder="Deine Frage oder Nachricht …" required></textarea>
+            <span class="cfield__error">Bitte schreib eine Nachricht.</span>
+          </div>
+
+          <div class="cform-error" id="contactFormError" role="alert"></div>
+
+          <button type="submit" class="btn btn--primary" id="contactSubmit" style="width:100%;">Nachricht senden</button>
+        </form>
       </div>
-
-      <form id="contactForm" novalidate>
-        <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none">
-        <input type="hidden" name="subject" id="contactSubject">
-
-        <div class="mc-field" id="field-name">
-          <label for="contactName">Name <span aria-hidden="true">*</span></label>
-          <input type="text" id="contactName" name="name" placeholder="Dein Name" required autocomplete="name">
-          <span class="mc-field-error" id="err-name">Bitte gib deinen Namen ein.</span>
-        </div>
-
-        <div class="mc-field" id="field-email">
-          <label for="contactEmail">E-Mail <span aria-hidden="true">*</span></label>
-          <input type="email" id="contactEmail" name="email" placeholder="deine@email.de" required autocomplete="email">
-          <span class="mc-field-error" id="err-email">Bitte gib eine gültige E-Mail-Adresse ein.</span>
-        </div>
-
-        <div class="mc-field" id="field-message">
-          <label for="contactMessage">Nachricht <span aria-hidden="true">*</span></label>
-          <textarea id="contactMessage" name="message" rows="4" placeholder="Deine Frage oder Nachricht …" required></textarea>
-          <span class="mc-field-error" id="err-message">Bitte schreib eine Nachricht.</span>
-        </div>
-
-        <div class="mc-form-error" id="contactFormError" role="alert"></div>
-
-        <button type="submit" class="btn btn--primary btn--large" id="contactSubmit" style="width:100%;">Nachricht senden</button>
-      </form>
     </div>
   </div>
 
@@ -737,7 +738,7 @@
       function setFieldError(id, show) {
         var el = document.getElementById(id);
         if (!el) return;
-        var wrap = el.closest('.mc-field');
+        var wrap = el.closest('.cfield');
         wrap && wrap.classList[show ? 'add' : 'remove']('has-error');
       }
 
@@ -775,7 +776,7 @@
         var website = form.querySelector('[name="website"]').value;
 
         if (!validate(name, email, message)) {
-          var first = form.querySelector('.mc-field.has-error input, .mc-field.has-error textarea');
+          var first = form.querySelector('.cfield.has-error input, .cfield.has-error textarea');
           if (first) first.focus();
           return;
         }
@@ -791,7 +792,7 @@
             setLoading(false);
             if (r.d && r.d.success) {
               form.style.display = 'none';
-              formSuccess.classList.add('visible');
+              formSuccess.style.display = 'block';
             } else {
               formError.textContent = (r.d && r.d.error) || 'Fehler beim Senden. Bitte versuche es erneut.';
               formError.classList.add('visible');
