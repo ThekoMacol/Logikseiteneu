@@ -1374,6 +1374,16 @@ a {
 }
 
 /* === CONTACT FORM FIELDS === */
+.contact-modal__body {
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-modal__body #contactForm {
+  width: 100%;
+}
+
 #contactForm {
   display: flex;
   flex-direction: column;
@@ -1392,6 +1402,7 @@ a {
   color: #666;
   letter-spacing: 0.07em;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .cfield input,
@@ -1477,7 +1488,11 @@ a {
 }
 
 .cfield-check a {
-  color: #FF3B30;
+  color: #FF3B30 !important;
+  background: rgba(255, 59, 48, 0.12);
+  padding: 1px 5px;
+  border-radius: 3px;
+  text-decoration: none;
 }
 
 .cfield-check.has-error label {
