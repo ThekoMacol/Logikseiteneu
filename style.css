@@ -1052,6 +1052,28 @@ a {
 
 .proof__cta {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.vf-demo-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Modal: live demo block */
+.modal__live-demo {
+  background: var(--bg-3);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 /* === FRAMEWORK === */
