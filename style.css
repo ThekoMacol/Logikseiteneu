@@ -1898,6 +1898,13 @@ a {
     justify-content: center;
   }
 
+  .modal__body .btn--primary {
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+    padding: 0.9rem 1.25rem;
+  }
+
   .module__header {
     flex-direction: column;
     gap: 0.3rem;
