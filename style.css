@@ -829,6 +829,79 @@ a {
   .modal__body { padding: 1.2rem 1.2rem 1.5rem; }
 }
 
+/* Modal: use case subtitle */
+.modal__usecase {
+  font-size: 0.82rem;
+  color: var(--text-3);
+  font-family: var(--mono);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.25rem;
+  max-width: none;
+}
+
+/* Modal: dominant result hero */
+.modal__result-hero {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  background: var(--accent-dim);
+  border: 1px solid rgba(255,59,48,0.15);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+}
+
+@media (max-width: 480px) {
+  .modal__result-hero { grid-template-columns: repeat(2, 1fr); }
+}
+
+.modal__result-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.2rem;
+}
+
+.modal__result-num {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-weight: 800;
+  color: var(--accent);
+  font-family: var(--mono);
+  line-height: 1;
+}
+
+.modal__result-label {
+  font-size: 0.72rem;
+  color: var(--text-3);
+  line-height: 1.3;
+}
+
+/* Modal: system-eigenschaft block */
+.modal__property {
+  background: var(--bg-3);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.modal__property-claim {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  max-width: none;
+  font-style: italic;
+}
+
+/* Modal: ideal für block */
+.modal__ideal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 /* Modal: example block with link */
 .modal__example {
   background: var(--bg-3);
