@@ -891,22 +891,21 @@ a {
 .modal__property-claim {
   font-size: clamp(1.25rem, 3.5vw, 1.75rem);
   font-weight: 800;
-  color: var(--text);
+  color: #fff;
   max-width: none;
   line-height: 1.25;
   letter-spacing: -0.03em;
-  text-transform: uppercase;
   font-family: var(--mono);
 }
 
 .modal__property .modal__list {
   gap: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 1.75rem;
 }
 
 .modal__property .modal__list li {
   font-size: 0.9rem;
-  color: var(--text);
+  color: #fff;
   font-weight: 700;
 }
 
