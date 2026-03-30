@@ -126,20 +126,29 @@ function animateStats() {
     hero.style.height = hero.offsetHeight + 'px';
   }
 
-  // Restore original text, then animate from step[0]
+  // Restore original text
   nums.forEach((el, i) => { el.textContent = saved[i]; });
+
+  // Animate columns sequentially: col 0 completes all steps, then col 1, etc.
+  const stepsCount = nums.length > 0
+    ? nums[0].getAttribute('data-steps').split('|').length
+    : 4;
+  const colDuration = (stepsCount - 1) * STEP_MS;
+
+  function tick(el, text) {
+    el.classList.remove('stat-tick');
+    void el.offsetWidth;
+    el.classList.add('stat-tick');
+    el.textContent = text;
+  }
 
   nums.forEach((el, colIdx) => {
     const steps = el.getAttribute('data-steps').split('|');
     if (steps.length < 2) return;
-    el.textContent = steps[0];
+    const colStart = colIdx * colDuration;
+    setTimeout(() => tick(el, steps[0]), colStart);
     steps.slice(1).forEach((step, i) => {
-      setTimeout(() => {
-        el.classList.remove('stat-tick');
-        void el.offsetWidth;
-        el.classList.add('stat-tick');
-        el.textContent = step;
-      }, (colIdx * 80) + (i + 1) * STEP_MS);
+      setTimeout(() => tick(el, step), colStart + (i + 1) * STEP_MS);
     });
   });
 }
