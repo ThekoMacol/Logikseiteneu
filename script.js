@@ -127,7 +127,6 @@ function animateStats() {
     const steps = el.getAttribute('data-steps').split('|');
     if (steps.length < 2) return;
     const colStart = colIdx * colDuration;
-    setTimeout(() => tick(el, steps[0]), colStart);
     steps.slice(1).forEach((step, i) => {
       setTimeout(() => tick(el, step), colStart + (i + 1) * STEP_MS);
     });
