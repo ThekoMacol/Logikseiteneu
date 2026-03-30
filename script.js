@@ -138,6 +138,10 @@ function openModal(key) {
   const src = document.getElementById('modal-' + key);
   if (!src || !modalOverlay || !modalBody) return;
   modalBody.innerHTML = src.innerHTML;
+  // Set worst-case (step[0]) immediately so it's visible from the start
+  modalBody.querySelectorAll('.modal__result-num[data-steps]').forEach(el => {
+    el.textContent = el.getAttribute('data-steps').split('|')[0];
+  });
   modalOverlay.style.display = 'flex';
   requestAnimationFrame(() => {
     modalOverlay.classList.add('open');
