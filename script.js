@@ -108,26 +108,7 @@ const modalClose   = document.getElementById('modalClose');
 
 function animateStats() {
   const STEP_MS = 520;
-  const hero = modalBody.querySelector('.modal__result-hero');
   const nums = Array.from(modalBody.querySelectorAll('.modal__result-num[data-steps]'));
-
-  // Temporarily set each number to its longest step value to measure max size
-  const saved = nums.map(el => el.textContent);
-  nums.forEach(el => {
-    const steps = el.getAttribute('data-steps').split('|');
-    el.textContent = steps.reduce((a, b) => a.length >= b.length ? a : b);
-  });
-
-  // Lock grid column widths at the measured max size
-  if (hero) {
-    const items = Array.from(hero.querySelectorAll('.modal__result-item'));
-    const colWidths = items.map(item => item.offsetWidth);
-    hero.style.gridTemplateColumns = colWidths.map(w => w + 'px').join(' ');
-    hero.style.height = hero.offsetHeight + 'px';
-  }
-
-  // Restore original text
-  nums.forEach((el, i) => { el.textContent = saved[i]; });
 
   // Animate columns sequentially: col 0 completes all steps, then col 1, etc.
   const stepsCount = nums.length > 0
