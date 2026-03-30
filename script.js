@@ -130,8 +130,8 @@ function openModal(key) {
   modalOverlay.style.display = 'flex';
   requestAnimationFrame(() => {
     modalOverlay.classList.add('open');
-    animateStats();
   });
+  setTimeout(animateStats, 250);
   document.body.style.overflow = 'hidden';
 }
 
