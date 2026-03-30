@@ -202,12 +202,32 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeLightbox();
 });
 
+function animateAboutStat(el) {
+  const strong = el.querySelector('strong[data-steps]');
+  if (!strong) return;
+  const STEP_MS = 520;
+  const steps = strong.getAttribute('data-steps').split('|');
+  if (steps.length < 2) return;
+  strong.textContent = steps[0];
+  steps.slice(1).forEach((step, i) => {
+    setTimeout(() => {
+      strong.classList.remove('stat-tick');
+      void strong.offsetWidth;
+      strong.classList.add('stat-tick');
+      strong.textContent = step;
+    }, (i + 1) * STEP_MS);
+  });
+}
+
 // Intersection Observer: fade-in sections
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
+        if (entry.target.classList.contains('about__stat')) {
+          animateAboutStat(entry.target);
+        }
         observer.unobserve(entry.target);
       }
     });
