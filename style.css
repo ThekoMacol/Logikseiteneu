@@ -868,6 +868,14 @@ a {
   color: var(--accent);
   font-family: var(--mono);
   line-height: 1;
+  display: inline-block;
+}
+@keyframes stat-tick {
+  0%   { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.modal__result-num.stat-tick {
+  animation: stat-tick 0.18s ease-out forwards;
 }
 
 .modal__result-label {

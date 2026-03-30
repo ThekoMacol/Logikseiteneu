@@ -106,12 +106,32 @@ const modalOverlay = document.getElementById('modalOverlay');
 const modalBody    = document.getElementById('modalBody');
 const modalClose   = document.getElementById('modalClose');
 
+function animateStats() {
+  const STEP_MS = 320;
+  modalBody.querySelectorAll('.modal__result-num[data-steps]').forEach((el, colIdx) => {
+    const steps = el.getAttribute('data-steps').split('|');
+    if (steps.length < 2) return;
+    el.textContent = steps[0];
+    steps.slice(1).forEach((step, i) => {
+      setTimeout(() => {
+        el.classList.remove('stat-tick');
+        void el.offsetWidth; // reflow to restart animation
+        el.classList.add('stat-tick');
+        el.textContent = step;
+      }, (colIdx * 80) + (i + 1) * STEP_MS);
+    });
+  });
+}
+
 function openModal(key) {
   const src = document.getElementById('modal-' + key);
   if (!src || !modalOverlay || !modalBody) return;
   modalBody.innerHTML = src.innerHTML;
   modalOverlay.style.display = 'flex';
-  requestAnimationFrame(() => modalOverlay.classList.add('open'));
+  requestAnimationFrame(() => {
+    modalOverlay.classList.add('open');
+    animateStats();
+  });
   document.body.style.overflow = 'hidden';
 }
 
