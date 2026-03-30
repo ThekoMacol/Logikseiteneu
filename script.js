@@ -108,22 +108,35 @@ const modalClose   = document.getElementById('modalClose');
 
 function animateStats() {
   const STEP_MS = 520;
-  // Lock hero box size before values change
   const hero = modalBody.querySelector('.modal__result-hero');
+  const nums = Array.from(modalBody.querySelectorAll('.modal__result-num[data-steps]'));
+
+  // Temporarily set each number to its longest step value to measure max size
+  const saved = nums.map(el => el.textContent);
+  nums.forEach(el => {
+    const steps = el.getAttribute('data-steps').split('|');
+    el.textContent = steps.reduce((a, b) => a.length >= b.length ? a : b);
+  });
+
+  // Lock grid column widths at the measured max size
   if (hero) {
+    const items = Array.from(hero.querySelectorAll('.modal__result-item'));
+    const colWidths = items.map(item => item.offsetWidth);
+    hero.style.gridTemplateColumns = colWidths.map(w => w + 'px').join(' ');
     hero.style.height = hero.offsetHeight + 'px';
-    hero.querySelectorAll('.modal__result-item').forEach(item => {
-      item.style.width = item.offsetWidth + 'px';
-    });
   }
-  modalBody.querySelectorAll('.modal__result-num[data-steps]').forEach((el, colIdx) => {
+
+  // Restore original text, then animate from step[0]
+  nums.forEach((el, i) => { el.textContent = saved[i]; });
+
+  nums.forEach((el, colIdx) => {
     const steps = el.getAttribute('data-steps').split('|');
     if (steps.length < 2) return;
     el.textContent = steps[0];
     steps.slice(1).forEach((step, i) => {
       setTimeout(() => {
         el.classList.remove('stat-tick');
-        void el.offsetWidth; // reflow to restart animation
+        void el.offsetWidth;
         el.classList.add('stat-tick');
         el.textContent = step;
       }, (colIdx * 80) + (i + 1) * STEP_MS);
