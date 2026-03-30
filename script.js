@@ -106,28 +106,45 @@ const modalOverlay = document.getElementById('modalOverlay');
 const modalBody    = document.getElementById('modalBody');
 const modalClose   = document.getElementById('modalClose');
 
-function openModal(key) {
+const modalUrlMap = {
+  'text2image':    '/influencer-system',
+  'automatisierung': '/content-system',
+  'image2video':   '/video-system',
+  'crm':           '/crm-system',
+  'vibecoding':    '/vibecoding'
+};
+const urlToModal = Object.fromEntries(Object.entries(modalUrlMap).map(([k, v]) => [v, k]));
+
+function openModal(key, updateUrl = true) {
   const src = document.getElementById('modal-' + key);
   if (!src || !modalOverlay || !modalBody) return;
   modalBody.innerHTML = src.innerHTML;
   modalOverlay.style.display = 'flex';
   requestAnimationFrame(() => modalOverlay.classList.add('open'));
   document.body.style.overflow = 'hidden';
+  if (updateUrl && modalUrlMap[key]) {
+    history.pushState({ modal: key }, '', modalUrlMap[key]);
+  }
 }
 
-function closeModal() {
+function closeModal(updateUrl = true) {
   if (!modalOverlay) return;
   modalOverlay.classList.remove('open');
   document.body.style.overflow = '';
   setTimeout(() => { modalOverlay.style.display = 'none'; }, 220);
+  if (updateUrl) {
+    history.pushState({}, '', '/');
+  }
 }
 
-
 document.querySelectorAll('[data-modal]').forEach(btn => {
-  btn.addEventListener('click', () => openModal(btn.dataset.modal));
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    openModal(btn.dataset.modal);
+  });
 });
 
-if (modalClose) modalClose.addEventListener('click', closeModal);
+if (modalClose) modalClose.addEventListener('click', () => closeModal());
 if (modalOverlay) {
   modalOverlay.addEventListener('click', e => {
     if (e.target === modalOverlay) closeModal();
@@ -136,6 +153,21 @@ if (modalOverlay) {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();
 });
+
+window.addEventListener('popstate', e => {
+  if (e.state && e.state.modal) {
+    openModal(e.state.modal, false);
+  } else {
+    closeModal(false);
+  }
+});
+
+// Open modal if landing on a case study URL directly
+const initialModal = urlToModal[window.location.pathname];
+if (initialModal) {
+  openModal(initialModal, false);
+  history.replaceState({ modal: initialModal }, '', window.location.pathname);
+}
 
 // Lightbox for photo cards (delegated - works after modal injects content)
 const lightbox    = document.getElementById('lightbox');
