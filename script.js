@@ -107,7 +107,7 @@ const modalBody    = document.getElementById('modalBody');
 const modalClose   = document.getElementById('modalClose');
 
 function animateStats() {
-  const STEP_MS = 320;
+  const STEP_MS = 520;
   modalBody.querySelectorAll('.modal__result-num[data-steps]').forEach((el, colIdx) => {
     const steps = el.getAttribute('data-steps').split('|');
     if (steps.length < 2) return;
