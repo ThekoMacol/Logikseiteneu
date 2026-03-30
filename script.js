@@ -108,6 +108,14 @@ const modalClose   = document.getElementById('modalClose');
 
 function animateStats() {
   const STEP_MS = 520;
+  // Lock hero box size before values change
+  const hero = modalBody.querySelector('.modal__result-hero');
+  if (hero) {
+    hero.style.height = hero.offsetHeight + 'px';
+    hero.querySelectorAll('.modal__result-item').forEach(item => {
+      item.style.width = item.offsetWidth + 'px';
+    });
+  }
   modalBody.querySelectorAll('.modal__result-num[data-steps]').forEach((el, colIdx) => {
     const steps = el.getAttribute('data-steps').split('|');
     if (steps.length < 2) return;
