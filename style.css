@@ -869,9 +869,6 @@ a {
   font-family: var(--mono);
   line-height: 1;
   display: inline-block;
-  white-space: nowrap;
-  min-width: 3ch;
-  text-align: center;
 }
 @keyframes stat-tick {
   0%   { opacity: 0; transform: translateY(6px); }
