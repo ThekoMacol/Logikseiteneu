@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content-System: 1 Video täglich vollautomatisch – Kornelius Thelen</title>
+  <meta name="description" content="Planbarer Content-Output. Täglich. Ohne Aufwand. 1 Video/Tag vollautomatisch, ~400 Abonnenten in 30 Tagen, 344.444 Views. Wie das System funktioniert.">
+  <link rel="canonical" href="https://log1k.de/content-system">
+  <meta property="og:title" content="Content-System: 1 Video täglich. Vollautomatisch.">
+  <meta property="og:description" content="Planbarer Content-Output. Täglich. Ohne Aufwand. ~400 Abonnenten / 30 Tage. 344.444 Views (Top Video).">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://log1k.de/content-system">
+  <meta property="og:image" content="https://log1k.de/og-image.jpg">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Content-System: 1 Video täglich. Vollautomatisch.">
+  <meta name="twitter:description" content="Planbarer Content-Output. Täglich. Ohne Aufwand. ~400 Abonnenten / 30 Tage.">
+  <meta name="twitter:image" content="https://log1k.de/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Content-System: 1 Video täglich. Vollautomatisch.",
+    "description": "Planbarer Content-Output täglich ohne Aufwand durch automatisierte Content-Pipeline.",
+    "author": { "@type": "Person", "name": "Kornelius Thelen", "url": "https://log1k.de" },
+    "publisher": { "@type": "Person", "name": "Kornelius Thelen", "url": "https://log1k.de" },
+    "url": "https://log1k.de/content-system"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .cs-page { padding-top: calc(5rem + var(--space-3xl)); padding-bottom: var(--space-3xl); min-height: 80vh; }
+    .cs-body { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-xl); }
+    .cs-back { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text-3); font-size: 0.85rem; text-decoration: none; font-family: var(--font-mono); letter-spacing: 0.05em; transition: color 0.2s; margin-bottom: var(--space-md); }
+    .cs-back:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="log1k.de" style="display:flex;align-items:center;gap:0.5rem;color:var(--text);text-decoration:none;font-weight:800;font-size:1rem;">log1k.de</a>
+      <ul class="nav__links" role="list" style="display:none"></ul>
+      <a href="/#kontakt" class="btn btn--nav">Kontakt</a>
+      <button class="nav__burger" id="navBurger" aria-label="Menu öffnen" aria-expanded="false" style="display:none">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="cs-page">
+    <div class="container">
+      <div class="cs-body">
+        <a href="/" class="cs-back">← Zurück zu log1k.de</a>
+
+        <div class="modal__label label label--accent">Content-System</div>
+        <h1 style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;line-height:1.15;margin:0;">1 Video täglich. Vollautomatisch.</h1>
+        <p class="modal__usecase">Planbarer Content-Output. Täglich. Ohne Aufwand.</p>
+
+        <div class="modal__result-hero">
+          <div class="modal__result-item">
+            <span class="modal__result-num">1/Tag</span>
+            <span class="modal__result-label">vollautomatisch</span>
+          </div>
+          <div class="modal__result-item">
+            <span class="modal__result-num">~400</span>
+            <span class="modal__result-label">Abonnenten / 30 Tage</span>
+          </div>
+          <div class="modal__result-item">
+            <span class="modal__result-num">+212</span>
+            <span class="modal__result-label">Abonnenten aus 1 Video</span>
+          </div>
+          <div class="modal__result-item">
+            <span class="modal__result-num">344.444</span>
+            <span class="modal__result-label">Views (Top Video)</span>
+          </div>
+        </div>
+
+        <div class="modal__property">
+          <p class="modal__property-claim">Content entsteht aus System.<br>Nicht aus Zeit.</p>
+          <ul class="modal__list">
+            <li>Planbarer Output ohne Creator-Abhängigkeit</li>
+            <li>Täglicher Content ohne Produktionsaufwand</li>
+            <li>Klare Pipeline statt täglicher Entscheidungen</li>
+          </ul>
+        </div>
+
+        <div class="modal__blocks">
+          <div class="modal__block">
+            <h2 style="font-size:0.75rem;font-weight:800;color:#fff;text-transform:uppercase;font-family:var(--font-mono);letter-spacing:0.08em;margin:0 0 0.75rem;">Ausgangslage</h2>
+            <ul class="modal__list">
+              <li>0 Content, 0 Reichweite</li>
+              <li>Kein skalierbarer Prozess</li>
+              <li>Content abhängig von Zeit & manueller Erstellung</li>
+              <li>Kein planbarer Output</li>
+            </ul>
+          </div>
+          <div class="modal__block">
+            <h2 style="font-size:0.75rem;font-weight:800;color:#fff;text-transform:uppercase;font-family:var(--font-mono);letter-spacing:0.08em;margin:0 0 0.75rem;">System</h2>
+            <ul class="modal__list">
+              <li>Themen-Pipeline als Input</li>
+              <li>KI generiert Skript und Varianten</li>
+              <li>Automatisierte Video-Erstellung täglich</li>
+              <li>Automatisierter Upload zur Prime Time</li>
+            </ul>
+          </div>
+          <div class="modal__block">
+            <h2 style="font-size:0.75rem;font-weight:800;color:#fff;text-transform:uppercase;font-family:var(--font-mono);letter-spacing:0.08em;margin:0 0 0.75rem;">Mechanik</h2>
+            <ul class="modal__list">
+              <li>Konstante Frequenz (1/Tag)</li>
+              <li>Timing optimiert (Prime Time)</li>
+              <li>Standardisiertes Format - täglich reproduzierbar</li>
+              <li>Output unabhängig von Personen</li>
+            </ul>
+          </div>
+          <div class="modal__block">
+            <h2 style="font-size:0.75rem;font-weight:800;color:#fff;text-transform:uppercase;font-family:var(--font-mono);letter-spacing:0.08em;margin:0 0 0.75rem;">Ergebnis</h2>
+            <ul class="modal__list">
+              <li>1 Video täglich ohne Mehraufwand</li>
+              <li>~400 neue Abonnenten / 30 Tage</li>
+              <li>+212 Abonnenten aus 1 Video</li>
+              <li>344.444 Views (Top Video)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="modal__example">
+          <div class="modal__example-label">Skalierbar</div>
+          <p>Gleiche Pipeline auf allen Kanälen</p>
+          <p>Mehrere Content-Pipelines parallel skalierbar</p>
+        </div>
+
+        <div class="modal__example">
+          <div class="modal__example-label">Live Demo</div>
+          <p>Dieser Kanal postet täglich automatisch. 1 Video pro Tag. Kein manueller Aufwand.</p>
+          <a href="https://www.youtube.com/@AI.Fantasy_ASMR/shorts" target="_blank" rel="noopener" class="modal__link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+            @AI.Fantasy_ASMR ansehen →
+          </a>
+        </div>
+
+        <div class="modal__ideal">
+          <div class="modal__example-label">Ideal für</div>
+          <p>Brands und Founder, die Content skalieren wollen - ohne Creator-Abhängigkeit aufzubauen.</p>
+        </div>
+
+        <button class="btn btn--primary" data-open-contact="Content-Pipeline aufsetzen">Content-Output automatisieren →</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <p>Kornelius Thelen<br>Thought Engineer / AI Systems Builder</p>
+        </div>
+        <div class="footer__links">
+          <a href="/">Startseite</a>
+          <a href="/#proof">Proof</a>
+          <a href="mailto:hallo@log1k.de">Kontakt</a>
+        </div>
+        <div class="footer__legal">
+          <a href="/impressum">Impressum</a>
+          <a href="/datenschutz">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal-overlay" id="contactModal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+    <div class="modal">
+      <button class="modal__close" id="contactModalClose" aria-label="Schließen">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="modal__body contact-modal__body">
+        <div style="text-align:center;">
+          <div class="modal__label label label--accent" style="display:inline-block;margin-bottom:0.5rem;">Kontakt</div>
+          <h3 id="contactModalTitle" style="font-size:1.3rem;font-weight:800;">Anfrage</h3>
+        </div>
+        <div class="contact-success" id="contactSuccess" style="display:none;">
+          <p><strong>Nachricht gesendet.</strong><br>Ich melde mich so schnell wie möglich bei dir.</p>
+        </div>
+        <form id="contactForm" novalidate>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none">
+          <input type="hidden" name="subject" id="contactSubject">
+          <div class="cfield" id="field-name">
+            <input type="text" id="contactName" name="name" placeholder="Name" required autocomplete="name" style="background:#141414!important;color:#E8E8E8!important;width:100%;display:block;">
+            <span class="cfield__error" style="display:none">Bitte gib deinen Namen ein.</span>
+          </div>
+          <div class="cfield" id="field-email">
+            <input type="email" id="contactEmail" name="email" placeholder="E-Mail" required autocomplete="email" style="background:#141414!important;color:#E8E8E8!important;width:100%;display:block;">
+            <span class="cfield__error" style="display:none">Bitte gib eine gültige E-Mail-Adresse ein.</span>
+          </div>
+          <div class="cfield" id="field-message">
+            <textarea id="contactMessage" name="message" rows="4" placeholder="Nachricht" required style="background:#141414!important;color:#E8E8E8!important;width:100%;display:block;"></textarea>
+            <span class="cfield__error" style="display:none">Bitte schreib eine Nachricht.</span>
+          </div>
+          <div class="cfield-check" id="field-datenschutz">
+            <input type="checkbox" id="contactDatenschutz" required>
+            <label for="contactDatenschutz">Ich stimme der Verarbeitung meiner Daten zu. <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a></label>
+          </div>
+          <div class="cform-error" id="contactFormError" role="alert" style="display:none"></div>
+          <button type="submit" class="btn btn--primary" id="contactSubmit" style="width:100%;margin-top:0.25rem;">Nachricht senden</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    (function () {
+      var modal = document.getElementById('contactModal');
+      var closeBtn = document.getElementById('contactModalClose');
+      var titleEl = document.getElementById('contactModalTitle');
+      var subjectEl = document.getElementById('contactSubject');
+      var form = document.getElementById('contactForm');
+      var submitBtn = document.getElementById('contactSubmit');
+      var formError = document.getElementById('contactFormError');
+      var formSuccess = document.getElementById('contactSuccess');
+      var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      function openContactModal(subject) {
+        titleEl.textContent = subject;
+        subjectEl.value = subject;
+        modal.style.display = 'flex';
+        requestAnimationFrame(function () { modal.classList.add('open'); });
+        document.body.style.overflow = 'hidden';
+      }
+      function closeContactModal() {
+        modal.classList.remove('open');
+        modal.addEventListener('transitionend', function () { modal.style.display = 'none'; }, { once: true });
+        document.body.style.overflow = '';
+      }
+      document.addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-open-contact]');
+        if (btn) { e.preventDefault(); openContactModal(btn.dataset.openContact); }
+      });
+      closeBtn.addEventListener('click', closeContactModal);
+      modal.addEventListener('click', function (e) { if (e.target === modal) closeContactModal(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('open')) closeContactModal(); });
+      function setFieldError(id, show) {
+        var el = document.getElementById(id); if (!el) return;
+        var wrap = el.closest('.cfield'); if (!wrap) return;
+        wrap.classList[show ? 'add' : 'remove']('has-error');
+        var err = wrap.querySelector('.cfield__error');
+        if (err) err.style.display = show ? 'block' : 'none';
+      }
+      function validate(name, email, message) {
+        var ok = true;
+        var check = document.getElementById('contactDatenschutz');
+        setFieldError('contactName', !name); if (!name) ok = false;
+        setFieldError('contactEmail', !email || !EMAIL_RE.test(email)); if (!email || !EMAIL_RE.test(email)) ok = false;
+        setFieldError('contactMessage', !message); if (!message) ok = false;
+        if (check && !check.checked) { check.closest('.cfield-check').classList.add('has-error'); ok = false; }
+        else if (check) { check.closest('.cfield-check').classList.remove('has-error'); }
+        return ok;
+      }
+      function setLoading(on) {
+        submitBtn.disabled = on;
+        submitBtn.textContent = on ? 'Wird gesendet\u2026' : 'Nachricht senden';
+      }
+      ['contactName', 'contactEmail', 'contactMessage'].forEach(function (id) {
+        var el = document.getElementById(id); if (!el) return;
+        el.addEventListener('blur', function () {
+          var v = el.value.trim();
+          if (id === 'contactName') setFieldError(id, !v);
+          if (id === 'contactEmail') setFieldError(id, !v || !EMAIL_RE.test(v));
+          if (id === 'contactMessage') setFieldError(id, !v);
+        });
+      });
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        formError.style.display = 'none';
+        var name = document.getElementById('contactName').value.trim();
+        var email = document.getElementById('contactEmail').value.trim();
+        var message = document.getElementById('contactMessage').value.trim();
+        var subject = subjectEl.value;
+        var website = form.querySelector('[name="website"]').value;
+        var fullMessage = (subject ? 'CTA: ' + subject + '\n\n' : '') + message;
+        if (!validate(name, email, message)) {
+          var first = form.querySelector('.cfield.has-error input, .cfield.has-error textarea');
+          if (first) first.focus();
+          return;
+        }
+        if (website) return;
+        setLoading(true);
+        fetch('https://log1k.de/functions/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: name, email: email, message: fullMessage })
+        }).then(function (r) {
+          if (!r.ok) throw new Error('Server error');
+          form.style.display = 'none';
+          formSuccess.style.display = 'block';
+        }).catch(function () {
+          formError.textContent = 'Fehler beim Senden. Bitte versuch es erneut oder schreib direkt an hallo@log1k.de';
+          formError.style.display = 'block';
+          setLoading(false);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
