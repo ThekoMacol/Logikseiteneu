@@ -898,11 +898,10 @@ a {
 }
 
 .modal__result-item--dominant .modal__result-num {
-  transition: font-size 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .modal__result-item--dominant.is-final .modal__result-num {
-  font-size: clamp(1.3rem, 3.5vw, 1.7rem) !important;
   color: #fff !important;
 }
 
