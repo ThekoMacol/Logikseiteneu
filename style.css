@@ -897,6 +897,24 @@ a {
   gap: 0.2rem;
 }
 
+.modal__result-item--dominant .modal__result-num {
+  font-size: clamp(1.3rem, 3.5vw, 1.7rem) !important;
+  color: #fff !important;
+}
+
+.modal__result-item--dominant .modal__result-label {
+  color: var(--text-2);
+  font-weight: 600;
+}
+
+.modal__result-hero:has(.modal__result-item--dominant) .modal__result-item:not(.modal__result-item--dominant) .modal__result-num {
+  opacity: 0.55;
+}
+
+.modal__result-hero:has(.modal__result-item--dominant) .modal__result-item:not(.modal__result-item--dominant) .modal__result-label {
+  opacity: 0.45;
+}
+
 .modal__result-num {
   font-size: clamp(0.8rem, 2vw, 0.95rem);
   font-weight: 800;
