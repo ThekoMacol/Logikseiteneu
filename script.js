@@ -54,6 +54,20 @@ if (burger && mobileMenu) {
   });
 }
 
+// Framework pillars: sequential reveal on scroll
+(function () {
+  const pillars = Array.from(document.querySelectorAll('.framework__pillars .pillar'));
+  if (!pillars.length) return;
+
+  const obs = new IntersectionObserver(entries => {
+    if (!entries[0].isIntersecting) return;
+    obs.disconnect();
+    pillars.forEach(pillar => pillar.classList.add('is-visible'));
+  }, { threshold: 0.1, rootMargin: '0px 0px -15% 0px' });
+
+  obs.observe(pillars[0].closest('.framework__pillars') || pillars[0]);
+})();
+
 // Smooth scroll for anchor links + set active nav on click
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {

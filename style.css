@@ -1171,6 +1171,18 @@ a {
   gap: var(--space-lg);
   padding: var(--space-lg) 0;
   border-bottom: 1px solid var(--border);
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.pillar:nth-child(1) { transition-delay: 0ms; }
+.pillar:nth-child(2) { transition-delay: 250ms; }
+.pillar:nth-child(3) { transition-delay: 500ms; }
+
+.pillar.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .pillar:first-child {
