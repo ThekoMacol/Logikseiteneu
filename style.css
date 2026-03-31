@@ -1218,10 +1218,10 @@ a {
 }
 
 .framework__formula {
-  background: var(--bg-3);
-  border: 1px solid var(--border);
+  background: #222222;
+  border: 1px solid #333333;
   border-radius: var(--radius-lg);
-  padding: var(--space-lg);
+  padding: calc(var(--space-lg) * 1.13);
 }
 
 .formula {
