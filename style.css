@@ -1656,6 +1656,12 @@ a {
   border: 1px solid rgba(255, 59, 48, 0.2);
   border-radius: 6px;
   padding: 0.65rem 0.75rem;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.cfield-check:has(input[type="checkbox"]:checked) {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .cfield-check input[type="checkbox"] {
@@ -1676,10 +1682,11 @@ a {
 
 .cfield-check a {
   color: #FF3B30 !important;
-  background: rgba(255, 59, 48, 0.15);
-  padding: 1px 6px 2px;
-  border-radius: 3px;
-  text-decoration: none;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
   font-weight: 600;
 }
 
