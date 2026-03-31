@@ -116,11 +116,15 @@ function animateStats() {
     : 4;
   const colDuration = (stepsCount - 1) * STEP_MS;
 
-  function tick(el, text) {
+  function tick(el, text, isFinal) {
     el.classList.remove('stat-tick');
     void el.offsetWidth;
     el.classList.add('stat-tick');
     el.textContent = text;
+    if (isFinal) {
+      const item = el.closest('.modal__result-item--dominant');
+      if (item) item.classList.add('is-final');
+    }
   }
 
   nums.forEach((el, colIdx) => {
@@ -128,7 +132,8 @@ function animateStats() {
     if (steps.length < 2) return;
     const colStart = colIdx * colDuration;
     steps.slice(1).forEach((step, i) => {
-      setTimeout(() => tick(el, step), colStart + (i + 1) * STEP_MS);
+      const isFinal = i === steps.length - 2;
+      setTimeout(() => tick(el, step, isFinal), colStart + (i + 1) * STEP_MS);
     });
   });
 }

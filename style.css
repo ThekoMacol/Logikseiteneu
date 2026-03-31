@@ -898,21 +898,27 @@ a {
 }
 
 .modal__result-item--dominant .modal__result-num {
+  transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+.modal__result-item--dominant.is-final .modal__result-num {
   font-size: clamp(1.3rem, 3.5vw, 1.7rem) !important;
   color: #fff !important;
 }
 
-.modal__result-item--dominant .modal__result-label {
+.modal__result-item--dominant.is-final .modal__result-label {
   color: var(--text-2);
   font-weight: 600;
 }
 
-.modal__result-hero:has(.modal__result-item--dominant) .modal__result-item:not(.modal__result-item--dominant) .modal__result-num {
+.modal__result-hero:has(.modal__result-item--dominant.is-final) .modal__result-item:not(.modal__result-item--dominant) .modal__result-num {
   opacity: 0.55;
+  transition: opacity 0.4s ease;
 }
 
-.modal__result-hero:has(.modal__result-item--dominant) .modal__result-item:not(.modal__result-item--dominant) .modal__result-label {
+.modal__result-hero:has(.modal__result-item--dominant.is-final) .modal__result-item:not(.modal__result-item--dominant) .modal__result-label {
   opacity: 0.45;
+  transition: opacity 0.4s ease;
 }
 
 .modal__result-num {
