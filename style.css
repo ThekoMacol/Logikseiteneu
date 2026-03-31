@@ -484,6 +484,15 @@ a {
   padding: var(--space-xl) 0;
 }
 
+.problem__verdict {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-md);
+}
+
 .highlight-text {
   font-size: clamp(1.3rem, 3vw, 1.9rem);
   font-weight: 700;
