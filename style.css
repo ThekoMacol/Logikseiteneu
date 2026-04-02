@@ -2269,3 +2269,63 @@ details[open] .modal__faq-question::after {
     height: 70vh;
   }
 }
+
+/* === SUBPAGE FAQ === */
+.cs-faq {
+  padding: var(--space-2xl) 0;
+  border-top: 1px solid var(--border);
+}
+
+.cs-faq__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 var(--space-lg);
+}
+
+.cs-faq__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-faq__item {
+  border-bottom: 1px solid var(--border);
+}
+
+.cs-faq__item:last-child {
+  border-bottom: none;
+}
+
+.cs-faq__question {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-2);
+  padding: 0.85rem 0;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cs-faq__question::-webkit-details-marker { display: none; }
+
+.cs-faq__question::after {
+  content: '+';
+  font-size: 1rem;
+  color: var(--text-3);
+  flex-shrink: 0;
+}
+
+details[open] .cs-faq__question::after {
+  content: '−';
+}
+
+.cs-faq__answer {
+  font-size: 0.85rem;
+  color: var(--text-3);
+  line-height: 1.7;
+  padding: 0 0 0.85rem;
+  margin: 0;
+}
