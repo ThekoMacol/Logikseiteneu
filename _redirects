@@ -1,7 +1,2 @@
-/content-system      /content-system.html   200
-/crm-system          /crm-system.html       200
-/influencer-system   /influencer-system.html 200
-/vibecoding          /vibecoding.html        200
-/video-system        /video-system.html      200
-/impressum           /impressum.html         200
-/datenschutz         /datenschutz.html       200
+# Cloudflare Pages serves .html files at clean URLs natively.
+# No rewrite rules needed — adding them causes redirect loops.
