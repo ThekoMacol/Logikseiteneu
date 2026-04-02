@@ -6,37 +6,37 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://log1k.de/content-system.html</loc>
+    <loc>https://log1k.de/content-system</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://log1k.de/crm-system.html</loc>
+    <loc>https://log1k.de/crm-system</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://log1k.de/influencer-system.html</loc>
+    <loc>https://log1k.de/influencer-system</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://log1k.de/vibecoding.html</loc>
+    <loc>https://log1k.de/vibecoding</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://log1k.de/video-system.html</loc>
+    <loc>https://log1k.de/video-system</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://log1k.de/impressum.html</loc>
+    <loc>https://log1k.de/impressum</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://log1k.de/datenschutz.html</loc>
+    <loc>https://log1k.de/datenschutz</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
