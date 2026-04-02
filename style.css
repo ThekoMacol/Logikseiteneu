@@ -1037,6 +1037,54 @@ a {
 .modal__link:hover { opacity: 0.75; }
 .modal__link svg { flex-shrink: 0; }
 
+.modal__faq {
+  margin-top: var(--space-xl);
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-lg);
+}
+
+.modal__faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.modal__faq-item:last-child {
+  border-bottom: none;
+}
+
+.modal__faq-question {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-2);
+  padding: 0.75rem 0;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modal__faq-question::-webkit-details-marker { display: none; }
+
+.modal__faq-question::after {
+  content: '+';
+  font-size: 1rem;
+  color: var(--text-3);
+  flex-shrink: 0;
+}
+
+details[open] .modal__faq-question::after {
+  content: '−';
+}
+
+.modal__faq-answer {
+  font-size: 0.82rem;
+  color: var(--text-3);
+  line-height: 1.6;
+  padding: 0 0 0.75rem;
+  margin: 0;
+}
+
 /* Modal: photo card fan */
 .modal__cards {
   display: flex;
