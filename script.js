@@ -54,6 +54,41 @@ if (burger && mobileMenu) {
   });
 }
 
+// Nav: Systeme dropdown (click-based)
+(function () {
+  const dropdowns = document.querySelectorAll('.nav__dropdown');
+  if (!dropdowns.length) return;
+
+  dropdowns.forEach(dd => {
+    const toggle = dd.querySelector('.nav__dropdown-toggle');
+    if (!toggle) return;
+    toggle.addEventListener('click', e => {
+      e.stopPropagation();
+      const isOpen = dd.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+  });
+
+  // Close on outside click
+  document.addEventListener('click', () => {
+    dropdowns.forEach(dd => {
+      dd.classList.remove('is-open');
+      const t = dd.querySelector('.nav__dropdown-toggle');
+      if (t) t.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    dropdowns.forEach(dd => {
+      dd.classList.remove('is-open');
+      const t = dd.querySelector('.nav__dropdown-toggle');
+      if (t) t.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
 // Framework pillars: sequential reveal on scroll
 (function () {
   const pillars = Array.from(document.querySelectorAll('.framework__pillars .pillar'));
