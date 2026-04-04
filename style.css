@@ -351,6 +351,60 @@ a {
   color: var(--text);
 }
 
+/* Nav dropdown */
+.nav__dropdown { position: relative; }
+.nav__dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text-3);
+  font-weight: 500;
+  font-family: inherit;
+  transition: color var(--transition);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.nav__dropdown-toggle:hover { color: var(--text); }
+.nav__dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem 0;
+  list-style: none;
+  min-width: 200px;
+  display: none;
+  z-index: 200;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+.nav__dropdown:hover .nav__dropdown-menu,
+.nav__dropdown:focus-within .nav__dropdown-menu { display: block; }
+.nav__dropdown-menu li a {
+  display: block;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  color: var(--text-2);
+  font-weight: 500;
+  transition: color var(--transition);
+  white-space: nowrap;
+}
+.nav__dropdown-menu li a:hover { color: var(--text); }
+
+/* FAQ h3 reset */
+.cs-faq__question h3 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  display: inline;
+}
+
 /* === HERO === */
 .hero {
   padding-top: calc(var(--space-3xl) + 70px);
