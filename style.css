@@ -2340,6 +2340,7 @@ details[open] .modal__faq-question::after {
 
 /* === SUBPAGE FAQ === */
 .cs-faq {
+  margin-top: var(--space-xl);
   padding: var(--space-2xl) 0;
   border-top: 1px solid var(--border);
 }
