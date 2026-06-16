@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>log1k – Enterprise N8N Automatisierung | Kornelius E. Thelen</title>
-  <meta name="description" content="Hochperformante N8N-Automatisierungen für B2B-Unternehmen. Meta Ads, Funnelspot CRM und Lexware Office zu einer fehlerfreien, autarken Unternehmensinfrastruktur verbinden.">
+  <title>log1k – Workflow-Automatisierung für B2B-Unternehmen | Kornelius E. Thelen</title>
+  <meta name="description" content="Wir automatisieren Ihre Vertriebs-, Verwaltungs- und Finanzprozesse. Leads schneller bearbeiten, Rechnungen automatisch erstellen, manuelle Aufgaben eliminieren.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://log1k.de">
-  <meta property="og:title" content="log1k – Enterprise N8N Automatisierung">
-  <meta property="og:description" content="Skalieren Sie Ihre Operations. Ohne neue Mitarbeiter einzustellen.">
+  <meta property="og:title" content="log1k – Gewinnen Sie 5+ Stunden pro Woche zurück">
+  <meta property="og:description" content="Wir automatisieren Ihre Vertriebs-, Verwaltungs- und Finanzprozesse. Ohne neue Mitarbeiter einzustellen.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://log1k.de">
   <meta property="og:image" content="https://log1k.de/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
   <link rel="stylesheet" href="/fonts/fonts.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -32,51 +35,34 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
-
     .nav-blur {
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
-      background: rgba(9, 9, 11, 0.85);
+      background: rgba(9, 9, 11, 0.88);
     }
-
     .gradient-card {
-      background: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(99,102,241,0.01) 100%);
+      background: linear-gradient(135deg, rgba(99,102,241,0.07) 0%, rgba(99,102,241,0.01) 100%);
       border: 1px solid rgba(99,102,241,0.18);
     }
-    .gradient-card:hover {
-      border-color: rgba(99,102,241,0.38);
-    }
-
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.32s ease;
-    }
-    .accordion-content.open {
-      max-height: 400px;
-    }
-    .accordion-chevron {
-      transition: transform 0.32s ease;
-    }
-    .accordion-chevron.rotated {
-      transform: rotate(180deg);
-    }
-
+    .gradient-card:hover { border-color: rgba(99,102,241,0.35); }
+    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.32s ease; }
+    .accordion-content.open { max-height: 400px; }
+    .accordion-chevron { transition: transform 0.32s ease; }
+    .accordion-chevron.rotated { transform: rotate(180deg); }
     input:focus, textarea:focus {
       outline: none;
       border-color: #6366f1;
       box-shadow: 0 0 0 2px rgba(99,102,241,0.15);
     }
-
     .hero-glow {
       position: absolute;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(99,102,241,0.11) 0%, transparent 70%);
       pointer-events: none;
       left: 50%;
       transform: translateX(-50%);
-      top: -100px;
+      top: -120px;
     }
   </style>
 </head>
@@ -85,32 +71,111 @@
   <!-- NAV -->
   <header class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-slate-800/60">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="https://log1k.de" class="text-white font-bold text-xl tracking-tight hover:opacity-80 transition-opacity">log1k</a>
+      <a href="/" class="text-white font-bold text-xl tracking-tight hover:opacity-80 transition-opacity">log1k</a>
       <a href="#audit" class="bg-brand hover:bg-brand-dark text-white text-sm font-semibold px-5 py-2.5 rounded-md transition-colors duration-200">
-        System-Audit buchen
+        Kostenlose Prozessanalyse
       </a>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="relative pt-36 pb-28 px-6 overflow-hidden">
+  <section class="relative pt-36 pb-24 px-6 overflow-hidden">
     <div class="hero-glow"></div>
     <div class="relative max-w-4xl mx-auto text-center">
-      <div class="inline-flex items-center gap-2 bg-brand/10 border border-brand/25 text-brand text-xs font-semibold px-4 py-1.5 rounded-full mb-8 tracking-wider uppercase">
-        Enterprise N8N Automatisierung
+      <div class="inline-flex items-center gap-2 bg-brand/10 border border-brand/25 text-brand text-xs font-semibold px-4 py-1.5 rounded-full mb-8 tracking-widest uppercase">
+        Enterprise Workflow Automation
       </div>
-      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.08] tracking-tight mb-7">
-        Skalieren Sie Ihre Operations.<br>
-        <span class="text-brand">Ohne neue Mitarbeiter einzustellen.</span>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.08] tracking-tight mb-6">
+        Gewinnen Sie 5+ Stunden<br>pro Woche zur&uuml;ck.
+        <span class="block text-brand mt-2">Ohne neue Mitarbeiter einzustellen.</span>
       </h1>
       <p class="text-slate-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-10">
-        Wir entwickeln hochperformante N8N-Automatisierungen, die Meta Ads, Funnelspot CRM und Lexware Office zu einer fehlerfreien, autarken Unternehmensinfrastruktur verbinden.
+        Wir automatisieren Ihre Vertriebs-, Verwaltungs- und Finanzprozesse, damit Leads schneller bearbeitet, Rechnungen automatisch erstellt und manuelle Aufgaben vollst&auml;ndig eliminiert werden.
       </p>
       <a href="#audit" class="inline-flex items-center gap-2.5 bg-brand hover:bg-brand-dark text-white font-semibold px-9 py-4 rounded-md transition-colors duration-200 text-base shadow-lg shadow-brand/25">
-        15-Minuten Pipeline-Audit vereinbaren
+        Kostenlose Prozessanalyse sichern
         <i data-lucide="arrow-right" class="w-4 h-4"></i>
       </a>
-      <p class="text-slate-500 text-sm mt-4">Ausschließlich für CEOs &amp; Operations Directors</p>
+      <p class="text-slate-500 text-sm mt-4">15 Minuten. Kein Verkaufsdruck. Nur konkrete Automatisierungspotenziale.</p>
+    </div>
+  </section>
+
+  <!-- TRUST BLOCK -->
+  <section class="py-8 px-6 border-t border-slate-800/50">
+    <div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900/40 border border-slate-800 rounded-xl px-8 py-6 flex flex-col md:flex-row items-start md:items-center gap-6">
+        <div class="flex items-center gap-1.5 shrink-0">
+          <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
+          <span class="text-white font-semibold text-sm ml-2">Bereits erfolgreich umgesetzt f&uuml;r Struktur &amp; Fokus</span>
+        </div>
+        <div class="flex flex-wrap gap-x-6 gap-y-2">
+          <span class="text-slate-300 text-sm flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand shrink-0"></i>Meta Ads &rarr; Funnelspot &rarr; Lexware</span>
+          <span class="text-slate-300 text-sm flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand shrink-0"></i>CEO-Dashboard in Echtzeit</span>
+          <span class="text-slate-300 text-sm flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand shrink-0"></i>Vollautomatisierte Datenfl&uuml;sse</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="py-20 px-6 border-t border-slate-800/50">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Das Problem</p>
+        <h2 class="text-3xl md:text-4xl font-bold">Die meisten Unternehmen wachsen schneller als ihre Prozesse.</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4 mb-10">
+        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-5 flex items-start gap-4">
+          <div class="w-8 h-8 bg-red-500/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+            <i data-lucide="x" class="w-4 h-4 text-red-400"></i>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed">Leads landen in verschiedenen Systemen und werden zu sp&auml;t bearbeitet.</p>
+        </div>
+        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-5 flex items-start gap-4">
+          <div class="w-8 h-8 bg-red-500/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+            <i data-lucide="x" class="w-4 h-4 text-red-400"></i>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed">Mitarbeiter &uuml;bertragen Daten manuell zwischen Tools.</p>
+        </div>
+        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-5 flex items-start gap-4">
+          <div class="w-8 h-8 bg-red-500/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+            <i data-lucide="x" class="w-4 h-4 text-red-400"></i>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed">Rechnungen werden doppelt gepr&uuml;ft und manuell erstellt.</p>
+        </div>
+        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-5 flex items-start gap-4">
+          <div class="w-8 h-8 bg-red-500/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+            <i data-lucide="x" class="w-4 h-4 text-red-400"></i>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed">Wichtige Kennzahlen sind &uuml;ber mehrere Tools verteilt.</p>
+        </div>
+      </div>
+      <div class="bg-slate-900/40 border border-slate-800 rounded-xl p-7 mb-8">
+        <p class="text-slate-400 text-sm font-semibold uppercase tracking-widest mb-4">Das Ergebnis</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="text-center">
+            <i data-lucide="clock" class="w-5 h-5 text-red-400 mx-auto mb-2"></i>
+            <p class="text-white font-semibold text-sm">Zeitverlust</p>
+          </div>
+          <div class="text-center">
+            <i data-lucide="alert-triangle" class="w-5 h-5 text-red-400 mx-auto mb-2"></i>
+            <p class="text-white font-semibold text-sm">Fehleranf&auml;lligkeit</p>
+          </div>
+          <div class="text-center">
+            <i data-lucide="trending-up" class="w-5 h-5 text-red-400 mx-auto mb-2"></i>
+            <p class="text-white font-semibold text-sm">H&ouml;here Personalkosten</p>
+          </div>
+          <div class="text-center">
+            <i data-lucide="zap-off" class="w-5 h-5 text-red-400 mx-auto mb-2"></i>
+            <p class="text-white font-semibold text-sm">Langsameres Wachstum</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-center text-slate-300 font-semibold text-lg">Wir l&ouml;sen dieses Problem durch intelligente Workflow-Automatisierung.</p>
     </div>
   </section>
 
@@ -119,114 +184,117 @@
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
         <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Die Operations-Pfeiler</p>
-        <h2 class="text-3xl md:text-4xl font-bold">Drei Systeme. Ein nahtloser Betrieb.</h2>
+        <h2 class="text-3xl md:text-4xl font-bold">Drei Systeme. Ein sauberer Betrieb.</h2>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
-
         <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
           <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
             <i data-lucide="trending-up" class="w-5 h-5 text-brand"></i>
           </div>
           <h3 class="text-white font-bold text-lg mb-3">Umsatz-Infrastruktur</h3>
           <p class="text-slate-400 leading-relaxed text-sm">
-            Automatisches Lead-Routing von Meta Ads direkt in Ihre Funnelspot-Pipelines innerhalb von 60 Sekunden. Maximiert Ihre Speed-to-Lead-Metriken und eliminiert manuelle Übergaben vollständig.
+            Meta Ads, CRM und Vertrieb arbeiten als ein System. Neue Leads werden automatisch erfasst, qualifiziert und den richtigen Pipelines zugeordnet &ndash; ohne Copy-Paste und ohne Verz&ouml;gerung.
           </p>
         </div>
-
         <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
           <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
             <i data-lucide="file-check-2" class="w-5 h-5 text-brand"></i>
           </div>
           <h3 class="text-white font-bold text-lg mb-3">Finanz-Automatisierung</h3>
           <p class="text-slate-400 leading-relaxed text-sm">
-            Automatische Erstellung und Abstimmung DSGVO-konformer Rechnungen in Lexware Office in dem Moment, in dem ein Deal in Funnelspot abgeschlossen wird. Kein manueller Aufwand mehr.
+            Angebote, Rechnungen und Kundendaten werden automatisch synchronisiert. Kein manuelles &Uuml;bertragen. Kein Risiko durch doppelte Dateneingaben.
           </p>
         </div>
-
         <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
           <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
             <i data-lucide="shield-check" class="w-5 h-5 text-brand"></i>
           </div>
           <h3 class="text-white font-bold text-lg mb-3">Ausfallsicheres Monitoring</h3>
           <p class="text-slate-400 leading-relaxed text-sm">
-            Proaktives N8N-Error-Routing mit Sofort-Benachrichtigungen via Slack/Discord. 99,9 % Workflow-Uptime — Ihr Betrieb läuft auch dann, wenn Drittanbieter-APIs Probleme machen.
+            Ihre Prozesse werden kontinuierlich &uuml;berwacht. Wenn eine API ausf&auml;llt oder eine Synchronisation fehlschl&auml;gt, werden Probleme erkannt bevor sie Umsatz kosten.
           </p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- METRICS & SOCIAL PROOF -->
+  <!-- METRICS -->
   <section class="py-20 px-6 border-t border-slate-800/50">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
         <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Messbare Performance</p>
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Systeme gebaut für messbare Performance</h2>
-        <p class="text-slate-400 max-w-2xl mx-auto leading-relaxed">
-          Echte Ergebnisse durch den Ersatz fehleranfälliger manueller Prozesse durch produktionsbereite N8N-Architektur.
-        </p>
+        <h2 class="text-3xl md:text-4xl font-bold">Systeme gebaut f&uuml;r messbare Ergebnisse</h2>
       </div>
-
-      <div class="bg-slate-900/40 border border-slate-800 rounded-2xl grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-800 mb-12">
+      <div class="bg-slate-900/40 border border-slate-800 rounded-2xl grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-800">
         <div class="px-10 py-10 text-center">
           <p class="text-5xl font-extrabold text-white mb-1 tracking-tight">100+</p>
           <p class="text-brand font-semibold text-sm mb-2">Stunden</p>
-          <p class="text-slate-400 text-sm">Eingesparte Arbeitszeit pro Monat bei administrativen Aufgaben</p>
+          <p class="text-slate-400 text-sm">Eingesparte Arbeitszeit pro Monat durch den Wegfall manueller Verwaltungsaufgaben.</p>
         </div>
         <div class="px-10 py-10 text-center">
           <p class="text-5xl font-extrabold text-white mb-1 tracking-tight">&lt; 60 Sek.</p>
           <p class="text-brand font-semibold text-sm mb-2">Lead-Transferzeit</p>
-          <p class="text-slate-400 text-sm">Von Meta Ads direkt in Ihr Funnelspot CRM — in Echtzeit</p>
+          <p class="text-slate-400 text-sm">Von der Lead-Anfrage bis zur &Uuml;bergabe ins CRM.</p>
         </div>
         <div class="px-10 py-10 text-center">
-          <p class="text-5xl font-extrabold text-white mb-1 tracking-tight">0 %</p>
-          <p class="text-brand font-semibold text-sm mb-2">Fehlerquote</p>
-          <p class="text-slate-400 text-sm">Bei der Datenübertragung und Rechnungserstellung in Lexware Office</p>
+          <p class="text-5xl font-extrabold text-white mb-1 tracking-tight">99,9 %</p>
+          <p class="text-brand font-semibold text-sm mb-2">Verf&uuml;gbarkeit</p>
+          <p class="text-slate-400 text-sm">Workflow-Verf&uuml;gbarkeit durch professionelles Monitoring und Fehlerbehandlung.</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-8">
-          <div class="flex gap-0.5 mb-5">
-            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
-          </div>
-          <p class="text-slate-300 leading-relaxed mb-6 italic text-sm">
-            "Unsere Lead-Synchronisation zwischen Meta Ads und Funnelspot war extrem fehleranfällig. Kornelius hat die gesamte Pipeline in N8N neu aufgesetzt. Die Daten fließen jetzt in Echtzeit und unsere Reaktionszeit liegt unter einer Minute."
-          </p>
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 bg-brand/15 rounded-full flex items-center justify-center shrink-0">
-              <i data-lucide="user" class="w-4 h-4 text-brand"></i>
-            </div>
-            <div>
-              <p class="text-white font-semibold text-sm">Geschäftsführer</p>
-              <p class="text-slate-500 text-xs">B2B Agentur</p>
-            </div>
-          </div>
+  <!-- TESTIMONIAL -->
+  <section class="py-20 px-6 border-t border-slate-800/50">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Kundenstimmen</p>
+        <h2 class="text-3xl md:text-4xl font-bold">Was unsere Kunden sagen</h2>
+      </div>
+      <div class="bg-slate-900/40 border border-brand/20 rounded-2xl p-10">
+        <div class="flex gap-0.5 mb-6">
+          <i data-lucide="star" class="w-5 h-5 fill-brand text-brand"></i>
+          <i data-lucide="star" class="w-5 h-5 fill-brand text-brand"></i>
+          <i data-lucide="star" class="w-5 h-5 fill-brand text-brand"></i>
+          <i data-lucide="star" class="w-5 h-5 fill-brand text-brand"></i>
+          <i data-lucide="star" class="w-5 h-5 fill-brand text-brand"></i>
         </div>
-
-        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-8">
-          <div class="flex gap-0.5 mb-5">
-            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
-          </div>
-          <p class="text-slate-300 leading-relaxed mb-6 italic text-sm">
-            "Das manuelle Erstellen und Abgleichen von Rechnungen in Lexware Office war ein massiver interner Flaschenhals. Log1k hat den gesamten Prozess automatisiert. Wir haben seit Monaten keine Rechnung mehr manuell abgetippt."
-          </p>
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 bg-brand/15 rounded-full flex items-center justify-center shrink-0">
-              <i data-lucide="user" class="w-4 h-4 text-brand"></i>
+        <blockquote class="text-slate-200 text-lg leading-relaxed mb-8 italic">
+          &ldquo;Kornelius hat f&uuml;r uns ein ma&szlig;geschneidertes CEO-Dashboard entwickelt, das unsere Daten aus Meta Ads, Funnelspot und Lexware nahtlos an einem zentralen Ort zusammenf&uuml;hrt.
+          <br><br>
+          Wichtige Kennzahlen wie der CAC und die gesamte Kampagnen-Performance sind jetzt mit nur einem einzigen Blick sichtbar.
+          <br><br>
+          Die Zusammenarbeit lief &uuml;ber die gesamte Umsetzungsphase absolut reibungslos. Kornelius &uuml;berzeugt durch transparente, proaktive Kommunikation, beeindruckendes Tempo und 100-prozentige Zuverl&auml;ssigkeit.
+          <br><br>
+          Man merkt einfach vom ersten Tag an, dass hier ein absoluter Experte am Werk ist. Vielen Dank f&uuml;r die gro&szlig;artige Unterst&uuml;tzung.&rdquo;
+        </blockquote>
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pt-6 border-t border-slate-800">
+          <div class="flex items-center gap-4">
+            <div class="w-11 h-11 bg-brand/15 rounded-full flex items-center justify-center shrink-0">
+              <i data-lucide="user" class="w-5 h-5 text-brand"></i>
             </div>
             <div>
-              <p class="text-white font-semibold text-sm">Chief Operating Officer</p>
-              <p class="text-slate-500 text-xs">Wachstumsunternehmen</p>
+              <p class="text-white font-bold">Julius Stephan</p>
+              <p class="text-slate-400 text-sm">Struktur &amp; Fokus</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="flex items-center gap-2 text-sm text-slate-300">
+              <i data-lucide="check" class="w-4 h-4 text-brand shrink-0"></i>
+              Meta Ads, Funnelspot &amp; Lexware verbunden
+            </div>
+            <div class="flex items-center gap-2 text-sm text-slate-300">
+              <i data-lucide="check" class="w-4 h-4 text-brand shrink-0"></i>
+              Echtzeit-Reporting f&uuml;r Marketing &amp; Vertrieb
+            </div>
+            <div class="flex items-center gap-2 text-sm text-slate-300">
+              <i data-lucide="check" class="w-4 h-4 text-brand shrink-0"></i>
+              Transparenz &uuml;ber Kampagnen-Performance
+            </div>
+            <div class="flex items-center gap-2 text-sm text-slate-300">
+              <i data-lucide="check" class="w-4 h-4 text-brand shrink-0"></i>
+              Keine manuelle Datensammlung mehr
             </div>
           </div>
         </div>
@@ -238,72 +306,49 @@
   <section class="py-20 px-6 border-t border-slate-800/50">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
-        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Enterprise-Modelle</p>
-        <h2 class="text-3xl md:text-4xl font-bold">Die richtige Partnerschaft für Ihre Operations</h2>
+        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Partnerschaftsmodelle</p>
+        <h2 class="text-3xl md:text-4xl font-bold">Die richtige L&ouml;sung f&uuml;r Ihre Wachstumsphase</h2>
       </div>
       <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-
         <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-8 flex flex-col">
           <div class="mb-6">
             <h3 class="text-white font-bold text-xl mb-1">Enterprise Setup</h3>
-            <p class="text-slate-500 text-sm">Einmaliges Projekt · Schlüsselfertig</p>
+            <p class="text-slate-500 text-sm">Einmaliges Projekt &middot; Schl&uuml;sselfertig</p>
           </div>
           <ul class="space-y-3 mb-8 flex-1">
-            <li class="flex items-start gap-3 text-sm text-slate-300">
-              <i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>
-              Discovery &amp; Blueprint Ihrer bestehenden Prozesse
-            </li>
-            <li class="flex items-start gap-3 text-sm text-slate-300">
-              <i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>
-              Aufbau der Kern-Workflows (Meta → Funnelspot → Lexware)
-            </li>
-            <li class="flex items-start gap-3 text-sm text-slate-300">
-              <i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>
-              Testing, QA und vollständiges Deployment
-            </li>
-            <li class="flex items-start gap-3 text-sm text-slate-300">
-              <i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>
-              Übergabe-Dokumentation &amp; 30 Tage Support
-            </li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Analyse bestehender Prozesse</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Architektur &amp; Automatisierungs-Blueprint</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Aufbau aller Kern-Workflows</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Testing &amp; Qualit&auml;tssicherung</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Dokumentation</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>30 Tage Support</li>
           </ul>
           <a href="#audit" class="block text-center bg-slate-800 hover:bg-slate-700 text-white font-semibold px-6 py-3.5 rounded-md transition-colors duration-200 text-sm">
-            Für Setup bewerben
+            F&uuml;r Setup bewerben
           </a>
         </div>
-
         <div class="relative bg-brand/5 border border-brand/30 rounded-xl p-8 flex flex-col">
           <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
             <span class="bg-brand text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap shadow-lg shadow-brand/30">
-              Meistgefragt für wachsende Unternehmen
+              Meistgefragt f&uuml;r wachsende Unternehmen
             </span>
           </div>
           <div class="mb-6 mt-2">
             <h3 class="text-white font-bold text-xl mb-1">Managed Architecture Retainer</h3>
-            <p class="text-slate-500 text-sm">Monatlich · Dedizierte Kapazität</p>
+            <p class="text-slate-500 text-sm">Laufende Betreuung &middot; Dedizierte Kapazit&auml;t</p>
           </div>
           <ul class="space-y-3 mb-8 flex-1">
-            <li class="flex items-start gap-3 text-sm text-slate-300">
-              <i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>
-              Dedizierte monatliche Kapazität für Systems Engineering
-            </li>
-            <li class="flex items-start gap-3 text-sm text-slate-300">
-              <i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>
-              Neue API-Deployments &amp; Workflow-Erweiterungen
-            </li>
-            <li class="flex items-start gap-3 text-sm text-slate-300">
-              <i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>
-              Proaktives Monitoring aller laufenden Workflows
-            </li>
-            <li class="flex items-start gap-3 text-sm text-slate-300">
-              <i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>
-              Priorisierter Support &amp; monatliches Performance-Reporting
-            </li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Kontinuierliche Systemoptimierung</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Neue Integrationen &amp; APIs</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Workflow-Erweiterungen</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Priorisierter Support</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Performance-Monitoring</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Monatliches Reporting</li>
           </ul>
           <a href="#audit" class="block text-center bg-brand hover:bg-brand-dark text-white font-semibold px-6 py-3.5 rounded-md transition-colors duration-200 text-sm shadow-md shadow-brand/25">
-            Für Partnerschaft bewerben
+            F&uuml;r Partnerschaft bewerben
           </a>
         </div>
-
       </div>
     </div>
   </section>
@@ -312,73 +357,58 @@
   <section class="py-20 px-6 border-t border-slate-800/50">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-14">
-        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Einwandbehandlung</p>
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Risiken eliminieren</h2>
-        <p class="text-slate-400">Antworten auf kritische Fragen zu Datensicherheit, Stabilität und ROI.</p>
+        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">H&auml;ufige Fragen</p>
+        <h2 class="text-3xl md:text-4xl font-bold">Risiken eliminieren</h2>
       </div>
-
       <div class="space-y-3" id="faqAccordion">
-
         <div class="accordion-item border border-slate-800 rounded-xl overflow-hidden">
           <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-900/40 transition-colors">
-            <span class="font-semibold text-white pr-4 text-sm leading-snug">Was passiert, wenn eine API aktualisiert wird oder eine Synchronisation fehlschlägt?</span>
+            <span class="font-semibold text-white pr-4 text-sm leading-snug">Was passiert, wenn eine API ausf&auml;llt?</span>
             <i data-lucide="chevron-down" class="accordion-chevron w-5 h-5 text-slate-400 shrink-0"></i>
           </button>
           <div class="accordion-content">
-            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">
-              Jedes von mir gebaute System enthält eine professionelle Catch-and-Retry-Logik. Sollten Meta oder Funnelspot Änderungen vornehmen, isoliert N8N die betroffenen Daten, alarmiert uns sofort via Slack und verhindert jeglichen Datenverlust, während Ihr Hauptbetrieb ungestört weiterläuft.
-            </p>
+            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">Unsere Systeme verf&uuml;gen &uuml;ber Monitoring, Fehlerbehandlung und Benachrichtigungen. Probleme werden erkannt bevor Daten verloren gehen oder Prozesse stillstehen.</p>
           </div>
         </div>
-
         <div class="accordion-item border border-slate-800 rounded-xl overflow-hidden">
           <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-900/40 transition-colors">
-            <span class="font-semibold text-white pr-4 text-sm leading-snug">Wie sicher sind unsere Finanzdaten in Bezug auf Lexware Office?</span>
+            <span class="font-semibold text-white pr-4 text-sm leading-snug">Wie sicher sind unsere Daten?</span>
             <i data-lucide="chevron-down" class="accordion-chevron w-5 h-5 text-slate-400 shrink-0"></i>
           </button>
           <div class="accordion-content">
-            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">
-              Datenschutz steht an oberster Stelle. Durch den Einsatz dedizierter N8N-Instanzen, die ausschließlich auf DSGVO-konformen europäischen Servern gehostet werden, bleiben Ihre Finanzdaten und Kundenprofile absolut sicher und audit-sicher umschlossen.
-            </p>
+            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">Wir arbeiten ausschlie&szlig;lich mit professionellen Zugriffsrechten, verschl&uuml;sselten Verbindungen und dokumentierten Prozessen.</p>
           </div>
         </div>
-
         <div class="accordion-item border border-slate-800 rounded-xl overflow-hidden">
           <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-900/40 transition-colors">
-            <span class="font-semibold text-white pr-4 text-sm leading-snug">Warum sollten wir nicht einfach Zapier oder native Integrationen nutzen?</span>
+            <span class="font-semibold text-white pr-4 text-sm leading-snug">Warum nicht einfach Zapier nutzen?</span>
             <i data-lucide="chevron-down" class="accordion-chevron w-5 h-5 text-slate-400 shrink-0"></i>
           </button>
           <div class="accordion-content">
-            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">
-              Native Integrationen sind starr und brechen bei komplexen Bedingungen ab. Zapier wird bei hohem Leadvolumen extrem teuer und bietet keine fortgeschrittene Logik. N8N erlaubt maßgeschneiderte JavaScript-Logik und unbegrenzte Skalierbarkeit ohne transaktionale Strafgebühren.
-            </p>
+            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">Standard-Tools funktionieren f&uuml;r einfache Aufgaben. Komplexe Unternehmensprozesse ben&ouml;tigen individuelle Logik, Monitoring und Skalierbarkeit.</p>
           </div>
         </div>
-
         <div class="accordion-item border border-slate-800 rounded-xl overflow-hidden">
           <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-900/40 transition-colors">
-            <span class="font-semibold text-white pr-4 text-sm leading-snug">Wie viel Zeit müssen wir als Führungsteam für das Projekt aufwenden?</span>
+            <span class="font-semibold text-white pr-4 text-sm leading-snug">Wie viel Zeit m&uuml;ssen wir intern investieren?</span>
             <i data-lucide="chevron-down" class="accordion-chevron w-5 h-5 text-slate-400 shrink-0"></i>
           </button>
           <div class="accordion-content">
-            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">
-              Minimal. Nach einem einmaligen, 45-minütigen Workshop zur Erfassung Ihrer Meta-, Funnelspot- und Lexware-Parameter übernimmt mein Team die gesamte Architektur, das Testing und das Deployment schlüsselfertig.
-            </p>
+            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">In der Regel reichen ein Discovery-Call und punktuelles Feedback w&auml;hrend der Implementierung. Die technische Umsetzung &uuml;bernehmen wir.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- BOOKING BLOCK -->
+  <!-- AUDIT FORM -->
   <section class="py-20 px-6 border-t border-slate-800/50" id="audit">
     <div class="max-w-2xl mx-auto">
       <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-10">
         <div class="text-center mb-8">
           <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Audit anfordern</p>
-          <h2 class="text-3xl font-bold mb-3">Fordern Sie Ihre operative Roadmap an</h2>
-          <p class="text-slate-400 text-sm">Kostenlose 15-Minuten-Analyse Ihrer aktuellen Prozessarchitektur.</p>
+          <h2 class="text-3xl font-bold mb-3">Finden Sie heraus, wo Ihr Unternehmen Zeit verliert.</h2>
+          <p class="text-slate-400 text-sm">Kostenlose 15-Minuten-Analyse Ihrer aktuellen Prozesslandschaft.</p>
         </div>
         <form id="auditForm" class="space-y-4">
           <div>
@@ -387,22 +417,23 @@
               class="w-full bg-slate-800/60 border border-slate-700 rounded-md px-4 py-3 text-white placeholder-slate-500 text-sm transition-all">
           </div>
           <div>
-            <label class="block text-sm font-medium text-slate-300 mb-1.5">Gesch&#228;fts-E-Mail</label>
+            <label class="block text-sm font-medium text-slate-300 mb-1.5">Gesch&auml;fts-E-Mail</label>
             <input type="email" name="email" placeholder="max@unternehmen.de" required
               class="w-full bg-slate-800/60 border border-slate-700 rounded-md px-4 py-3 text-white placeholder-slate-500 text-sm transition-all">
           </div>
           <div>
-            <label class="block text-sm font-medium text-slate-300 mb-1.5">Aktueller manueller Flaschenhals</label>
-            <textarea name="message" rows="3" placeholder="z. B. Lead-Übergaben dauern zu lang, Rechnungen werden manuell erstellt..."
+            <label class="block text-sm font-medium text-slate-300 mb-1.5">Aktueller Flaschenhals</label>
+            <textarea name="message" rows="3"
+              placeholder="Leads werden manuell &uuml;bertragen, Rechnungen werden doppelt erfasst oder Daten liegen in mehreren Systemen."
               class="w-full bg-slate-800/60 border border-slate-700 rounded-md px-4 py-3 text-white placeholder-slate-500 text-sm transition-all resize-none"></textarea>
           </div>
           <button type="submit" id="auditSubmit"
             class="w-full bg-brand hover:bg-brand-dark text-white font-semibold py-4 rounded-md transition-colors duration-200 flex items-center justify-center gap-2 shadow-lg shadow-brand/25">
-            Audit-Termin best&#228;tigen
+            Kostenlose Prozessanalyse anfordern
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
           <p id="auditMsg" class="text-sm text-center hidden"></p>
-          <p class="text-slate-500 text-xs text-center">Kein Spam. Kein Verkaufsdruck. Nur ein ehrliches Gespr&#228;ch &#252;ber Ihre Prozesse.</p>
+          <p class="text-slate-500 text-xs text-center">Kein Spam. Kein Verkaufsdruck. Nur klare Handlungsempfehlungen.</p>
         </form>
       </div>
     </div>
@@ -426,34 +457,25 @@
     document.addEventListener('DOMContentLoaded', function () {
       lucide.createIcons();
 
-      // FAQ Accordion
       document.querySelectorAll('.accordion-trigger').forEach(function (trigger) {
         trigger.addEventListener('click', function () {
           var item = this.closest('.accordion-item');
           var content = item.querySelector('.accordion-content');
           var chevron = this.querySelector('.accordion-chevron');
           var isOpen = content.classList.contains('open');
-
           document.querySelectorAll('.accordion-content').forEach(function (c) { c.classList.remove('open'); });
           document.querySelectorAll('.accordion-chevron').forEach(function (c) { c.classList.remove('rotated'); });
-
-          if (!isOpen) {
-            content.classList.add('open');
-            chevron.classList.add('rotated');
-          }
+          if (!isOpen) { content.classList.add('open'); chevron.classList.add('rotated'); }
         });
       });
 
-      // Contact form
       document.getElementById('auditForm').addEventListener('submit', async function (e) {
         e.preventDefault();
         var btn = document.getElementById('auditSubmit');
         var msg = document.getElementById('auditMsg');
         var data = new FormData(this);
-
         btn.disabled = true;
         btn.textContent = 'Wird gesendet...';
-
         try {
           var res = await fetch('/api/contact', {
             method: 'POST',
@@ -461,25 +483,22 @@
             body: JSON.stringify({
               name: data.get('name'),
               email: data.get('email'),
-              message: 'Audit-Anfrage\n\nFlaschenhals: ' + data.get('message'),
-              subject: 'Enterprise Audit-Anfrage'
+              message: 'Prozessanalyse-Anfrage\n\nFlaschenhals: ' + data.get('message'),
+              subject: 'Kostenlose Prozessanalyse'
             })
           });
-
           if (res.ok) {
             msg.textContent = 'Danke. Wir melden uns innerhalb von 24 Stunden.';
             msg.className = 'text-sm text-center text-green-400';
             this.reset();
-          } else {
-            throw new Error();
-          }
+          } else { throw new Error(); }
         } catch (_) {
           msg.textContent = 'Fehler beim Senden. Bitte versuchen Sie es erneut.';
           msg.className = 'text-sm text-center text-red-400';
         } finally {
           msg.classList.remove('hidden');
           btn.disabled = false;
-          btn.innerHTML = 'Audit-Termin bestätigen <span style="display:inline-flex;align-items:center;margin-left:0.5rem;"><i data-lucide="arrow-right" class="w-4 h-4"></i></span>';
+          btn.textContent = 'Kostenlose Prozessanalyse anfordern';
           lucide.createIcons();
         }
       });
