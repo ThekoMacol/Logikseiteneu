@@ -1,2 +1,10 @@
 # Cloudflare Pages serves .html files at clean URLs natively.
 # No rewrite rules needed — adding them causes redirect loops.
+
+# Verwaiste Leistungsseiten -> Startseite (301)
+/crm-system           /  301
+/crm-system.html      /  301
+/content-system       /  301
+/content-system.html  /  301
+/influencer-system        /  301
+/influencer-system.html   /  301
