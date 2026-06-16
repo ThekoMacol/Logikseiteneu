@@ -3,1079 +3,488 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kornelius Thelen – KI Systeme & Automatisierung | Thought Engineer</title>
-  <meta name="description" content="Kornelius Thelen baut KI-Systeme, die messbar funktionieren. KI Masterclass Deutschland. Prompt Engineering lernen. KI Automatisierung ohne Theorie - nur Ergebnisse.">
-  <meta name="keywords" content="KI Masterclass Deutschland, Prompt Engineering lernen, KI Automatisierung lernen, Conversion Rate Optimierung, AI Systeme, Thought Engineering">
-  <meta name="author" content="Kornelius Thelen">
-  <meta property="og:title" content="Kornelius Thelen – KI Systeme, die funktionieren">
-  <meta property="og:description" content="Thought Engineer & AI Operator. Keine Demos. Keine Theorie. Systeme mit messbaren Ergebnissen.">
+  <title>log1k – Enterprise N8N Automatisierung | Kornelius E. Thelen</title>
+  <meta name="description" content="Hochperformante N8N-Automatisierungen für B2B-Unternehmen. Meta Ads, Funnelspot CRM und Lexware Office zu einer fehlerfreien, autarken Unternehmensinfrastruktur verbinden.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://log1k.de/enterprise">
+  <meta property="og:title" content="log1k – Enterprise N8N Automatisierung">
+  <meta property="og:description" content="Skalieren Sie Ihre Operations. Ohne neue Mitarbeiter einzustellen.">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://log1k.de/enterprise">
   <meta property="og:image" content="https://log1k.de/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:url" content="https://log1k.de">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Kornelius Thelen – KI Systeme, die funktionieren">
-  <meta name="twitter:description" content="Thought Engineer & AI Operator. Keine Demos. Keine Theorie. Systeme mit messbaren Ergebnissen.">
-  <meta name="twitter:image" content="https://log1k.de/og-image.jpg">
-  <link rel="canonical" href="https://log1k.de">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Kornelius Thelen",
-    "url": "https://log1k.de",
-    "image": "https://log1k.de/og-image.jpg",
-    "jobTitle": "Thought Engineer",
-    "description": "KI-Systeme & Automatisierung. Reproduzierbare Ergebnisse durch präzise Systemarchitektur.",
-    "knowsAbout": ["KI-Automatisierung", "Prompt Engineering", "AI Systems", "Thought Engineering"],
-    "sameAs": []
-  }
-  </script>
   <link rel="stylesheet" href="/fonts/fonts.css">
-  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#6366f1',
+            'brand-dark': '#4f46e5',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+
+    .nav-blur {
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(9, 9, 11, 0.85);
+    }
+
+    .gradient-card {
+      background: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(99,102,241,0.01) 100%);
+      border: 1px solid rgba(99,102,241,0.18);
+    }
+    .gradient-card:hover {
+      border-color: rgba(99,102,241,0.38);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.32s ease;
+    }
+    .accordion-content.open {
+      max-height: 400px;
+    }
+    .accordion-chevron {
+      transition: transform 0.32s ease;
+    }
+    .accordion-chevron.rotated {
+      transform: rotate(180deg);
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #6366f1;
+      box-shadow: 0 0 0 2px rgba(99,102,241,0.15);
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%);
+      pointer-events: none;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -100px;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-zinc-950 text-white antialiased">
 
   <!-- NAV -->
-  <nav class="nav" id="nav">
-    <div class="nav__inner">
-      <a href="#" class="nav__logo" aria-label="Kornelius Thelen" style="display:none">KT</a>
-      <ul class="nav__links" role="list">
-        <li><a href="#problem">Problem</a></li>
-        <li><a href="#proof">Proof</a></li>
-        <li><a href="#framework">Framework</a></li>
-        <li><a href="#prozess">Prozess</a></li>
-        <li class="nav__dropdown">
-          <button class="nav__dropdown-toggle" aria-haspopup="true">Systeme</button>
-          <ul class="nav__dropdown-menu">
-            <li><a href="/content-system">Content-System</a></li>
-            <li><a href="/influencer-system">KI-Influencer-System</a></li>
-            <li><a href="/video-system">KI-Video-System</a></li>
-            <li><a href="/crm-system">CRM-Optimierung</a></li>
-            <li><a href="/vibecoding">Vibecoding</a></li>
-          </ul>
-        </li>
-      </ul>
-      <a href="#" class="btn btn--nav" data-open-contact="System aufbauen">System aufbauen →</a>
-      <button class="nav__burger" id="navBurger" aria-label="Menu öffnen" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+  <header class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="https://log1k.de" class="text-white font-bold text-xl tracking-tight hover:opacity-80 transition-opacity">log1k</a>
+      <a href="#audit" class="bg-brand hover:bg-brand-dark text-white text-sm font-semibold px-5 py-2.5 rounded-md transition-colors duration-200">
+        System-Audit buchen
+      </a>
     </div>
-    <div class="nav__mobile" id="navMobile" aria-hidden="true">
-      <a href="#problem">Problem</a>
-      <a href="#proof">Proof</a>
-      <a href="#framework">Framework</a>
-      <a href="#prozess">Prozess</a>
-      <a href="#" data-open-contact="Kontakt" style="background:none;border:none;cursor:pointer;font-size:inherit;color:var(--text-3);font-family:inherit;padding:0;text-decoration:none;text-align:left;">Kontakt</a>
-      <div style="border-top: 1px solid var(--border); padding-top: 0.5rem; margin-top: 0.25rem;">
-        <p style="font-size: 0.75rem; color: var(--text-3); font-family: var(--font-mono); letter-spacing: 0.05em; margin: 0 0 0.5rem;">SYSTEME</p>
-        <a href="/content-system">Content-System</a>
-        <a href="/influencer-system">KI-Influencer-System</a>
-        <a href="/video-system">KI-Video-System</a>
-        <a href="/crm-system">CRM-Optimierung</a>
-        <a href="/vibecoding">Vibecoding</a>
-      </div>
-    </div>
-  </nav>
+  </header>
 
   <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="container">
-      <h1 class="hero__headline">
-        KI funktioniert.<br>
-        <span class="accent">Du verwendest sie nur falsch.</span>
+  <section class="relative pt-36 pb-28 px-6 overflow-hidden">
+    <div class="hero-glow"></div>
+    <div class="relative max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 bg-brand/10 border border-brand/25 text-brand text-xs font-semibold px-4 py-1.5 rounded-full mb-8 tracking-wider uppercase">
+        Enterprise N8N Automatisierung
+      </div>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.08] tracking-tight mb-7">
+        Skalieren Sie Ihre Operations.<br>
+        <span class="text-brand">Ohne neue Mitarbeiter einzustellen.</span>
       </h1>
-      <p class="hero__sub">
-        KI Systeme für Messbare Ergebnisse.<br>
-        Kein Hype. Keine Demos. Keine generischen Prompt-Tipps.
+      <p class="text-slate-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-10">
+        Kornelius E. Thelen entwickelt hochperformante N8N-Automatisierungen, die Meta Ads, Funnelspot CRM und Lexware Office zu einer fehlerfreien, autarken Unternehmensinfrastruktur verbinden.
       </p>
-      <div class="hero__tension">
-        <p>Der Markt produziert Tools. Niemand baut Systeme.<br>
-        Das ist der Unterschied zwischen einer Demo und einem Ergebnis.</p>
+      <a href="#audit" class="inline-flex items-center gap-2.5 bg-brand hover:bg-brand-dark text-white font-semibold px-9 py-4 rounded-md transition-colors duration-200 text-base shadow-lg shadow-brand/25">
+        15-Minuten Pipeline-Audit vereinbaren
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+      <p class="text-slate-500 text-sm mt-4">Ausschließlich für CEOs &amp; Operations Directors</p>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="py-20 px-6 border-t border-slate-800/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Die Operations-Pfeiler</p>
+        <h2 class="text-3xl md:text-4xl font-bold">Drei Systeme. Ein nahtloser Betrieb.</h2>
       </div>
-      <div class="hero__cta">
-        <button class="btn btn--primary" data-open-contact="System aufbauen">System aufbauen →</button>
-        <a href="#proof" class="btn btn--ghost">Ergebnisse sehen</a>
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
+          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="trending-up" class="w-5 h-5 text-brand"></i>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Umsatz-Infrastruktur</h3>
+          <p class="text-slate-400 leading-relaxed text-sm">
+            Automatisches Lead-Routing von Meta Ads direkt in Ihre Funnelspot-Pipelines innerhalb von 60 Sekunden. Maximiert Ihre Speed-to-Lead-Metriken und eliminiert manuelle Übergaben vollständig.
+          </p>
+        </div>
+
+        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
+          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="file-check-2" class="w-5 h-5 text-brand"></i>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Finanz-Automatisierung</h3>
+          <p class="text-slate-400 leading-relaxed text-sm">
+            Automatische Erstellung und Abstimmung DSGVO-konformer Rechnungen in Lexware Office in dem Moment, in dem ein Deal in Funnelspot abgeschlossen wird. Kein manueller Aufwand mehr.
+          </p>
+        </div>
+
+        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
+          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="shield-check" class="w-5 h-5 text-brand"></i>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Ausfallsicheres Monitoring</h3>
+          <p class="text-slate-400 leading-relaxed text-sm">
+            Proaktives N8N-Error-Routing mit Sofort-Benachrichtigungen via Slack/Discord. 99,9 % Workflow-Uptime — Ihr Betrieb läuft auch dann, wenn Drittanbieter-APIs Probleme machen.
+          </p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- PROBLEM -->
-  <section class="section problem" id="problem">
-    <div class="container">
-      <div class="section__label label">Problem-Analyse</div>
-      <h2 class="section__headline">
-        Warum KI in deinem Unternehmen<br>nicht funktioniert.
-      </h2>
-      <p class="section__intro">
-        Das Problem ist nicht, dass KI zu komplex ist. Das Problem ist, wie sie eingesetzt wird.
-      </p>
-
-      <div class="problem__grid">
-
-        <div class="problem__item">
-          <div class="problem__number">01</div>
-          <h3>Tools sind keine Systeme.</h3>
-          <p>Einzelne Outputs ohne Prozess erzeugen kein reproduzierbares Ergebnis.</p>
-        </div>
-
-        <div class="problem__item">
-          <div class="problem__number">02</div>
-          <h3>Prompts ohne Kontext sind Rauschen.</h3>
-          <p>Wer Syntax optimiert, ohne Architektur zu verstehen, macht das Falsche präziser.</p>
-        </div>
-
-        <div class="problem__item">
-          <div class="problem__number">03</div>
-          <h3>Automation ohne Struktur ist teures Chaos.</h3>
-          <p>Kaputte Prozesse automatisiert produzieren kaputte Ergebnisse schneller.</p>
-        </div>
-
-        <div class="problem__item">
-          <div class="problem__number">04</div>
-          <h3>Form Friction vernichtet Conversions, bevor sie entstehen.</h3>
-          <p>70–85% der Abbrüche sind keine Angebotsprobleme -sie sind Prozessprobleme.</p>
-        </div>
-
-      </div>
-
-      <div class="problem__conclusion">
-        <p class="highlight-text">
-          Das sind keine KI-Probleme.<br>
-          Das ist fehlende Struktur.
+  <!-- METRICS & SOCIAL PROOF -->
+  <section class="py-20 px-6 border-t border-slate-800/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Messbare Performance</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Systeme gebaut für messbare Performance</h2>
+        <p class="text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          Echte Ergebnisse durch den Ersatz fehleranfälliger manueller Prozesse durch produktionsbereite N8N-Architektur.
         </p>
-        <p class="highlight-text" style="margin-top: var(--space-xl);">
-          Du brauchst keinen weiteren Tool-Kurs.<br>
-          Du brauchst ein System, das läuft.
-        </p>
-        <button class="btn btn--primary" data-open-contact="System aufbauen" style="margin-top: var(--space-lg);">System aufbauen →</button>
+      </div>
+
+      <div class="bg-slate-900/40 border border-slate-800 rounded-2xl grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-800 mb-12">
+        <div class="px-10 py-10 text-center">
+          <p class="text-5xl font-extrabold text-white mb-1 tracking-tight">100+</p>
+          <p class="text-brand font-semibold text-sm mb-2">Stunden</p>
+          <p class="text-slate-400 text-sm">Eingesparte Arbeitszeit pro Monat bei administrativen Aufgaben</p>
+        </div>
+        <div class="px-10 py-10 text-center">
+          <p class="text-5xl font-extrabold text-white mb-1 tracking-tight">&lt; 60 Sek.</p>
+          <p class="text-brand font-semibold text-sm mb-2">Lead-Transferzeit</p>
+          <p class="text-slate-400 text-sm">Von Meta Ads direkt in Ihr Funnelspot CRM — in Echtzeit</p>
+        </div>
+        <div class="px-10 py-10 text-center">
+          <p class="text-5xl font-extrabold text-white mb-1 tracking-tight">0 %</p>
+          <p class="text-brand font-semibold text-sm mb-2">Fehlerquote</p>
+          <p class="text-slate-400 text-sm">Bei der Datenübertragung und Rechnungserstellung in Lexware Office</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-8">
+          <div class="flex gap-0.5 mb-5">
+            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
+          </div>
+          <p class="text-slate-300 leading-relaxed mb-6 italic text-sm">
+            "Unsere Lead-Synchronisation zwischen Meta Ads und Funnelspot war extrem fehleranfällig. Kornelius hat die gesamte Pipeline in N8N neu aufgesetzt. Die Daten fließen jetzt in Echtzeit und unsere Reaktionszeit liegt unter einer Minute."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 bg-brand/15 rounded-full flex items-center justify-center shrink-0">
+              <i data-lucide="user" class="w-4 h-4 text-brand"></i>
+            </div>
+            <div>
+              <p class="text-white font-semibold text-sm">Geschäftsführer</p>
+              <p class="text-slate-500 text-xs">B2B Agentur</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-8">
+          <div class="flex gap-0.5 mb-5">
+            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
+          </div>
+          <p class="text-slate-300 leading-relaxed mb-6 italic text-sm">
+            "Das manuelle Erstellen und Abgleichen von Rechnungen in Lexware Office war ein massiver interner Flaschenhals. Log1k hat den gesamten Prozess automatisiert. Wir haben seit Monaten keine Rechnung mehr manuell abgetippt."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 bg-brand/15 rounded-full flex items-center justify-center shrink-0">
+              <i data-lucide="user" class="w-4 h-4 text-brand"></i>
+            </div>
+            <div>
+              <p class="text-white font-semibold text-sm">Chief Operating Officer</p>
+              <p class="text-slate-500 text-xs">Wachstumsunternehmen</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PROOF / AUTHORITY -->
-  <section class="section proof" id="proof">
-    <div class="container">
-      <div class="section__label label">Best Practice</div>
-      <h2 class="section__headline">
-        Proof, nicht <span style="color:var(--text-3);font-weight:600;">Versprechen</span>.
-      </h2>
-      <p class="section__intro">
-        Keine Testimonials aus dem Nichts. Keine Screenshots mit unverifizierbaren Zahlen. Konkrete Mechaniken mit erklärbaren Ursachen.
-      </p>
-
-      <div class="proof__example-btns">
-        <button class="btn btn--ghost proof__btn" data-modal="text2image">Influencer-System</button>
-        <button class="btn btn--ghost proof__btn" data-modal="automatisierung">Content-System</button>
-        <button class="btn btn--ghost proof__btn" data-modal="image2video">Video-System</button>
-        <button class="btn btn--ghost proof__btn" data-modal="crm">CRM-System</button>
-        <button class="btn btn--ghost proof__btn" data-modal="vibecoding">Vibecoding</button>
+  <!-- PRICING -->
+  <section class="py-20 px-6 border-t border-slate-800/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Enterprise-Modelle</p>
+        <h2 class="text-3xl md:text-4xl font-bold">Die richtige Partnerschaft für Ihre Operations</h2>
       </div>
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
 
-      <div class="proof__cta">
-        <button class="btn btn--primary" data-open-contact="System aufbauen">System aufbauen →</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- FRAMEWORK -->
-  <section class="section framework" id="framework">
-    <div class="container">
-      <div class="section__label label">Methodik</div>
-      <h2 class="section__headline">
-        Thought Engineering.<br>
-        Das System hinter den Ergebnissen.
-      </h2>
-      <p class="section__intro">
-        Ich baue Systeme, die messbare Ergebnisse liefern.
-      </p>
-
-      <div class="framework__pillars">
-
-        <div class="pillar pillar--lead">
-          <div class="pillar__step">
-            <span class="pillar__index">I</span>
-            <div class="pillar__connector"></div>
+        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-8 flex flex-col">
+          <div class="mb-6">
+            <h3 class="text-white font-bold text-xl mb-1">Enterprise Setup</h3>
+            <p class="text-slate-500 text-sm">Einmaliges Projekt · Schlüsselfertig</p>
           </div>
-          <div class="pillar__content">
-            <h3>Diagnose vor Lösung.</h3>
-            <ul class="pillar__points">
-              <li>Systemische Ursachenanalyse</li>
-              <li>Trennung von Symptom und Ursache</li>
-              <li>Problem messbar machen</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="pillar">
-          <div class="pillar__step">
-            <span class="pillar__index">II</span>
-            <div class="pillar__connector"></div>
-          </div>
-          <div class="pillar__content">
-            <h3>Architektur vor Execution.</h3>
-            <ul class="pillar__points">
-              <li>Definierte Systemstruktur</li>
-              <li>Klare Ein- und Ausgabe-Protokolle</li>
-              <li>Reproduzierbare Abläufe statt Prompt-Tricks</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="pillar">
-          <div class="pillar__step">
-            <span class="pillar__index">III</span>
-            <div class="pillar__connector"></div>
-          </div>
-          <div class="pillar__content">
-            <h3>Messung vor Skalierung.</h3>
-            <ul class="pillar__points">
-              <li>KPI-Definition vor Umsetzung</li>
-              <li>Feedback-Loops im System</li>
-              <li>Iteration auf Datenbasis</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="framework__formula">
-        <div class="formula">
-          <span class="formula__part">Diagnose</span>
-          <span class="formula__op">+</span>
-          <span class="formula__part">Architektur</span>
-          <span class="formula__op">+</span>
-          <span class="formula__part">Metriken</span>
-          <span class="formula__op">=</span>
-          <span class="formula__result">Reproduzierbares Ergebnis</span>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:var(--space-xl);">
-        <button class="btn btn--primary" data-open-contact="System aufbauen">System aufbauen →</button>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- PROZESS -->
-  <section class="section prozess" id="prozess">
-    <div class="container">
-      <div class="section__label label">Zusammenarbeit</div>
-      <h2 class="section__headline">
-        Wie Zusammenarbeit funktioniert.
-      </h2>
-      <p class="section__intro">
-        Vier Schritte. Klare Struktur. Kein Projektmanagement-Theater.
-      </p>
-
-      <div class="prozess__steps">
-
-        <div class="step">
-          <div class="step__number">01</div>
-          <div class="step__content">
-            <h3>Diagnose-Call</h3>
-            <p>60 Minuten. Ich verstehe dein Problem - nicht das, das du glaubst zu haben, sondern das, das dich wirklich bremst. Kein Sales-Call. Keine Präsentation. Nur strukturierte Analyse.</p>
-            <span class="step__output">Output: Klare Problemdefinition + erste Lösungshypothese</span>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="step__number">02</div>
-          <div class="step__content">
-            <h3>System-Design</h3>
-            <p>Auf Basis der Diagnose entsteht eine konkrete System-Architektur. Welche Komponenten. Welche Schnittstellen. Welche Metriken. Dokumentiert, nachvollziehbar, ausführbar.</p>
-            <span class="step__output">Output: Detailliertes System-Design-Dokument</span>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="step__number">03</div>
-          <div class="step__content">
-            <h3>Build & Deploy</h3>
-            <p>Das System wird gebaut und deployed - nicht präsentiert. Du siehst das System in Aktion, nicht in Folien. Jede Komponente ist dokumentiert, jede Entscheidung begründet.</p>
-            <span class="step__output">Output: Funktionierendes, deployables System</span>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="step__number">04</div>
-          <div class="step__content">
-            <h3>Messen & Iterieren</h3>
-            <p>Nach dem Deployment beginnt die eigentliche Arbeit. Metriken werden ausgewertet, Bottlenecks identifiziert, das System iteriert. Auf Datenbasis, nicht auf Bauchgefühl.</p>
-            <span class="step__output">Output: Optimiertes System + Iteration-Protokoll</span>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="prozess__note">
-        <p>Ich arbeite mit maximal <strong>vier Kunden gleichzeitig</strong>. Nicht wegen künstlicher Knappheit - weil Tiefe mehr Zeit braucht als Breite.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA BLOCK -->
-  <section class="section cta-block" id="kontakt">
-    <div class="container">
-      <div class="cta-block__inner">
-        <h2>Du hast genug <span class="accent">Theorie.</span><br>
-        Hier ist der nächste Schritt.</h2>
-        <p>Ich baue das System für dich. Diagnose, Design, Build, Deploy. Für Unternehmer und Entscheider, die Ergebnisse brauchen, nicht Lernzeit.</p>
-
-        <button class="btn btn--primary btn--large" data-open-contact="System aufbauen">System aufbauen →</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT MINIMAL -->
-  <section class="section about" id="about">
-    <div class="container">
-      <div class="about__grid">
-        <div class="about__text">
-          <div class="section__label label">Wer</div>
-          <h2>Kornelius Thelen.</h2>
-          <p>Thought Engineer. AI Operator. Ich baue KI-Systeme - nicht für Demos, sondern für den Einsatz. Mein Fokus: Verhaltensmechaniken, Prompt-Architektur, Automatisierung und messbare Ergebnisse.</p>
-          <p>Ich glaube nicht an Hype. Ich glaube an Systeme, die funktionieren, wenn niemand zuschaut.</p>
-          <div class="about__positions">
-            <span class="position-tag">KI Automatisierung</span>
-            <span class="position-tag">Prompt Engineering</span>
-            <span class="position-tag">Conversion Rate Optimierung</span>
-            <span class="position-tag">Systemarchitektur</span>
-          </div>
-          <a href="https://www.linkedin.com/in/kornelius-e-thelen/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost" style="margin-top: var(--space-lg); display: inline-flex; align-items: center; gap: 0.5rem;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            LinkedIn
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-start gap-3 text-sm text-slate-300">
+              <i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>
+              Discovery &amp; Blueprint Ihrer bestehenden Prozesse
+            </li>
+            <li class="flex items-start gap-3 text-sm text-slate-300">
+              <i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>
+              Aufbau der Kern-Workflows (Meta → Funnelspot → Lexware)
+            </li>
+            <li class="flex items-start gap-3 text-sm text-slate-300">
+              <i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>
+              Testing, QA und vollständiges Deployment
+            </li>
+            <li class="flex items-start gap-3 text-sm text-slate-300">
+              <i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>
+              Übergabe-Dokumentation &amp; 30 Tage Support
+            </li>
+          </ul>
+          <a href="#audit" class="block text-center bg-slate-800 hover:bg-slate-700 text-white font-semibold px-6 py-3.5 rounded-md transition-colors duration-200 text-sm">
+            Für Setup bewerben
           </a>
         </div>
-        <div class="about__stats">
-          <div class="about__stat">
-            <strong data-steps="10%|40%|70%|100%">100%</strong>
-            <p>Reale Systeme - keine theoretischen Modelle</p>
+
+        <div class="relative bg-brand/5 border border-brand/30 rounded-xl p-8 flex flex-col">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
+            <span class="bg-brand text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap shadow-lg shadow-brand/30">
+              Meistgefragt für wachsende Unternehmen
+            </span>
           </div>
-          <div class="about__stat">
-            <strong data-steps="15|10|5|0">0</strong>
-            <p>Generische Tool-Empfehlungen ohne Kontext</p>
+          <div class="mb-6 mt-2">
+            <h3 class="text-white font-bold text-xl mb-1">Managed Architecture Retainer</h3>
+            <p class="text-slate-500 text-sm">Monatlich · Dedizierte Kapazität</p>
+          </div>
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-start gap-3 text-sm text-slate-300">
+              <i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>
+              Dedizierte monatliche Kapazität für Systems Engineering
+            </li>
+            <li class="flex items-start gap-3 text-sm text-slate-300">
+              <i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>
+              Neue API-Deployments &amp; Workflow-Erweiterungen
+            </li>
+            <li class="flex items-start gap-3 text-sm text-slate-300">
+              <i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>
+              Proaktives Monitoring aller laufenden Workflows
+            </li>
+            <li class="flex items-start gap-3 text-sm text-slate-300">
+              <i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>
+              Priorisierter Support &amp; monatliches Performance-Reporting
+            </li>
+          </ul>
+          <a href="#audit" class="block text-center bg-brand hover:bg-brand-dark text-white font-semibold px-6 py-3.5 rounded-md transition-colors duration-200 text-sm shadow-md shadow-brand/25">
+            Für Partnerschaft bewerben
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-6 border-t border-slate-800/50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Einwandbehandlung</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Risiken eliminieren</h2>
+        <p class="text-slate-400">Antworten auf kritische Fragen zu Datensicherheit, Stabilität und ROI.</p>
+      </div>
+
+      <div class="space-y-3" id="faqAccordion">
+
+        <div class="accordion-item border border-slate-800 rounded-xl overflow-hidden">
+          <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-900/40 transition-colors">
+            <span class="font-semibold text-white pr-4 text-sm leading-snug">Was passiert, wenn eine API aktualisiert wird oder eine Synchronisation fehlschlägt?</span>
+            <i data-lucide="chevron-down" class="accordion-chevron w-5 h-5 text-slate-400 shrink-0"></i>
+          </button>
+          <div class="accordion-content">
+            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">
+              Jedes von mir gebaute System enthält eine professionelle Catch-and-Retry-Logik. Sollten Meta oder Funnelspot Änderungen vornehmen, isoliert N8N die betroffenen Daten, alarmiert uns sofort via Slack und verhindert jeglichen Datenverlust, während Ihr Hauptbetrieb ungestört weiterläuft.
+            </p>
           </div>
         </div>
+
+        <div class="accordion-item border border-slate-800 rounded-xl overflow-hidden">
+          <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-900/40 transition-colors">
+            <span class="font-semibold text-white pr-4 text-sm leading-snug">Wie sicher sind unsere Finanzdaten in Bezug auf Lexware Office?</span>
+            <i data-lucide="chevron-down" class="accordion-chevron w-5 h-5 text-slate-400 shrink-0"></i>
+          </button>
+          <div class="accordion-content">
+            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">
+              Datenschutz steht an oberster Stelle. Durch den Einsatz dedizierter N8N-Instanzen, die ausschließlich auf DSGVO-konformen europäischen Servern gehostet werden, bleiben Ihre Finanzdaten und Kundenprofile absolut sicher und audit-sicher umschlossen.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item border border-slate-800 rounded-xl overflow-hidden">
+          <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-900/40 transition-colors">
+            <span class="font-semibold text-white pr-4 text-sm leading-snug">Warum sollten wir nicht einfach Zapier oder native Integrationen nutzen?</span>
+            <i data-lucide="chevron-down" class="accordion-chevron w-5 h-5 text-slate-400 shrink-0"></i>
+          </button>
+          <div class="accordion-content">
+            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">
+              Native Integrationen sind starr und brechen bei komplexen Bedingungen ab. Zapier wird bei hohem Leadvolumen extrem teuer und bietet keine fortgeschrittene Logik. N8N erlaubt maßgeschneiderte JavaScript-Logik und unbegrenzte Skalierbarkeit ohne transaktionale Strafgebühren.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item border border-slate-800 rounded-xl overflow-hidden">
+          <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-900/40 transition-colors">
+            <span class="font-semibold text-white pr-4 text-sm leading-snug">Wie viel Zeit müssen wir als Führungsteam für das Projekt aufwenden?</span>
+            <i data-lucide="chevron-down" class="accordion-chevron w-5 h-5 text-slate-400 shrink-0"></i>
+          </button>
+          <div class="accordion-content">
+            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">
+              Minimal. Nach einem einmaligen, 45-minütigen Workshop zur Erfassung Ihrer Meta-, Funnelspot- und Lexware-Parameter übernimmt mein Team die gesamte Architektur, das Testing und das Deployment schlüsselfertig.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING BLOCK -->
+  <section class="py-20 px-6 border-t border-slate-800/50" id="audit">
+    <div class="max-w-2xl mx-auto">
+      <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-10">
+        <div class="text-center mb-8">
+          <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Audit anfordern</p>
+          <h2 class="text-3xl font-bold mb-3">Fordern Sie Ihre operative Roadmap an</h2>
+          <p class="text-slate-400 text-sm">Kostenlose 15-Minuten-Analyse Ihrer aktuellen Prozessarchitektur.</p>
+        </div>
+        <form id="auditForm" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-slate-300 mb-1.5">Name</label>
+            <input type="text" name="name" placeholder="Max Mustermann" required
+              class="w-full bg-slate-800/60 border border-slate-700 rounded-md px-4 py-3 text-white placeholder-slate-500 text-sm transition-all">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-300 mb-1.5">Gesch&#228;fts-E-Mail</label>
+            <input type="email" name="email" placeholder="max@unternehmen.de" required
+              class="w-full bg-slate-800/60 border border-slate-700 rounded-md px-4 py-3 text-white placeholder-slate-500 text-sm transition-all">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-300 mb-1.5">Aktueller manueller Flaschenhals</label>
+            <textarea name="message" rows="3" placeholder="z. B. Lead-Übergaben dauern zu lang, Rechnungen werden manuell erstellt..."
+              class="w-full bg-slate-800/60 border border-slate-700 rounded-md px-4 py-3 text-white placeholder-slate-500 text-sm transition-all resize-none"></textarea>
+          </div>
+          <button type="submit" id="auditSubmit"
+            class="w-full bg-brand hover:bg-brand-dark text-white font-semibold py-4 rounded-md transition-colors duration-200 flex items-center justify-center gap-2 shadow-lg shadow-brand/25">
+            Audit-Termin best&#228;tigen
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+          <p id="auditMsg" class="text-sm text-center hidden"></p>
+          <p class="text-slate-500 text-xs text-center">Kein Spam. Kein Verkaufsdruck. Nur ein ehrliches Gespr&#228;ch &#252;ber Ihre Prozesse.</p>
+        </form>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__inner">
-        <div class="footer__brand">
-          <p>Kornelius Thelen<br>Thought Engineer / AI Operator</p>
-        </div>
-        <div class="footer__links">
-          <a href="#problem">Problem</a>
-          <a href="#proof">Proof</a>
-          <a href="#framework">Framework</a>
-          <a href="#prozess">Prozess</a>
-          <a href="mailto:hallo@log1k.de">Kontakt</a>
-        </div>
-        <div class="footer__links">
-          <a href="/influencer-system">Influencer-System</a>
-          <a href="/content-system">Content-System</a>
-          <a href="/video-system">Video-System</a>
-          <a href="/crm-system">CRM-System</a>
-          <a href="/vibecoding">Vibecoding</a>
-        </div>
-        <div class="footer__legal">
-          <a href="/impressum">Impressum</a>
-          <a href="/datenschutz">Datenschutz</a>
-        </div>
+  <footer class="border-t border-slate-800 px-6 py-8">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="text-white font-semibold">Kornelius E. Thelen</p>
+        <p class="text-slate-500 text-sm">log1k.de &middot; Enterprise Workflow Automation</p>
       </div>
-      <div class="footer__bottom">
-        <p>Precision over Noise. Systems over Tools. Proof over Claims.</p>
+      <div class="flex items-center gap-6">
+        <a href="/impressum" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Impressum</a>
+        <a href="/datenschutz" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Datenschutz</a>
       </div>
     </div>
   </footer>
 
-  <!-- VOICEFLOW CHAT WIDGET (ausgeblendet - wird überarbeitet) -->
-  <div class="vf-widget" id="vfWidget" style="display:none">
-    <div class="vf-panel" id="vfPanel" aria-hidden="true">
-      <div class="vf-panel__header">
-        <div class="vf-panel__title">
-          <span class="vf-online-dot"></span>
-          <span>Autonomes Backoffice</span>
-          <span class="vf-online-label">Online</span>
-        </div>
-        <button class="vf-panel__close" id="vfClose" aria-label="Chat schliessen">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </button>
-      </div>
-      <iframe
-        id="vfIframe"
-        src="https://creator.voiceflow.com/prototype/68834c24abb7872e2620cd77"
-        title="Autonomes Backoffice Chat"
-        allow="microphone"
-        loading="lazy"
-      ></iframe>
-    </div>
-
-    <button class="vf-trigger" id="vfTrigger" aria-label="Autonomes Backoffice öffnen" aria-expanded="false">
-      <span class="vf-trigger__inner">
-        <span class="vf-online-dot"></span>
-        <span class="vf-trigger__text">Autonomes Backoffice <span class="vf-online-label">Online</span></span>
-      </span>
-      <span class="vf-trigger__icon" aria-hidden="true">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 11.5C2 12.328 2.672 13 3.5 13H5.5L8 15.5L10.5 13H12.5C13.328 13 14 12.328 14 11.5V3.5C14 2.672 13.328 2 12.5 2H3.5C2.672 2 2 2.672 2 3.5V11.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-        </svg>
-      </span>
-    </button>
-  </div>
-
-  <!-- MODAL OVERLAY -->
-  <div class="modal-overlay" id="modalOverlay">
-    <div class="modal" id="modal" role="dialog" aria-modal="true">
-      <button class="modal__close" id="modalClose" aria-label="Schließen">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
-      <div class="modal__body" id="modalBody"></div>
-    </div>
-  </div>
-
-  <!-- MODAL CONTENT (hidden) -->
-
-  <!-- CONTENT-SYSTEM -->
-  <div id="modal-automatisierung" hidden>
-    <h3>1 Video täglich. Vollautomatisch.</h3>
-    <p class="modal__usecase">Planbarer Content-Output. Täglich. Ohne Aufwand.</p>
-    <div class="modal__result-hero">
-      <div class="modal__result-item modal__result-item--dominant">
-        <span class="modal__result-num" data-steps="12.000|85.000|200.000|344.444">12.000</span>
-        <span class="modal__result-label">Views (Top Video)</span>
-      </div>
-      <div class="modal__result-item">
-        <span class="modal__result-num" data-steps="50|150|280|~400">50</span>
-        <span class="modal__result-label">Abonnenten / 30 Tage</span>
-      </div>
-      <div class="modal__result-item">
-        <span class="modal__result-num" data-steps="+12|+68|+142|+212">+12</span>
-        <span class="modal__result-label">Abonnenten aus 1 Video</span>
-      </div>
-      <div class="modal__result-item">
-        <span class="modal__result-num" data-steps="1/Monat|1/Woche|3/Woche|∞/Tag">1/Monat</span>
-        <span class="modal__result-label">vollautomatisch</span>
-      </div>
-    </div>
-    <div class="modal__property">
-      <p class="modal__property-claim">Content entsteht aus System.<br>Nicht aus Zeit.</p>
-      <ul class="modal__list">
-        <li>Planbarer Output ohne Creator-Abhängigkeit</li>
-        <li>Täglicher Content ohne Produktionsaufwand</li>
-        <li>Klare Pipeline statt täglicher Entscheidungen</li>
-      </ul>
-    </div>
-    <div class="modal__blocks">
-      <div class="modal__block">
-        <h4>Ausgangslage</h4>
-        <ul class="modal__list">
-          <li>0 Content, 0 Reichweite</li>
-          <li>Kein skalierbarer Prozess</li>
-          <li>Content abhängig von Zeit & manueller Erstellung</li>
-          <li>Kein planbarer Output</li>
-        </ul>
-      </div>
-      <div class="modal__block">
-        <h4>System</h4>
-        <ul class="modal__list">
-          <li>Themen-Pipeline als Input</li>
-          <li>KI generiert Skript und Varianten</li>
-          <li>Automatisierte Video-Erstellung täglich</li>
-          <li>Automatisierter Upload zur Prime Time</li>
-        </ul>
-      </div>
-      <div class="modal__block">
-        <h4>Mechanik</h4>
-        <ul class="modal__list">
-          <li>Konstante Frequenz (1/Tag)</li>
-          <li>Timing optimiert (Prime Time)</li>
-          <li>Standardisiertes Format → täglich reproduzierbar</li>
-          <li>Output unabhängig von Personen</li>
-        </ul>
-      </div>
-      <div class="modal__block modal__block--result">
-        <h4>Ergebnis</h4>
-        <ul class="modal__list">
-          <li><strong>344.444 Views</strong> (Top Video)</li>
-          <li><strong>~400 neue Abonnenten</strong> / 30 Tage</li>
-          <li>+212 Abonnenten aus 1 Video</li>
-          <li>1 Video täglich ohne Mehraufwand</li>
-        </ul>
-      </div>
-    </div>
-    <div class="modal__example">
-      <div class="modal__example-label">Skalierbar</div>
-      <p>Gleiche Pipeline auf allen Kanälen</p>
-      <p>Mehrere Content-Pipelines parallel skalierbar</p>
-    </div>
-    <div class="modal__example">
-      <div class="modal__example-label">Live Demo</div>
-      <h4 style="margin:0 0 0.5rem;font-size:0.95rem;font-weight:700;color:var(--text);">Beispiel: KI-Content-System auf YouTube</h4>
-      <p>Dieser Kanal publiziert täglich automatisch generierten Video-Content. Kein Creator, kein manueller Upload - vollständig systemgesteuert.</p>
-      <a href="https://www.youtube.com/@AI.Fantasy_ASMR/shorts" target="_blank" rel="noopener" class="modal__link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
-        @AI.Fantasy_ASMR ansehen →
-      </a>
-    </div>
-    <div class="modal__ideal">
-      <div class="modal__example-label">Ideal für</div>
-      <p>Brands und Founder, die Content skalieren wollen - ohne Creator-Abhängigkeit aufzubauen.</p>
-    </div>
-    <button class="btn btn--primary" data-open-contact="Content-Pipeline aufsetzen">Content-Output automatisieren →</button>
-  </div>
-
-  <!-- INFLUENCER-SYSTEM -->
-  <div id="modal-text2image" hidden>
-    <h3>Täglicher Content. Ohne Creator.</h3>
-    <p class="modal__usecase">Täglicher Content aus einer Persona - auf allen Kanälen skalierbar.</p>
-    <div class="modal__result-hero">
-      <div class="modal__result-item modal__result-item--dominant">
-        <span class="modal__result-num" data-steps="10|100|1.000|∞">10</span>
-        <span class="modal__result-label">Assets aus 1 Persona</span>
-      </div>
-      <div class="modal__result-item">
-        <span class="modal__result-num" data-steps="jährlich|monatlich|wöchentlich|täglich">jährlich</span>
-        <span class="modal__result-label">neuer Content</span>
-      </div>
-      <div class="modal__result-item">
-        <span class="modal__result-num" data-steps="15|10|5|0">15</span>
-        <span class="modal__result-label">Shootings notwendig</span>
-      </div>
-      <div class="modal__result-item">
-        <span class="modal__result-num" data-steps="25%|50%|75%|100%">25%</span>
-        <span class="modal__result-label">Kontrolle über Output</span>
-      </div>
-    </div>
-    <div class="modal__property">
-      <p class="modal__property-claim">Identität ist generierbar.<br>Nicht verhandelbar.</p>
-      <ul class="modal__list">
-        <li>Kein Shooting</li>
-        <li>Keine Abhängigkeit von Personen</li>
-        <li>Keine Abstimmungsschleifen</li>
-      </ul>
-    </div>
-    <div class="modal__blocks">
-      <div class="modal__block">
-        <h4>Ausgangslage</h4>
-        <ul class="modal__list">
-          <li>Content abhängig von realen Personen</li>
-          <li>Hohe Produktionskosten</li>
-          <li>Shooting abhängig von Verfügbarkeit</li>
-          <li>Unplanbarer Output</li>
-        </ul>
-      </div>
-      <div class="modal__block">
-        <h4>System</h4>
-        <ul class="modal__list">
-          <li>KI erzeugt visuelle Identität (Persona)</li>
-          <li>Content entsteht aus strukturierten Inputs</li>
-          <li>Konsistenter Look über alle Assets</li>
-          <li>Unbegrenzte Varianten pro Motiv</li>
-        </ul>
-      </div>
-      <div class="modal__block">
-        <h4>Mechanik</h4>
-        <ul class="modal__list">
-          <li>Identität einmal definiert → beliebig reproduzierbar</li>
-          <li>Output unabhängig von Personen</li>
-          <li>Varianten ohne Qualitätsverlust</li>
-          <li>Content in Stunden statt Wochen produziert</li>
-        </ul>
-      </div>
-      <div class="modal__block modal__block--result">
-        <h4>Ergebnis</h4>
-        <ul class="modal__list">
-          <li><strong>Täglich Content</strong> ohne Mehraufwand</li>
-          <li><strong>Konsistenz über alle Kanäle</strong></li>
-          <li>Vollständige Kontrolle über Darstellung</li>
-          <li>Kein Abstimmungsaufwand mit Personen</li>
-        </ul>
-      </div>
-    </div>
-    <div class="modal__example">
-      <div class="modal__example-label">Skalierbar</div>
-      <p>Gleiche Persona auf allen Kanälen</p>
-      <p>Ads & Organic parallel skalierbar</p>
-    </div>
-    <div class="modal__example">
-      <div class="modal__example-label">Live Demo</div>
-      <h4 style="margin:0 0 0.5rem;font-size:0.95rem;font-weight:700;color:var(--text);">Beispiel: Automatisierter Content mit KI</h4>
-      <p>Diese Persona erstellt täglich Content automatisch.<br>Der gesamte Prozess läuft ohne Creator, ohne Shooting und ohne manuelle Erstellung.</p>
-      <div class="modal__cards" style="margin:0.75rem 0 1.5rem;">
-        <button class="modal__card" data-lightbox="0" aria-label="Foto 1 vergrößern">
-          <img src="assets/images/zaya-1.jpg" alt="Synthetische Persönlichkeit - Beispiel 1" loading="lazy">
-        </button>
-        <button class="modal__card" data-lightbox="1" aria-label="Foto 2 vergrößern">
-          <img src="assets/images/zaya-2.jpg" alt="Synthetische Persönlichkeit - Beispiel 2" loading="lazy">
-        </button>
-        <button class="modal__card" data-lightbox="2" aria-label="Foto 3 vergrößern">
-          <img src="assets/images/zaya-3.jpg" alt="Synthetische Persönlichkeit - Beispiel 3" loading="lazy">
-        </button>
-      </div>
-      <a href="https://www.instagram.com/zaya.the.baddie/" target="_blank" rel="noopener" class="modal__link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-        @zaya.the.baddie ansehen →
-      </a>
-    </div>
-    <div class="modal__ideal">
-      <div class="modal__example-label">Ideal für</div>
-      <p>Brands, die täglich Content brauchen - ohne Creator-Abhängigkeit.</p>
-    </div>
-    <button class="btn btn--primary" data-open-contact="Influencer-System aufbauen">Täglichen Content ohne Creator starten →</button>
-  </div>
-
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox__close" id="lightboxClose" aria-label="Schließen">
-      <svg width="18" height="18" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-    </button>
-    <img class="lightbox__img" id="lightboxImg" src="" alt="">
-  </div>
-
-  <!-- VIDEO-SYSTEM -->
-  <div id="modal-image2video" hidden>
-    <h3>10+ Creatives. Kein Dreh.</h3>
-    <p class="modal__usecase">Mehr Creatives aus bestehenden Assets. Ohne Produktion.</p>
-    <div class="modal__result-hero">
-      <div class="modal__result-item modal__result-item--dominant">
-        <span class="modal__result-num" data-steps="1|3|6|10+">1</span>
-        <span class="modal__result-label">Creatives aus 1 Bild</span>
-      </div>
-      <div class="modal__result-item">
-        <span class="modal__result-num" data-steps="Wochen|Tage|Stunden|direkt">Wochen</span>
-        <span class="modal__result-label">für Ads & Social nutzbar</span>
-      </div>
-      <div class="modal__result-item">
-        <span class="modal__result-num" data-steps="4|3|1|0">4</span>
-        <span class="modal__result-label">Drehs notwendig</span>
-      </div>
-      <div class="modal__result-item">
-        <span class="modal__result-num" data-steps="Monate|Wochen|Tage|Stunden">Monate</span>
-        <span class="modal__result-label">statt Wochen</span>
-      </div>
-    </div>
-    <div class="modal__property">
-      <p class="modal__property-claim">Ein Asset erzeugt Varianten.<br>Kein Video.</p>
-      <ul class="modal__list">
-        <li>Output in Stunden statt Produktions-Bottleneck</li>
-        <li>Sofort nutzbare Creatives ohne Postproduktion</li>
-        <li>Skalierbare Produktion ohne Drehkosten</li>
-      </ul>
-    </div>
-    <div class="modal__blocks">
-      <div class="modal__block">
-        <h4>Ausgangslage</h4>
-        <ul class="modal__list">
-          <li>Videoproduktion teuer und langsam</li>
-          <li>Abhängig von Dreh und Verfügbarkeit</li>
-          <li>Lange Vorlaufzeiten für Creatives</li>
-          <li>Wenige Varianten für Testing</li>
-        </ul>
-      </div>
-      <div class="modal__block">
-        <h4>System</h4>
-        <ul class="modal__list">
-          <li>Statische Bilder → dynamische Videos</li>
-          <li>KI erzeugt Bewegung, Perspektive und Varianten</li>
-          <li>1 Input → mehrere Video-Assets</li>
-          <li>Formate direkt für Ads & Social nutzbar</li>
-        </ul>
-      </div>
-      <div class="modal__block">
-        <h4>Mechanik</h4>
-        <ul class="modal__list">
-          <li>Kein Dreh, keine Postproduktion</li>
-          <li>Mehrere Creatives aus einem Bild</li>
-          <li>Output in Stunden statt Wochen</li>
-          <li>Direkt testbar in Ads</li>
-        </ul>
-      </div>
-      <div class="modal__block modal__block--result">
-        <h4>Ergebnis</h4>
-        <ul class="modal__list">
-          <li><strong>10+ Creatives</strong> aus einem Asset</li>
-          <li><strong>Produktionszeit: Stunden</strong> statt Wochen</li>
-          <li>Kontinuierliche Creative-Pipeline ohne Pausen</li>
-          <li>Niedrigere Kosten pro Creative</li>
-        </ul>
-      </div>
-    </div>
-    <div class="modal__example">
-      <div class="modal__example-label">Skalierbar</div>
-      <p>Gleiche Pipeline für jedes Produkt</p>
-      <p>Testing über alle Kanäle parallel</p>
-    </div>
-    <div class="modal__ideal">
-      <div class="modal__example-label">Ideal für</div>
-      <p>E-Commerce und Marketing-Teams, die schnell skalierbare Video-Creatives brauchen - ohne Produktionsaufwand.</p>
-    </div>
-    <button class="btn btn--primary" data-open-contact="Video-System aufbauen">Creative-Output ohne Produktion skalieren →</button>
-  </div>
-
-  <!-- CRM-SYSTEM -->
-  <div id="modal-crm" hidden>
-    <h3>+49,1 Prozentpunkte Opt-in. Ohne mehr Traffic.</h3>
-    <p class="modal__usecase">Gleicher Traffic. Mehr Ergebnis.</p>
-    <div class="modal__result-hero">
-      <div class="modal__result-item modal__result-item--dominant">
-        <span class="modal__result-num" data-steps="+5|+18|+33|+49,1">+5</span>
-        <span class="modal__result-label">Prozentpunkte Opt-in</span>
-      </div>
-      <div class="modal__result-item">
-        <span class="modal__result-num" data-steps="30%|55%|78%|96,2%">30%</span>
-        <span class="modal__result-label">stabiler Opt-in</span>
-      </div>
-      <div class="modal__result-item">
-        <span class="modal__result-num" data-steps="Monate|Wochen|Tage|sofort">Monate</span>
-        <span class="modal__result-label">wirksam</span>
-      </div>
-      <div class="modal__result-item">
-        <span class="modal__result-num" data-steps="40h|20h|5h|0">40h</span>
-        <span class="modal__result-label">Mehraufwand</span>
-      </div>
-    </div>
-    <div class="modal__property">
-      <p class="modal__property-claim">Conversion ist ein Prozessproblem.<br>Kein Motivationsproblem.</p>
-      <ul class="modal__list">
-        <li>Mehr Leads ohne Training</li>
-        <li>Mehr Conversion ohne neue Software</li>
-        <li>Mehr Output ohne zusätzliches Budget</li>
-      </ul>
-    </div>
-    <div class="modal__blocks">
-      <div class="modal__block">
-        <h4>Ausgangslage</h4>
-        <ul class="modal__list">
-          <li>Ø Opt-in: 30–55% (instabil)</li>
-          <li>Problem wird beim Mitarbeiter gesucht</li>
-          <li>Keine Kontrolle über Conversion-Rate</li>
-          <li>Hoher Schulungsaufwand ohne Ergebnis</li>
-        </ul>
-      </div>
-      <div class="modal__block">
-        <h4>System</h4>
-        <ul class="modal__list">
-          <li>Bewertung nach klarer Systemlogik</li>
-          <li>Form Friction Reduzierung auf Formular Ebene</li>
-          <li>Kein neues Design</li>
-          <li>Ein gezielter Eingriff im Prozess</li>
-        </ul>
-      </div>
-      <div class="modal__block">
-        <h4>Mechanik</h4>
-        <ul class="modal__list">
-          <li>Weniger kognitive Last → schnelleres Entscheiden</li>
-          <li>Entscheidung wird vorgezogen</li>
-          <li>Eine Änderung → dauerhafter Effekt</li>
-          <li>Reproduzierbar auf alle Formulare</li>
-        </ul>
-      </div>
-      <div class="modal__block modal__block--result">
-        <h4>Ergebnis</h4>
-        <ul class="modal__list">
-          <li><strong>Sofort mehr Leads</strong> ohne Mehraufwand</li>
-          <li><strong>Opt-in stabil über 60%</strong></li>
-          <li>Kein Training notwendig</li>
-          <li>Skalierbar auf alle Formulare</li>
-        </ul>
-      </div>
-    </div>
-    <div class="modal__example">
-      <div class="modal__example-label">Skalierbar</div>
-      <p>Gleiche Logik auf alle Formulare übertragbar</p>
-      <p>CRM, Checkout, Onboarding, Terminbuchung</p>
-    </div>
-    <div class="modal__ideal">
-      <div class="modal__example-label">Ideal für</div>
-      <p>Unternehmen mit CRM-Prozessen und niedrigen Opt-in-Raten, die Conversion ohne Werbebudget steigern wollen.</p>
-    </div>
-    <div class="modal__example">
-      <div class="modal__example-label">Live Demo</div>
-      <h4 style="margin:0 0 0.5rem;font-size:0.95rem;font-weight:700;color:var(--text);">Beispiel: CRM-Optimierung live erleben</h4>
-      <p>Teste direkt, wie eine strukturelle Formular-Änderung die Opt-in-Rate messbar steigert - ohne neues Design, ohne Training.</p>
-      <p style="font-size:0.8rem;color:var(--text-3);margin:0.5rem 0 0;font-family:var(--font-mono);">Der interaktive Bot wird derzeit überarbeitet und ist bald wieder verfügbar.</p>
-    </div>
-    <button class="btn btn--primary" data-open-contact="CRM analysieren und optimieren">Mehr Leads aus meinem Traffic holen →</button>
-  </div>
-
-  <!-- VIBECODING -->
-  <div id="modal-vibecoding" hidden>
-    <h3>Software live in Tagen. Ohne Entwickler.</h3>
-    <p class="modal__usecase">Keine Sprints. Kein Warten. Direkt produktiv.</p>
-    <div class="modal__result-hero">
-      <div class="modal__result-item modal__result-item--dominant">
-        <span class="modal__result-num" data-steps="25%|50%|75%|100%">25%</span>
-        <span class="modal__result-label">deploybarer Code</span>
-      </div>
-      <div class="modal__result-item">
-        <span class="modal__result-num" data-steps="Monate|Wochen|Tage|direkt">Monate</span>
-        <span class="modal__result-label">iterierbar</span>
-      </div>
-      <div class="modal__result-item">
-        <span class="modal__result-num" data-steps="3|2|1|0">3</span>
-        <span class="modal__result-label">Entwickler notwendig</span>
-      </div>
-      <div class="modal__result-item">
-        <span class="modal__result-num" data-steps="6 Monate|3 Monate|1 Monat|Tage">6 Monate</span>
-        <span class="modal__result-label">statt Monate</span>
-      </div>
-    </div>
-    <div class="modal__property">
-      <p class="modal__property-claim">Software entsteht aus Anforderungen.<br>Nicht aus Code.</p>
-      <ul class="modal__list">
-        <li>Kein Warten auf Entwickler</li>
-        <li>Keine Sprint-Zyklen</li>
-        <li>Keine Verzögerungen</li>
-      </ul>
-    </div>
-    <div class="modal__blocks">
-      <div class="modal__block">
-        <h4>Ausgangslage</h4>
-        <ul class="modal__list">
-          <li>Software-Entwicklung teuer und langsam</li>
-          <li>Abhängig von Entwicklern</li>
-          <li>Lange Iterationszyklen</li>
-          <li>Sprint-Planung blockiert Umsetzung</li>
-        </ul>
-      </div>
-      <div class="modal__block">
-        <h4>System</h4>
-        <ul class="modal__list">
-          <li>Anforderungen → strukturierte Prompts</li>
-          <li>KI baut iterativ, Schritt für Schritt</li>
-          <li>Jedes Modul getestet vor dem nächsten</li>
-          <li>Ergebnis: deploybarer, wartbarer Code</li>
-        </ul>
-      </div>
-      <div class="modal__block">
-        <h4>Mechanik</h4>
-        <ul class="modal__list">
-          <li>Klare Anforderungsdefinition</li>
-          <li>Modularer Aufbau</li>
-          <li>Kontinuierliches Testing</li>
-          <li>Strukturierte Prompts statt Trial & Error</li>
-        </ul>
-      </div>
-      <div class="modal__block modal__block--result">
-        <h4>Ergebnis</h4>
-        <ul class="modal__list">
-          <li><strong>Software in Tagen</strong> statt Monaten</li>
-          <li><strong>Vollständige Kontrolle</strong> ohne Tech-Team</li>
-          <li>Direkt iterierbar ohne Abhängigkeiten</li>
-          <li>Niedrigere Entwicklungskosten</li>
-        </ul>
-      </div>
-    </div>
-    <div class="modal__example">
-      <div class="modal__example-label">Skalierbar</div>
-      <p>Gleiche Methodik für neue Features und Tools</p>
-      <p>Mehrere Tools und Produkte parallel entwickelbar</p>
-    </div>
-    <div class="modal__ideal">
-      <div class="modal__example-label">Ideal für</div>
-      <p>Founder und Unternehmen ohne Entwickler-Abhängigkeit.</p>
-    </div>
-    <div class="modal__example">
-      <div class="modal__example-label">Live Demo</div>
-      <h4 style="margin:0 0 0.5rem;font-size:0.95rem;font-weight:700;color:var(--text);">Beispiel: Reale Projekte - gebaut per Vibecoding</h4>
-      <p>Beide Projekte wurden ohne klassisches Entwicklerteam umgesetzt - vollständig durch strukturiertes KI-Prompting.</p>
-      <ul class="modal__list" style="margin:0.5rem 0 1.25rem;">
-        <li>Diese Webseite - vollständig per Vibecoding gebaut</li>
-        <li>Sidequest - Habit-Tracker Gamification App für Android</li>
-      </ul>
-      <p style="font-size:0.82rem;color:var(--text-3);margin:0 0 0.5rem;font-family:var(--font-mono);letter-spacing:0.05em;">EIN KONKRETES BEISPIEL</p>
-      <p style="font-size:0.9rem;color:var(--text);font-weight:600;margin:0 0 0.35rem;">Eine lokale Website für Hagen - entwickelt in unter 48 Stunden.</p>
-      <p style="font-size:0.85rem;color:var(--text-2);margin:0 0 0.75rem;">Klare Struktur, mobile-first, konsequent auf Anfragen optimiert.</p>
-      <p style="font-size:0.82rem;color:var(--text-3);margin:0 0 0.2rem;">Erste Rankings innerhalb weniger Tage.<br>Top-Positionen für relevante Suchbegriffe.</p>
-      <a href="https://webseite-hagen.de" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:0.75rem;font-size:0.85rem;color:var(--accent);font-weight:600;text-decoration:none;">webseite-hagen.de ansehen →</a>
-    </div>
-    <button class="btn btn--primary" data-open-contact="Vibecoding Projekt starten">Produkt in Tagen live bringen →</button>
-  </div>
-
-  <!-- CONTACT MODAL -->
-  <div class="modal-overlay" id="contactModal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
-    <div class="modal">
-      <button class="modal__close" id="contactModalClose" aria-label="Schließen">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
-      <div class="modal__body contact-modal__body">
-        <div style="text-align:center;">
-          <div class="modal__label label label--accent" style="display:inline-block;margin-bottom:0.5rem;">Kontakt</div>
-          <h3 id="contactModalTitle" style="font-size:1.3rem;font-weight:800;">Anfrage</h3>
-        </div>
-
-        <div class="contact-success" id="contactSuccess" style="display:none;">
-          <p><strong>Nachricht gesendet.</strong><br>Ich melde mich so schnell wie möglich bei dir.</p>
-        </div>
-
-        <form id="contactForm" novalidate>
-          <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none">
-          <input type="hidden" name="subject" id="contactSubject">
-
-          <div class="cfield" id="field-name">
-            <input type="text" id="contactName" name="name" placeholder="Name" required autocomplete="name"
-              style="background:#141414!important;color:#E8E8E8!important;width:100%;display:block;">
-            <span class="cfield__error" style="display:none">Bitte gib deinen Namen ein.</span>
-          </div>
-
-          <div class="cfield" id="field-email">
-            <input type="email" id="contactEmail" name="email" placeholder="E-Mail" required autocomplete="email"
-              style="background:#141414!important;color:#E8E8E8!important;width:100%;display:block;">
-            <span class="cfield__error" style="display:none">Bitte gib eine gültige E-Mail-Adresse ein.</span>
-          </div>
-
-          <div class="cfield" id="field-message">
-            <textarea id="contactMessage" name="message" rows="4" placeholder="Nachricht" required
-              style="background:#141414!important;color:#E8E8E8!important;width:100%;display:block;"></textarea>
-            <span class="cfield__error" style="display:none">Bitte schreib eine Nachricht.</span>
-          </div>
-
-          <div class="cfield-check" id="field-datenschutz">
-            <input type="checkbox" id="contactDatenschutz" required>
-            <label for="contactDatenschutz">Ich stimme der Verarbeitung meiner Daten zu. <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a></label>
-          </div>
-
-          <div class="cform-error" id="contactFormError" role="alert" style="display:none"></div>
-
-          <button type="submit" class="btn btn--primary" id="contactSubmit" style="width:100%;margin-top:0.25rem;">Nachricht senden</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
   <script>
-    (function () {
-      var modal      = document.getElementById('contactModal');
-      var closeBtn   = document.getElementById('contactModalClose');
-      var titleEl    = document.getElementById('contactModalTitle');
-      var subjectEl  = document.getElementById('contactSubject');
-      var form       = document.getElementById('contactForm');
-      var submitBtn  = document.getElementById('contactSubmit');
-      var formError  = document.getElementById('contactFormError');
-      var formSuccess= document.getElementById('contactSuccess');
-      var EMAIL_RE   = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    document.addEventListener('DOMContentLoaded', function () {
+      lucide.createIcons();
 
-      function openContactModal(subject) {
-        titleEl.textContent = subject;
-        subjectEl.value = subject;
-        modal.style.display = 'flex';
-        requestAnimationFrame(function () { modal.classList.add('open'); });
-        document.body.style.overflow = 'hidden';
-      }
+      // FAQ Accordion
+      document.querySelectorAll('.accordion-trigger').forEach(function (trigger) {
+        trigger.addEventListener('click', function () {
+          var item = this.closest('.accordion-item');
+          var content = item.querySelector('.accordion-content');
+          var chevron = this.querySelector('.accordion-chevron');
+          var isOpen = content.classList.contains('open');
 
-      function closeContactModal() {
-        modal.classList.remove('open');
-        modal.addEventListener('transitionend', function () {
-          modal.style.display = 'none';
-        }, { once: true });
-        document.body.style.overflow = '';
-      }
+          document.querySelectorAll('.accordion-content').forEach(function (c) { c.classList.remove('open'); });
+          document.querySelectorAll('.accordion-chevron').forEach(function (c) { c.classList.remove('rotated'); });
 
-      document.addEventListener('click', function (e) {
-        var btn = e.target.closest('[data-open-contact]');
-        if (btn) { e.preventDefault(); openContactModal(btn.dataset.openContact); }
-      });
-
-      closeBtn.addEventListener('click', closeContactModal);
-      modal.addEventListener('click', function (e) { if (e.target === modal) closeContactModal(); });
-      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('open')) closeContactModal(); });
-
-      function setFieldError(id, show) {
-        var el = document.getElementById(id);
-        if (!el) return;
-        var wrap = el.closest('.cfield');
-        if (!wrap) return;
-        wrap.classList[show ? 'add' : 'remove']('has-error');
-        var err = wrap.querySelector('.cfield__error');
-        if (err) err.style.display = show ? 'block' : 'none';
-      }
-
-      function validate(name, email, message) {
-        var ok = true;
-        var check = document.getElementById('contactDatenschutz');
-        setFieldError('contactName',    !name);    if (!name) ok = false;
-        setFieldError('contactEmail',   !email || !EMAIL_RE.test(email)); if (!email || !EMAIL_RE.test(email)) ok = false;
-        setFieldError('contactMessage', !message); if (!message) ok = false;
-        if (check && !check.checked) {
-          check.closest('.cfield-check').classList.add('has-error');
-          ok = false;
-        } else if (check) {
-          check.closest('.cfield-check').classList.remove('has-error');
-        }
-        return ok;
-      }
-
-      function setLoading(on) {
-        submitBtn.disabled = on;
-        submitBtn.textContent = on ? 'Wird gesendet\u2026' : 'Nachricht senden';
-      }
-
-      ['contactName', 'contactEmail', 'contactMessage'].forEach(function (id) {
-        var el = document.getElementById(id);
-        if (!el) return;
-        el.addEventListener('blur', function () {
-          var v = el.value.trim();
-          if (id === 'contactName')    setFieldError(id, !v);
-          if (id === 'contactEmail')   setFieldError(id, !v || !EMAIL_RE.test(v));
-          if (id === 'contactMessage') setFieldError(id, !v);
+          if (!isOpen) {
+            content.classList.add('open');
+            chevron.classList.add('rotated');
+          }
         });
       });
 
-      form.addEventListener('submit', function (e) {
+      // Contact form
+      document.getElementById('auditForm').addEventListener('submit', async function (e) {
         e.preventDefault();
-        formError.style.display = 'none';
-        var name    = document.getElementById('contactName').value.trim();
-        var email   = document.getElementById('contactEmail').value.trim();
-        var message = document.getElementById('contactMessage').value.trim();
-        var subject = subjectEl.value;
-        var website = form.querySelector('[name="website"]').value;
-        var fullMessage = (subject ? 'CTA: ' + subject + '\n\n' : '') + message;
+        var btn = document.getElementById('auditSubmit');
+        var msg = document.getElementById('auditMsg');
+        var data = new FormData(this);
 
-        if (!validate(name, email, message)) {
-          var first = form.querySelector('.cfield.has-error input, .cfield.has-error textarea');
-          if (first) first.focus();
-          return;
-        }
+        btn.disabled = true;
+        btn.textContent = 'Wird gesendet...';
 
-        setLoading(true);
-        fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: name, email: email, message: fullMessage, subject: subject, website: website }),
-        })
-          .then(function (res) { return res.json().then(function (d) { return { ok: res.ok, d: d }; }); })
-          .then(function (r) {
-            setLoading(false);
-            if (r.d && r.d.success) {
-              form.style.display = 'none';
-              formSuccess.style.display = 'block';
-            } else {
-              formError.textContent = (r.d && r.d.error) || 'Fehler beim Senden. Bitte versuche es erneut.';
-              formError.style.display = 'block';
-            }
-          })
-          .catch(function () {
-            setLoading(false);
-            formError.textContent = 'Netzwerkfehler. Bitte pr\u00fcfe deine Verbindung.';
-            formError.style.display = 'block';
+        try {
+          var res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: data.get('name'),
+              email: data.get('email'),
+              message: 'Audit-Anfrage\n\nFlaschenhals: ' + data.get('message'),
+              subject: 'Enterprise Audit-Anfrage'
+            })
           });
+
+          if (res.ok) {
+            msg.textContent = 'Danke. Wir melden uns innerhalb von 24 Stunden.';
+            msg.className = 'text-sm text-center text-green-400';
+            this.reset();
+          } else {
+            throw new Error();
+          }
+        } catch (_) {
+          msg.textContent = 'Fehler beim Senden. Bitte versuchen Sie es erneut.';
+          msg.className = 'text-sm text-center text-red-400';
+        } finally {
+          msg.classList.remove('hidden');
+          btn.disabled = false;
+          btn.innerHTML = 'Audit-Termin bestätigen <span style="display:inline-flex;align-items:center;margin-left:0.5rem;"><i data-lucide="arrow-right" class="w-4 h-4"></i></span>';
+          lucide.createIcons();
+        }
       });
-    })();
+    });
   </script>
+
 </body>
 </html>
