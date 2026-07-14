@@ -1,4 +1,10 @@
+# log1k.de — offener Crawler-Zugang (inkl. Such- und KI-Crawler)
 User-agent: *
 Allow: /
 
 Sitemap: https://log1k.de/sitemap.xml
+
+# Hinweis: Falls Crawler nach dem Deploy weiterhin blockiert werden, liegt das
+# NICHT an dieser Datei, sondern an der Cloudflare-Einstellung
+# "Block AI Scrapers and Crawlers" (Dashboard -> Security -> Bots).
+# Das laesst sich nur im Cloudflare-Dashboard deaktivieren, nicht im Code.
