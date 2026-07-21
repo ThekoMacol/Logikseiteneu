@@ -7,17 +7,7 @@
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://log1k.de/datenschutz">
   <link rel="stylesheet" href="/fonts/fonts.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { brand: '#6366f1', 'brand-dark': '#4f46e5' },
-          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="/tw.css">
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
     .nav-blur {
@@ -99,7 +89,7 @@
         <p class="text-slate-400 leading-relaxed text-sm mb-4">
           &Uuml;ber das Formular auf dieser Website k&ouml;nnen Sie eine kostenlose Prozessanalyse anfragen. Dabei werden folgende Daten erhoben:
         </p>
-        <p class="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-2">Erhobene Daten</p>
+        <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">Erhobene Daten</p>
         <ul class="list-disc list-inside text-slate-400 text-sm space-y-1 mb-4 pl-1">
           <li>Name</li>
           <li>Gesch&auml;fts-E-Mail-Adresse</li>
@@ -136,10 +126,12 @@
 
       <!-- 6 -->
       <section class="mb-8">
-        <h2 class="text-white font-bold text-base mb-3">6. Eingebundene Drittinhalte (CDN)</h2>
+        <h2 class="text-white font-bold text-base mb-3">6. Eingebundener LinkedIn-Beitrag</h2>
+        <p class="text-slate-400 leading-relaxed text-sm mb-3">
+          Sämtliche Gestaltungselemente (Stylesheets, Icons, Schriftarten) werden lokal vom Server ausgeliefert; es findet kein Nachladen &uuml;ber externe Content-Delivery-Netzwerke statt.
+        </p>
         <p class="text-slate-400 leading-relaxed text-sm">
-          Zur Darstellung der Website werden ein Stylesheet-Framework (Tailwind CSS, geladen &uuml;ber <span class="text-white">cdn.tailwindcss.com</span>) sowie eine Icon-Bibliothek (Lucide, geladen &uuml;ber <span class="text-white">unpkg.com</span>) von externen Content-Delivery-Netzwerken nachgeladen. Beim Laden dieser Ressourcen wird technisch bedingt Ihre IP-Adresse an die jeweiligen Anbieter (US-Server) &uuml;bermittelt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer performanten Darstellung). Es werden hierbei keine Cookies gesetzt und kein Nutzerverhalten ausgewertet.
-          <!-- TODO: Falls Tailwind/Lucide kuenftig lokal gebundlet werden, diesen Abschnitt entfernen. -->
+          Auf der Startseite kann der jeweils neueste LinkedIn-Beitrag als eingebetteter Inhalt angezeigt werden. Dieser wird &uuml;ber einen <span class="text-white">iframe</span> von den Servern der LinkedIn Ireland Unlimited Company (Wilton Plaza, Wilton Place, Dublin 2, Irland) geladen. Erst beim Laden des eingebetteten Beitrags wird Ihre IP-Adresse an LinkedIn &uuml;bermittelt; LinkedIn kann dabei eigene Cookies setzen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Darstellung aktueller fachlicher Beitr&auml;ge). Weitere Informationen: <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-brand hover:underline">linkedin.com/legal/privacy-policy</a>
         </p>
       </section>
 
@@ -204,11 +196,11 @@
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
         <p class="text-white font-semibold">Kornelius E. Thelen</p>
-        <p class="text-slate-500 text-sm">log1k.de &middot; Workflow Automation f&uuml;r wachsende Unternehmen</p>
+        <p class="text-slate-400 text-sm">log1k.de &middot; Workflow Automation f&uuml;r wachsende Unternehmen</p>
       </div>
       <div class="flex items-center gap-6">
-        <a href="/impressum" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Impressum</a>
-        <a href="/datenschutz" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Datenschutz</a>
+        <a href="/impressum" class="text-slate-400 hover:text-slate-300 text-sm transition-colors">Impressum</a>
+        <a href="/datenschutz" class="text-slate-400 hover:text-slate-300 text-sm transition-colors">Datenschutz</a>
       </div>
     </div>
   </footer>

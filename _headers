@@ -5,3 +5,17 @@
 /sitemap.xml
   Content-Type: application/xml; charset=utf-8
   Cache-Control: public, max-age=86400
+
+# Self-hosted styling — long cache
+/tw.css
+  Cache-Control: public, max-age=31536000
+
+# Self-hosted fonts (content-hashed, safe to cache forever)
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images
+/og-image.jpg
+  Cache-Control: public, max-age=2592000
+/assets/*
+  Cache-Control: public, max-age=2592000

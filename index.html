@@ -16,23 +16,44 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/jpeg">
   <link rel="stylesheet" href="/fonts/fonts.css">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/tw.css">
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: '#6366f1',
-            'brand-dark': '#4f46e5',
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          }
-        }
+    // Minimal self-hosted icon renderer (replaces external Lucide CDN).
+    // Only the icons actually used on this page are included.
+    (function () {
+      var ICONS = {
+        'arrow-right': '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+        'trending-up': '<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>',
+        'file-check-2': '<path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m3 15 2 2 4-4"/>',
+        'shield-check': '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
+        'star': '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+        'check': '<path d="M20 6 9 17l-5-5"/>',
+        'chevron-down': '<path d="m6 9 6 6 6-6"/>',
+        'clock': '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+        'alert-triangle': '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/>',
+        'x': '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+        'zap-off': '<polyline points="12.41 6.75 13 2 10.57 4.92"/><polyline points="18.57 12.91 21 10 15.66 10"/><polyline points="8 8 3 14 12 14 11 22 16 16"/><line x1="2" x2="22" y1="2" y2="22"/>'
+      };
+      function render(root) {
+        (root || document).querySelectorAll('[data-lucide]').forEach(function (el) {
+          var name = el.getAttribute('data-lucide');
+          if (!ICONS[name]) return;
+          var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+          svg.setAttribute('viewBox', '0 0 24 24');
+          svg.setAttribute('fill', 'none');
+          svg.setAttribute('stroke', 'currentColor');
+          svg.setAttribute('stroke-width', '2');
+          svg.setAttribute('stroke-linecap', 'round');
+          svg.setAttribute('stroke-linejoin', 'round');
+          svg.setAttribute('aria-hidden', 'true');
+          if (el.getAttribute('class')) svg.setAttribute('class', el.getAttribute('class'));
+          svg.innerHTML = ICONS[name];
+          el.parentNode.replaceChild(svg, el);
+        });
       }
-    }
+      window.lucide = { createIcons: function () { render(document); } };
+    })();
   </script>
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
     .nav-blur {
@@ -59,7 +80,7 @@
     .ts-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;border:1px solid #27272a;}
     .ts-name{display:flex;align-items:center;gap:6px;font-weight:600;color:#fafafa;font-size:16px;}
     .ts-verified{flex-shrink:0;}
-    .ts-role{color:#71717a;font-size:13px;margin-top:2px;}
+    .ts-role{color:#a1a1aa;font-size:13px;margin-top:2px;}
     .ts-stars{margin-left:auto;color:#fbbf24;letter-spacing:2px;font-size:15px;}
     .ts-quote{color:#d4d4d8;font-size:15.5px;line-height:1.75;margin:0;}
     /* Desktop: 550 x 1150 iframe scaled 0.8 -> 440 x 920 footprint, clipped, centered */
@@ -107,6 +128,7 @@
     </div>
   </header>
 
+  <main>
   <!-- HERO -->
   <section class="relative pt-36 pb-24 px-6 overflow-hidden">
     <div class="hero-glow"></div>
@@ -125,7 +147,7 @@
         Kostenlose Prozessanalyse sichern
         <i data-lucide="arrow-right" class="w-4 h-4"></i>
       </a>
-      <p class="text-slate-500 text-sm mt-4">15 Minuten. Kein Verkaufsdruck. Nur konkrete Automatisierungspotenziale.</p>
+      <p class="text-slate-400 text-sm mt-4">15 Minuten. Kein Verkaufsdruck. Nur konkrete Automatisierungspotenziale.</p>
     </div>
   </section>
 
@@ -271,7 +293,7 @@
           <p class="text-slate-400 text-sm">Workflow-Verf&uuml;gbarkeit durch professionelles Monitoring und Fehlerbehandlung.</p>
         </div>
       </div>
-      <p class="text-center text-slate-500 text-sm mt-6">Kennzahlen aus realem Kundenprojekt (CEO-Dashboard, 2026).</p>
+      <p class="text-center text-slate-400 text-sm mt-6">Kennzahlen aus realem Kundenprojekt (CEO-Dashboard, 2026).</p>
     </div>
   </section>
 
@@ -318,7 +340,7 @@
         <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-8 flex flex-col">
           <div class="mb-6">
             <h3 class="text-white font-bold text-xl mb-1">Automation Setup</h3>
-            <p class="text-slate-500 text-sm">Einmaliges Projekt &middot; Schl&uuml;sselfertig</p>
+            <p class="text-slate-400 text-sm">Einmaliges Projekt &middot; Schl&uuml;sselfertig</p>
           </div>
           <ul class="space-y-3 mb-8 flex-1">
             <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Analyse bestehender Prozesse</li>
@@ -340,7 +362,7 @@
           </div>
           <div class="mb-6 mt-2">
             <h3 class="text-white font-bold text-xl mb-1">Managed Architecture Retainer</h3>
-            <p class="text-slate-500 text-sm">Laufende Betreuung &middot; Dedizierte Kapazit&auml;t</p>
+            <p class="text-slate-400 text-sm">Laufende Betreuung &middot; Dedizierte Kapazit&auml;t</p>
           </div>
           <ul class="space-y-3 mb-8 flex-1">
             <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Kontinuierliche Systemoptimierung</li>
@@ -438,7 +460,7 @@
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
           <p id="auditMsg" class="text-sm text-center hidden"></p>
-          <p class="text-slate-500 text-xs text-center">Kein Spam. Kein Verkaufsdruck. Nur klare Handlungsempfehlungen.</p>
+          <p class="text-slate-400 text-xs text-center">Kein Spam. Kein Verkaufsdruck. Nur klare Handlungsempfehlungen.</p>
         </form>
       </div>
     </div>
@@ -455,16 +477,18 @@
     </div>
   </section>
 
+  </main>
+
   <!-- FOOTER -->
   <footer class="border-t border-slate-800 px-6 py-8">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
         <p class="text-white font-semibold">Kornelius E. Thelen</p>
-        <p class="text-slate-500 text-sm">log1k.de &middot; Workflow Automation f&uuml;r wachsende Unternehmen</p>
+        <p class="text-slate-400 text-sm">log1k.de &middot; Workflow Automation f&uuml;r wachsende Unternehmen</p>
       </div>
       <div class="flex items-center gap-6">
-        <a href="/impressum" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Impressum</a>
-        <a href="/datenschutz" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Datenschutz</a>
+        <a href="/impressum" class="text-slate-400 hover:text-slate-300 text-sm transition-colors">Impressum</a>
+        <a href="/datenschutz" class="text-slate-400 hover:text-slate-300 text-sm transition-colors">Datenschutz</a>
       </div>
     </div>
   </footer>
