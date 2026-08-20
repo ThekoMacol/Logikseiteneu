@@ -6,9 +6,10 @@
   Content-Type: application/xml; charset=utf-8
   Cache-Control: public, max-age=86400
 
-# Self-hosted styling — long cache
+# Self-hosted styling — short cache so CSS changes propagate quickly.
+# Bust immediately via the ?v= query on the <link> in the HTML when needed.
 /tw.css
-  Cache-Control: public, max-age=31536000
+  Cache-Control: public, max-age=3600
 
 # Self-hosted fonts (content-hashed, safe to cache forever)
 /fonts/*
