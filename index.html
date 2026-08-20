@@ -32,7 +32,9 @@
         'clock': '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
         'alert-triangle': '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/>',
         'x': '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
-        'zap-off': '<polyline points="12.41 6.75 13 2 10.57 4.92"/><polyline points="18.57 12.91 21 10 15.66 10"/><polyline points="8 8 3 14 12 14 11 22 16 16"/><line x1="2" x2="22" y1="2" y2="22"/>'
+        'zap-off': '<polyline points="12.41 6.75 13 2 10.57 4.92"/><polyline points="18.57 12.91 21 10 15.66 10"/><polyline points="8 8 3 14 12 14 11 22 16 16"/><line x1="2" x2="22" y1="2" y2="22"/>',
+        'target': '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
+        'calendar': '<path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>'
       };
       function render(root) {
         (root || document).querySelectorAll('[data-lucide]').forEach(function (el) {
@@ -140,8 +142,11 @@
         Gewinnen Sie 5+ Stunden<br>pro Woche zur&uuml;ck.
         <span class="block text-brand mt-2">Ohne neue Mitarbeiter einzustellen.</span>
       </h1>
-      <p class="text-slate-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-10">
+      <p class="text-slate-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-5">
         Wir automatisieren Ihre Vertriebs-, Verwaltungs- und Finanzprozesse, damit Leads schneller bearbeitet, Rechnungen automatisch erstellt und manuelle Aufgaben vollst&auml;ndig eliminiert werden.
+      </p>
+      <p class="text-slate-400 text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-10">
+        Und mit <span class="text-white font-semibold">MIDAS</span> liefern wir die Zahlen dazu &ndash; von den Werbekosten bis zum Rohertrag je Kanal, damit Sie Ihr Marketingbudget steuern k&ouml;nnen.
       </p>
       <a href="#audit" class="inline-flex items-center gap-2.5 bg-brand hover:bg-brand-dark text-white font-semibold px-9 py-4 rounded-md transition-colors duration-200 text-base shadow-lg shadow-brand/25">
         Kostenlose Prozessanalyse sichern
@@ -297,6 +302,77 @@
     </div>
   </section>
 
+  <!-- MIDAS -->
+  <section id="midas" class="py-20 px-6 border-t border-slate-800/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Produkt</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">MIDAS &mdash; was ein Kunde wirklich kostet</h2>
+        <p class="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto">
+          Meta Ads zeigt Klicks. Die Buchhaltung zeigt Umsatz. Dazwischen fehlt die Verbindung. MIDAS stellt sie her.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-14">
+        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
+          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="target" class="w-5 h-5 text-brand"></i>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Kundengewinnungskosten je Kampagne</h3>
+          <p class="text-slate-400 leading-relaxed text-sm">
+            Nicht je Klick, sondern je Abschluss. Sie sehen f&uuml;r jede Kampagne, was ein tats&auml;chlich gewonnener Kunde gekostet hat.
+          </p>
+        </div>
+        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
+          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="trending-up" class="w-5 h-5 text-brand"></i>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Rohertrag nach Werbekosten</h3>
+          <p class="text-slate-400 leading-relaxed text-sm">
+            Welcher Kanal tr&auml;gt, welcher kostet. MIDAS zieht die Werbeausgaben vom Umsatz ab und zeigt den Beitrag jedes Kanals.
+          </p>
+        </div>
+        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
+          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="calendar" class="w-5 h-5 text-brand"></i>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Zuordnung auf das Lead-Datum</h3>
+          <p class="text-slate-400 leading-relaxed text-sm">
+            Kosten und Ertrag landen in derselben Periode. Die Zeitspanne zwischen Anfrage und Abschluss wird je Kunde aus den Daten ermittelt.
+          </p>
+        </div>
+        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
+          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="shield-check" class="w-5 h-5 text-brand"></i>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Daten in der EU</h3>
+          <p class="text-slate-400 leading-relaxed text-sm">
+            Datenbank in Irland, Server in Deutschland. Es findet keine Auswertung au&szlig;erhalb der EU statt.
+          </p>
+        </div>
+      </div>
+
+      <!-- DASHBOARD-SCREENSHOT: Datei nach assets/images/midas-dashboard.png legen (16:9, empfohlen 2400x1350). -->
+      <figure class="max-w-5xl mx-auto">
+        <div class="rounded-xl border border-slate-800 bg-slate-900/40 overflow-hidden" style="aspect-ratio: 16 / 9;">
+          <!-- Platzhalter, bis das echte Bildschirmfoto geliefert wird -->
+          <div class="w-full h-full flex flex-col items-center justify-center text-center px-6">
+            <div class="w-12 h-12 bg-brand/10 rounded-lg flex items-center justify-center mb-4">
+              <i data-lucide="trending-up" class="w-6 h-6 text-brand"></i>
+            </div>
+            <p class="text-slate-300 font-semibold">MIDAS Dashboard</p>
+            <p class="text-slate-400 text-sm mt-1">Bildschirmfoto folgt</p>
+          </div>
+          <!--
+          Echtes Bild ersetzt den Platzhalter-Block oben durch:
+          <img src="assets/images/midas-dashboard.png" alt="MIDAS Dashboard: Kundengewinnungskosten und Rohertrag je Kampagne" class="w-full h-full object-cover" loading="lazy" width="2400" height="1350">
+          -->
+        </div>
+        <figcaption class="text-center text-slate-400 text-sm mt-4">Live unter <a href="https://midas.log1k.de" class="text-brand hover:underline">midas.log1k.de</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
   <!-- TESTIMONIAL -->
   <section class="py-20 px-6 border-t border-slate-800/50">
     <div class="max-w-4xl mx-auto">
@@ -336,7 +412,7 @@
         <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Partnerschaftsmodelle</p>
         <h2 class="text-3xl md:text-4xl font-bold">Die richtige L&ouml;sung f&uuml;r Ihre Wachstumsphase</h2>
       </div>
-      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-8 flex flex-col">
           <div class="mb-6">
             <h3 class="text-white font-bold text-xl mb-1">Automation Setup</h3>
@@ -376,6 +452,27 @@
             F&uuml;r Partnerschaft bewerben
           </a>
         </div>
+        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-8 flex flex-col">
+          <div class="mb-6">
+            <h3 class="text-white font-bold text-xl mb-1">MIDAS</h3>
+            <p class="text-slate-400 text-sm">Abonnement &middot; Marketing- &amp; Umsatzkennzahlen</p>
+          </div>
+          <div class="mb-6 pb-6 border-b border-slate-800">
+            <p class="text-white"><span class="text-3xl font-extrabold tracking-tight">1.800 &euro;</span> <span class="text-slate-400 text-sm">einmalig</span></p>
+            <p class="text-white mt-1"><span class="text-3xl font-extrabold tracking-tight">290 &euro;</span> <span class="text-slate-400 text-sm">/ Monat</span></p>
+          </div>
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Einrichtung &amp; Anbindung Ihrer Datenquellen</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Kundengewinnungskosten &amp; Rohertrag je Kampagne</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Laufender Betrieb &amp; Datenaktualisierung</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Daten in der EU (Irland / Deutschland)</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>12 Monate Mindestlaufzeit</li>
+          </ul>
+          <p class="text-slate-400 text-xs mb-4">Keine Umsatzsteuer nach &sect; 19 UStG.</p>
+          <a href="https://midas.log1k.de" class="block text-center bg-slate-800 hover:bg-slate-700 text-white font-semibold px-6 py-3.5 rounded-md transition-colors duration-200 text-sm">
+            MIDAS ansehen
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -403,7 +500,7 @@
             <i data-lucide="chevron-down" class="accordion-chevron w-5 h-5 text-slate-400 shrink-0"></i>
           </button>
           <div class="accordion-content">
-            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">Wir arbeiten ausschlie&szlig;lich mit professionellen Zugriffsrechten, verschl&uuml;sselten Verbindungen und dokumentierten Prozessen.</p>
+            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">Die Datenbank steht in Irland, die Server bei einem deutschen Anbieter. Die Mandantentrennung erfolgt auf Datenbankebene, sodass Ihre Daten von denen anderer Kunden getrennt sind. Einen Auftragsverarbeitungsvertrag nach Art. 28 DSGVO stellen wir Ihnen zur Verf&uuml;gung.</p>
           </div>
         </div>
         <div class="accordion-item border border-slate-800 rounded-xl overflow-hidden">
