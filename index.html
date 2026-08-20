@@ -328,21 +328,21 @@
         </div>
       </div>
 
-      <!-- DASHBOARD-SCREENSHOT: Datei nach assets/images/midas-dashboard.png legen (16:9, empfohlen 2400x1350). -->
+      <!-- DASHBOARD-SCREENSHOT: Datei unter assets/images/midas-dashboard.png ablegen.
+           Solange die Datei fehlt, blendet onerror das Bild aus und zeigt den Platzhalter (#midas-ph). -->
       <figure class="max-w-5xl mx-auto">
-        <div class="rounded-xl border border-slate-800 bg-slate-900/40 overflow-hidden" style="aspect-ratio: 16 / 9;">
-          <!-- Platzhalter, bis das echte Bildschirmfoto geliefert wird -->
-          <div class="w-full h-full flex flex-col items-center justify-center text-center px-6">
-            <div class="w-12 h-12 bg-brand/10 rounded-lg flex items-center justify-center mb-4">
-              <i data-lucide="trending-up" class="w-6 h-6 text-brand"></i>
-            </div>
-            <p class="text-slate-300 font-semibold">MIDAS Dashboard</p>
-            <p class="text-slate-400 text-sm mt-1">Bildschirmfoto folgt</p>
+        <img src="assets/images/midas-dashboard.png"
+             alt="MIDAS Dashboard: Rohertrag nach Werbekosten, CAC und Kampagnenleistung je Kanal an einer zentralen Stelle"
+             width="1751" height="1017"
+             class="w-full h-auto block rounded-xl border border-slate-800"
+             loading="lazy" decoding="async"
+             onerror="this.style.display='none';var p=document.getElementById('midas-ph');if(p){p.style.display='flex';}">
+        <div id="midas-ph" class="rounded-xl border border-slate-800 bg-slate-900/40 flex-col items-center justify-center text-center px-6" style="display:none;aspect-ratio:16/9;">
+          <div class="w-12 h-12 bg-brand/10 rounded-lg flex items-center justify-center mb-4">
+            <i data-lucide="trending-up" class="w-6 h-6 text-brand"></i>
           </div>
-          <!--
-          Echtes Bild ersetzt den Platzhalter-Block oben durch:
-          <img src="assets/images/midas-dashboard.png" alt="MIDAS Dashboard: Kundengewinnungskosten und Rohertrag je Kampagne" class="w-full h-full object-cover" loading="lazy" width="2400" height="1350">
-          -->
+          <p class="text-slate-300 font-semibold">MIDAS Dashboard</p>
+          <p class="text-slate-400 text-sm mt-1">Bildschirmfoto folgt</p>
         </div>
         <figcaption class="text-center text-slate-400 text-sm mt-4">Live unter <a href="https://midas.log1k.de" class="text-brand hover:underline">midas.log1k.de</a></figcaption>
       </figure>
