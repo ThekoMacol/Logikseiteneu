@@ -85,27 +85,6 @@
     .ts-role{color:#a1a1aa;font-size:13px;margin-top:2px;}
     .ts-stars{margin-left:auto;color:#fbbf24;letter-spacing:2px;font-size:15px;}
     .ts-quote{color:#d4d4d8;font-size:15.5px;line-height:1.75;margin:0;}
-    /* Desktop: 550 x 1150 iframe scaled 0.8 -> 440 x 920 footprint, clipped, centered */
-    #linkedin-latest{width:440px;height:920px;max-width:100%;margin:0 auto;overflow:hidden;}
-    #linkedin-latest iframe{
-      display:block;
-      width:550px;
-      height:1150px;
-      border:1px solid #27272a;
-      border-radius:12px;
-      background:#0e0e11;
-      transform:scale(0.8);
-      transform-origin:top left;
-    }
-    /* Mobile: no scaling, full width, natural height, fully legible */
-    @media (max-width:600px){
-      #linkedin-latest{width:100%;height:auto;overflow:visible;}
-      #linkedin-latest iframe{
-        width:100%;
-        height:1150px;
-        transform:none;
-      }
-    }
     .hero-glow {
       position: absolute;
       width: 700px;
@@ -469,8 +448,8 @@
             <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>12 Monate Mindestlaufzeit</li>
           </ul>
           <p class="text-slate-400 text-xs mb-4">Keine Umsatzsteuer nach &sect; 19 UStG.</p>
-          <a href="https://midas.log1k.de" class="block text-center bg-slate-800 hover:bg-slate-700 text-white font-semibold px-6 py-3.5 rounded-md transition-colors duration-200 text-sm">
-            MIDAS ansehen
+          <a href="#audit" class="block text-center bg-slate-800 hover:bg-slate-700 text-white font-semibold px-6 py-3.5 rounded-md transition-colors duration-200 text-sm">
+            Gespr&auml;ch vereinbaren
           </a>
         </div>
       </div>
@@ -563,17 +542,6 @@
     </div>
   </section>
 
-  <!-- LINKEDIN LATEST -->
-  <section id="linkedin-section" class="py-20 px-6 border-t border-slate-800/50" style="display:none;">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-14">
-        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Aktuell auf LinkedIn</p>
-        <h2 class="text-3xl md:text-4xl font-bold">Neueste Einblicke &amp; Gedanken</h2>
-      </div>
-      <div id="linkedin-latest" class="mx-auto"></div>
-    </div>
-  </section>
-
   </main>
 
   <!-- FOOTER -->
@@ -605,23 +573,6 @@
           if (!isOpen) { content.classList.add('open'); chevron.classList.add('rotated'); }
         });
       });
-
-      // Latest LinkedIn post — section stays hidden unless a valid post is returned
-      fetch('https://linkedin-posts.kornelius-thelen.workers.dev/latest')
-        .then(function (r) { return r.ok ? r.json() : null; })
-        .then(function (d) {
-          if (!d || !d.urn) return;
-          var container = document.getElementById('linkedin-latest');
-          var iframe = document.createElement('iframe');
-          iframe.src = 'https://www.linkedin.com/embed/feed/update/' + encodeURIComponent(d.urn);
-          iframe.setAttribute('frameborder', '0');
-          iframe.setAttribute('scrolling', 'no');
-          iframe.setAttribute('allowfullscreen', '');
-          iframe.title = 'Aktueller LinkedIn-Post von Kornelius';
-          container.appendChild(iframe);
-          document.getElementById('linkedin-section').style.display = '';
-        })
-        .catch(function () { /* endpoint unreachable — section stays hidden */ });
 
       document.getElementById('auditForm').addEventListener('submit', async function (e) {
         e.preventDefault();
