@@ -16,7 +16,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/jpeg">
   <link rel="stylesheet" href="/fonts/fonts.css">
-  <link rel="stylesheet" href="/tw.css?v=2">
+  <link rel="stylesheet" href="/tw.css?v=3">
   <script>
     // Minimal self-hosted icon renderer (replaces external Lucide CDN).
     // Only the icons actually used on this page are included.
@@ -31,7 +31,10 @@
         'chevron-down': '<path d="m6 9 6 6 6-6"/>',
         'x': '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
         'target': '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
-        'calendar': '<path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>'
+        'users': '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+        'file-text': '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/>',
+        'mic': '<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/>',
+        'wrench': '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>'
       };
       function render(root) {
         (root || document).querySelectorAll('[data-lucide]').forEach(function (el) {
@@ -284,39 +287,57 @@
   <section id="midas" class="py-20 px-6 border-t border-slate-800/50">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
-        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Auswertung</p>
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">MIDAS: was ein Kunde wirklich kostet</h2>
+        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Plattform</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">MIDAS: von der Anzeige bis zur Rechnung</h2>
         <p class="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto">
-          Wenn die Daten erst einmal sauber flie&szlig;en, l&auml;sst sich damit rechnen. Meta Ads zeigt Klicks, die Buchhaltung zeigt Umsatz. MIDAS verbindet beides und macht aus den automatisierten Datenfl&uuml;ssen eine Auswertung.
+          Aus den automatisierten Datenfl&uuml;ssen wird eine ganze Plattform. MIDAS f&uuml;hrt Kampagnen-Kennzahlen, Leads, Kunden, Angebote und Rechnungen an einer Stelle zusammen. Sie sehen, was ein Kunde wirklich kostet, und steuern den Weg von der Anzeige bis zur bezahlten Rechnung.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-6 mb-14">
-        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
-          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
-            <i data-lucide="target" class="w-5 h-5 text-brand"></i>
-          </div>
-          <h3 class="text-white font-bold text-lg mb-3">Kundengewinnungskosten je Kampagne</h3>
-          <p class="text-slate-400 leading-relaxed text-sm">
-            Nicht je Klick, sondern je Abschluss. Sie sehen f&uuml;r jede Kampagne, was ein tats&auml;chlich gewonnener Kunde gekostet hat.
-          </p>
-        </div>
+      <div class="grid md:grid-cols-3 gap-6 mb-14">
         <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
           <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
             <i data-lucide="trending-up" class="w-5 h-5 text-brand"></i>
           </div>
-          <h3 class="text-white font-bold text-lg mb-3">Rohertrag nach Werbekosten</h3>
+          <h3 class="text-white font-bold text-lg mb-3">Kampagnen-Auswertung</h3>
           <p class="text-slate-400 leading-relaxed text-sm">
-            Welcher Kanal tr&auml;gt, welcher kostet. MIDAS zieht die Werbeausgaben vom Umsatz ab und zeigt den Beitrag jedes Kanals.
+            Kundengewinnungskosten und Rohertrag nach Werbekosten je Kampagne. Sie sehen, welcher Kanal tr&auml;gt und welcher nur kostet.
           </p>
         </div>
         <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
           <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
-            <i data-lucide="calendar" class="w-5 h-5 text-brand"></i>
+            <i data-lucide="users" class="w-5 h-5 text-brand"></i>
           </div>
-          <h3 class="text-white font-bold text-lg mb-3">Zuordnung auf das Lead-Datum</h3>
+          <h3 class="text-white font-bold text-lg mb-3">Leads &amp; Kunden</h3>
           <p class="text-slate-400 leading-relaxed text-sm">
-            Kosten und Ertrag landen in derselben Periode. Die Zeitspanne zwischen Anfrage und Abschluss wird je Kunde aus den Daten ermittelt.
+            Leads mit Temperatur und vollst&auml;ndige Kundenakten an einem Ort. Vom ersten Kontakt bis zum Abschluss, ohne zweites CRM.
+          </p>
+        </div>
+        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
+          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="file-text" class="w-5 h-5 text-brand"></i>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Angebote</h3>
+          <p class="text-slate-400 leading-relaxed text-sm">
+            Angebote direkt aus den Kundendaten erstellen und als PDF versenden. Ein separates Angebots-Tool entf&auml;llt.
+          </p>
+        </div>
+        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
+          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="file-check-2" class="w-5 h-5 text-brand"></i>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Rechnungen</h3>
+          <p class="text-slate-400 leading-relaxed text-sm">
+            Rechnungen mit Positionen und Artikelkatalog, fertig als PDF. Sie entstehen aus dem gewonnenen Deal statt per Abtippen.
+          </p>
+        </div>
+        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
+          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="target" class="w-5 h-5 text-brand"></i>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Richtige Zuordnung</h3>
+          <p class="text-slate-400 leading-relaxed text-sm">
+            Kosten und Ertrag landen in derselben Periode, zugeordnet auf das Lead-Datum. So stimmt der CAC je Kampagne wirklich.
           </p>
         </div>
         <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
@@ -325,7 +346,7 @@
           </div>
           <h3 class="text-white font-bold text-lg mb-3">Daten in der EU</h3>
           <p class="text-slate-400 leading-relaxed text-sm">
-            Datenbank in Irland, Server in Deutschland. Es findet keine Auswertung au&szlig;erhalb der EU statt.
+            Datenbank in Irland, Server in Deutschland. Offline nutzbar, Team-Zugriff je Rolle, keine Auswertung au&szlig;erhalb der EU.
           </p>
         </div>
       </div>
@@ -348,6 +369,66 @@
         </div>
         <figcaption class="text-center text-slate-400 text-sm mt-4">Live unter <a href="https://midas.log1k.de" class="text-brand hover:underline">midas.log1k.de</a></figcaption>
       </figure>
+    </div>
+  </section>
+
+  <!-- OPENDIALOGUE -->
+  <section id="opendialogue" class="py-20 px-6 border-t border-slate-800/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">KI-Agent</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">OpenDialogue: Ihr KI-Assistent, lokal auf Ihrem Rechner</h2>
+        <p class="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto">
+          Ein KI-Agent, der auf Ihrem eigenen Rechner l&auml;uft, nicht in fremden Clouds. Lokale Modelle oder, wenn Sie wollen, ChatGPT und Claude. Steuerbar per Text und Sprache, mit direkter Anbindung an Ihre MIDAS-Zahlen.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
+        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
+          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="shield-check" class="w-5 h-5 text-brand"></i>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Lokal und on-prem</h3>
+          <p class="text-slate-400 leading-relaxed text-sm">
+            Die Modelle laufen lokal &uuml;ber Ollama, Ihre Daten bleiben auf dem Ger&auml;t. Cloud-Modelle wie ChatGPT oder Claude nur, wenn Sie es wollen.
+          </p>
+        </div>
+        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
+          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="mic" class="w-5 h-5 text-brand"></i>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Per Sprache steuerbar</h3>
+          <p class="text-slate-400 leading-relaxed text-sm">
+            Diktieren statt tippen, Antworten werden vorgelesen. Die Spracherkennung l&auml;uft lokal auf Ihrem Rechner.
+          </p>
+        </div>
+        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
+          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="wrench" class="w-5 h-5 text-brand"></i>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Erledigt Aufgaben</h3>
+          <p class="text-slate-400 leading-relaxed text-sm">
+            E-Mail, Telegram, GitHub, Web-Suche, Termine und Warenscan per EAN. Der Agent arbeitet, statt nur zu antworten.
+          </p>
+        </div>
+        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
+          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="trending-up" class="w-5 h-5 text-brand"></i>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Mit MIDAS verbunden</h3>
+          <p class="text-slate-400 leading-relaxed text-sm">
+            Fragen Sie Ihre Gesch&auml;ftszahlen in normaler Sprache. OpenDialogue meldet sich an MIDAS an und liest die Kennzahlen.
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="#audit" class="inline-flex items-center gap-2.5 bg-brand hover:bg-brand-dark text-white font-semibold px-8 py-4 rounded-md transition-colors duration-200 text-base shadow-lg shadow-brand/25">
+          Gespr&auml;ch vereinbaren
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <p class="text-slate-400 text-sm mt-4">On-Premise, auf Anfrage.</p>
+      </div>
     </div>
   </section>
 
