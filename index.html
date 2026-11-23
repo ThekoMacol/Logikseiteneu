@@ -16,7 +16,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/jpeg">
   <link rel="stylesheet" href="/fonts/fonts.css">
-  <link rel="stylesheet" href="/tw.css?v=3">
+  <link rel="stylesheet" href="/tw.css?v=4">
   <script>
     // Minimal self-hosted icon renderer (replaces external Lucide CDN).
     // Only the icons actually used on this page are included.
@@ -57,39 +57,88 @@
     })();
   </script>
   <style>
-    body { font-family: 'Inter', system-ui, sans-serif; }
+    :root { --brand:#6366f1; --brand-2:#818cf8; --brand-dark:#4f46e5; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color:#08080b;
+      background-image:
+        radial-gradient(55rem 50rem at 50% -8%, rgba(99,102,241,0.13), transparent 60%),
+        radial-gradient(45rem 40rem at 100% 10%, rgba(99,102,241,0.06), transparent 55%),
+        radial-gradient(42rem 46rem at 0% 52%, rgba(99,102,241,0.05), transparent 55%);
+      background-attachment: fixed;
+    }
     .nav-blur {
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      background: rgba(9, 9, 11, 0.88);
+      backdrop-filter: blur(16px) saturate(140%);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      background: rgba(8, 8, 11, 0.70);
     }
+
+    /* soft gradient section dividers instead of hard full-width lines */
+    main > section.border-t {
+      border-top: 1px solid transparent;
+      border-image: linear-gradient(to right, transparent, rgba(148,163,184,0.16), transparent) 1;
+    }
+
+    /* feature cards: depth + hover lift */
     .gradient-card {
-      background: linear-gradient(135deg, rgba(99,102,241,0.07) 0%, rgba(99,102,241,0.01) 100%);
-      border: 1px solid rgba(99,102,241,0.18);
+      background: linear-gradient(160deg, rgba(99,102,241,0.09) 0%, rgba(18,18,26,0.35) 60%);
+      border: 1px solid rgba(99,102,241,0.16);
+      transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
     }
-    .gradient-card:hover { border-color: rgba(99,102,241,0.35); }
+    .gradient-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(99,102,241,0.5);
+      box-shadow: 0 18px 50px -18px rgba(99,102,241,0.38);
+    }
+
+    /* accordion */
     .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.32s ease; }
-    .accordion-content.open { max-height: 400px; }
+    .accordion-content.open { max-height: 460px; }
     .accordion-chevron { transition: transform 0.32s ease; }
     .accordion-chevron.rotated { transform: rotate(180deg); }
+    .accordion-item { transition: border-color .2s ease; }
+    .accordion-item:hover { border-color: rgba(99,102,241,0.35); }
+
     input:focus, textarea:focus {
       outline: none;
-      border-color: #6366f1;
-      box-shadow: 0 0 0 2px rgba(99,102,241,0.15);
+      border-color: var(--brand);
+      box-shadow: 0 0 0 2px rgba(99,102,241,0.18);
     }
-    .ts-card{max-width:680px;margin:0 auto;background:#0e0e11;border:1px solid #27272a;border-radius:18px;padding:30px;}
+
+    /* primary CTA: gradient + glow */
+    .cta {
+      background-image: linear-gradient(180deg, #6366f1, #4f46e5);
+      box-shadow: 0 12px 34px -10px rgba(99,102,241,0.55);
+      transition: box-shadow .25s ease, transform .2s ease;
+    }
+    .cta:hover { box-shadow: 0 16px 46px -10px rgba(99,102,241,0.78); transform: translateY(-1px); }
+
+    /* gradient text accents */
+    .hero-accent { background: linear-gradient(92deg, #a5b4fc, #6366f1 62%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .stat-num { background: linear-gradient(180deg,#ffffff,#b9bcff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .stat-band { background: linear-gradient(135deg, rgba(99,102,241,0.11), rgba(99,102,241,0.02)); }
+
+    /* dashboard screenshot frame */
+    .shot-frame { box-shadow: 0 40px 90px -30px rgba(99,102,241,0.45), 0 0 0 1px rgba(255,255,255,0.05); }
+
+    /* scroll reveal */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce){ .reveal { opacity: 1 !important; transform: none !important; transition: none; } }
+
+    .ts-card{max-width:680px;margin:0 auto;background:linear-gradient(160deg,rgba(99,102,241,0.07),rgba(14,14,17,0.6));border:1px solid #27272a;border-radius:18px;padding:34px;}
     .ts-top{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
     .ts-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;border:1px solid #27272a;}
     .ts-name{display:flex;align-items:center;gap:6px;font-weight:600;color:#fafafa;font-size:16px;}
     .ts-verified{flex-shrink:0;}
     .ts-role{color:#a1a1aa;font-size:13px;margin-top:2px;}
     .ts-stars{margin-left:auto;color:#fbbf24;letter-spacing:2px;font-size:15px;}
-    .ts-quote{color:#d4d4d8;font-size:15.5px;line-height:1.75;margin:0;}
+    .ts-quote{color:#d4d4d8;font-size:16px;line-height:1.78;margin:0;}
     .hero-glow {
       position: absolute;
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(99,102,241,0.11) 0%, transparent 70%);
+      width: 820px;
+      height: 820px;
+      background: radial-gradient(circle, rgba(99,102,241,0.14) 0%, transparent 68%);
       pointer-events: none;
       left: 50%;
       transform: translateX(-50%);
@@ -119,12 +168,12 @@
       </div>
       <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.15] tracking-tight text-balance mb-6">
         Gewinnen Sie 5+ Stunden pro Woche zur&uuml;ck.
-        <span class="block text-brand mt-3">Ohne neue Mitarbeiter einzustellen.</span>
+        <span class="block hero-accent mt-3">Ohne neue Mitarbeiter einzustellen.</span>
       </h1>
       <p class="text-slate-400 text-lg md:text-xl leading-relaxed max-w-[65ch] mx-auto mb-10">
         Ein Lead aus Meta Ads landet ohne Zutun im CRM, die Rechnung entsteht beim Abschluss von selbst. Am Monatsende sehen Sie, welche Kampagne den Kunden gebracht hat.
       </p>
-      <a href="#audit" class="inline-flex items-center gap-2.5 bg-brand hover:bg-brand-dark text-white font-semibold px-9 py-4 rounded-md transition-colors duration-200 text-base shadow-lg shadow-brand/25">
+      <a href="#audit" class="cta inline-flex items-center gap-2.5 text-white font-semibold px-9 py-4 rounded-md text-base">
         Kostenlose Prozessanalyse sichern
         <i data-lucide="arrow-right" class="w-4 h-4"></i>
       </a>
@@ -262,19 +311,19 @@
         <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Ergebnisse</p>
         <h2 class="text-3xl md:text-4xl font-bold">Gebaut f&uuml;r Zahlen, nicht f&uuml;r Versprechen.</h2>
       </div>
-      <div class="bg-slate-900/40 border border-slate-800 rounded-2xl grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-800">
+      <div class="stat-band border border-slate-800 rounded-2xl grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-800">
         <div class="px-10 py-10 text-center">
-          <p class="text-5xl font-extrabold text-white mb-1 tracking-tight">3 &rarr; 1</p>
+          <p class="stat-num text-5xl font-extrabold mb-1 tracking-tight">3 &rarr; 1</p>
           <p class="text-brand font-semibold text-sm mb-2">Datenquellen</p>
           <p class="text-slate-400 text-sm">Meta Ads, Funnelspot und Lexware in einem zentralen Echtzeit-Dashboard vereint.</p>
         </div>
         <div class="px-10 py-10 text-center">
-          <p class="text-5xl font-extrabold text-white mb-1 tracking-tight">&lt; 60 Sek.</p>
+          <p class="stat-num text-5xl font-extrabold mb-1 tracking-tight">&lt; 60 Sek.</p>
           <p class="text-brand font-semibold text-sm mb-2">Lead-Transferzeit</p>
           <p class="text-slate-400 text-sm">Von der Lead-Anfrage bis zur &Uuml;bergabe ins CRM.</p>
         </div>
         <div class="px-10 py-10 text-center">
-          <p class="text-5xl font-extrabold text-white mb-1 tracking-tight">99,9 %</p>
+          <p class="stat-num text-5xl font-extrabold mb-1 tracking-tight">99,9 %</p>
           <p class="text-brand font-semibold text-sm mb-2">Verf&uuml;gbarkeit</p>
           <p class="text-slate-400 text-sm">Durch Monitoring und automatische Fehlerbehandlung, rund um die Uhr.</p>
         </div>
@@ -357,7 +406,7 @@
         <img src="assets/images/midas-dashboard.png"
              alt="MIDAS Dashboard: Rohertrag nach Werbekosten, CAC und Kampagnenleistung je Kanal an einer zentralen Stelle"
              width="1752" height="1073"
-             class="w-full h-auto block rounded-xl border border-slate-800"
+             class="shot-frame w-full h-auto block rounded-xl border border-slate-800"
              loading="lazy" decoding="async"
              onerror="this.style.display='none';var p=document.getElementById('midas-ph');if(p){p.style.display='flex';}">
         <div id="midas-ph" class="rounded-xl border border-slate-800 bg-slate-900/40 flex-col items-center justify-center text-center px-6" style="display:none;aspect-ratio:16/9;">
@@ -423,7 +472,7 @@
       </div>
 
       <div class="text-center">
-        <a href="#audit" class="inline-flex items-center gap-2.5 bg-brand hover:bg-brand-dark text-white font-semibold px-8 py-4 rounded-md transition-colors duration-200 text-base shadow-lg shadow-brand/25">
+        <a href="#audit" class="cta inline-flex items-center gap-2.5 text-white font-semibold px-8 py-4 rounded-md text-base">
           Gespr&auml;ch vereinbaren
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
@@ -485,7 +534,7 @@
             <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Monatliches Reporting</li>
             <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>12 Monate Mindestlaufzeit</li>
           </ul>
-          <a href="#audit" class="block text-center bg-brand hover:bg-brand-dark text-white font-semibold px-6 py-3.5 rounded-md transition-colors duration-200 text-sm shadow-md shadow-brand/25">
+          <a href="#audit" class="cta block text-center text-white font-semibold px-6 py-3.5 rounded-md text-sm">
             F&uuml;r Partnerschaft bewerben
           </a>
         </div>
@@ -589,7 +638,7 @@
               class="w-full bg-slate-800/60 border border-slate-700 rounded-md px-4 py-3 text-white placeholder-slate-500 text-sm transition-all resize-none"></textarea>
           </div>
           <button type="submit" id="auditSubmit"
-            class="w-full bg-brand hover:bg-brand-dark text-white font-semibold py-4 rounded-md transition-colors duration-200 flex items-center justify-center gap-2 shadow-lg shadow-brand/25">
+            class="cta w-full text-white font-semibold py-4 rounded-md flex items-center justify-center gap-2">
             Kostenlose Prozessanalyse anfordern
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
@@ -631,6 +680,22 @@
           if (!isOpen) { content.classList.add('open'); chevron.classList.add('rotated'); }
         });
       });
+
+      // Scroll reveal: fade each section in as it enters the viewport
+      (function () {
+        var els = document.querySelectorAll('main > section');
+        els.forEach(function (el) { el.classList.add('reveal'); });
+        if (!('IntersectionObserver' in window)) {
+          els.forEach(function (el) { el.classList.add('in'); });
+          return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+          });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+        els.forEach(function (el) { io.observe(el); });
+      })();
 
       document.getElementById('auditForm').addEventListener('submit', async function (e) {
         e.preventDefault();
