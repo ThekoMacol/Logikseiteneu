@@ -8,13 +8,30 @@
   <link rel="canonical" href="https://log1k.de/impressum">
   <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/tw.css?v=5">
+  <link rel="icon" type="image/webp" href="/assets/images/logo.webp">
   <style>
-    body { font-family: 'Inter', system-ui, sans-serif; }
-    .nav-blur {
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      background: rgba(9, 9, 11, 0.88);
+    :root { --accent:#9b8ce0; --accent-2:#b0a4ee; --accent-ink:#14101f; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color:#0a0a0d;
+      background-image: radial-gradient(60rem 48rem at 82% 4%, rgba(155,140,224,0.06), transparent 60%);
+      background-attachment: fixed;
     }
+    .nav-blur {
+      backdrop-filter: blur(16px) saturate(130%);
+      -webkit-backdrop-filter: blur(16px) saturate(130%);
+      background: rgba(10, 10, 13, 0.72);
+    }
+    /* retheme tw.css brand utilities to the calm violet */
+    .text-brand { color: var(--accent); }
+    .bg-brand { background-color: var(--accent); }
+    .hover\:bg-brand-dark:hover { background-color: var(--accent-2); }
+    .cta { background: var(--accent); color: var(--accent-ink); transition: background-color .2s ease, transform .2s ease; }
+    .cta:hover { background: var(--accent-2); transform: translateY(-1px); }
+    .nav-links { display: none; align-items: center; gap: 1.75rem; }
+    .nav-links a { color:#c6c6d0; font-size:.875rem; font-weight:500; transition: color .2s ease; }
+    .nav-links a:hover { color:#fff; }
+    @media (min-width: 768px) { .nav-links { display: flex; } }
   </style>
 </head>
 <body class="bg-zinc-950 text-white antialiased">
@@ -22,9 +39,18 @@
   <!-- NAV -->
   <header class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-slate-800/60">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="/" class="text-white font-bold text-xl tracking-tight hover:opacity-80 transition-opacity">log1k</a>
-      <a href="/#audit" class="bg-brand hover:bg-brand-dark text-white text-sm font-semibold px-5 py-2.5 rounded-md transition-colors duration-200">
-        Kostenlose Prozessanalyse
+      <a href="/" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+        <img src="/assets/images/logo.webp" alt="log1k" width="30" height="30" class="rounded-lg" style="display:block">
+        <span class="text-white font-bold text-xl tracking-tight">log1k</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#opendialogue">OpenDialogue</a>
+        <a href="/#midas">MIDAS</a>
+        <a href="/#onprem">Warum lokal</a>
+        <a href="/#preise">Preise</a>
+      </nav>
+      <a href="https://download.log1k.de/opendialogue/OpenDialogue-Setup.exe" class="cta text-sm font-semibold px-5 py-2.5 rounded-md">
+        OpenDialogue laden
       </a>
     </div>
   </header>
@@ -113,7 +139,7 @@
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
         <p class="text-white font-semibold">Kornelius E. Thelen</p>
-        <p class="text-slate-400 text-sm">log1k.de &middot; Workflow Automation f&uuml;r wachsende Unternehmen</p>
+        <p class="text-slate-400 text-sm">log1k.de &middot; Deine KI und deine Zahlen &ndash; lokal bei dir</p>
       </div>
       <div class="flex items-center gap-6">
         <a href="/impressum" class="text-slate-400 hover:text-slate-300 text-sm transition-colors">Impressum</a>
