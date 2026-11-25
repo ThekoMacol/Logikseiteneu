@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>log1k: Workflow-Automatisierung für wachsende Unternehmen | Kornelius E. Thelen</title>
-  <meta name="description" content="Wir automatisieren Ihre Vertriebs-, Verwaltungs- und Finanzprozesse. Leads schneller bearbeiten, Rechnungen automatisch erstellen, manuelle Aufgaben eliminieren.">
+  <title>log1k: Dein eigenes KI-Ökosystem – OpenDialogue &amp; MIDAS</title>
+  <meta name="description" content="OpenDialogue: deine KI lokal auf deinem Rechner, deine Daten bleiben bei dir. MIDAS: deine Geschäftszahlen von der Anzeige bis zur Rechnung an einem Ort. Läuft bei dir, nicht in fremden Clouds.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://log1k.de">
-  <meta property="og:title" content="log1k: Gewinnen Sie 5+ Stunden pro Woche zurück">
-  <meta property="og:description" content="Wir automatisieren Ihre Vertriebs-, Verwaltungs- und Finanzprozesse. Ohne neue Mitarbeiter einzustellen.">
+  <meta property="og:title" content="log1k: Dein eigenes KI-Ökosystem">
+  <meta property="og:description" content="Deine KI und deine Geschäftszahlen – lokal auf deinen Geräten. OpenDialogue läuft auf deinem Rechner, MIDAS führt deine Zahlen zusammen. Nichts verlässt dein Haus.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://log1k.de">
   <meta property="og:image" content="https://log1k.de/og-image.jpg">
@@ -35,7 +35,13 @@
         'users': '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
         'file-text': '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/>',
         'mic': '<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/>',
-        'wrench': '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>'
+        'wrench': '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>',
+        'database': '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/>',
+        'bot': '<path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/>',
+        'zap': '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
+        'lock': '<rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
+        'server': '<rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/>',
+        'sparkles': '<path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/>'
       };
       function render(root) {
         (root || document).querySelectorAll('[data-lucide]').forEach(function (el) {
@@ -74,10 +80,27 @@
       background: rgba(8, 8, 11, 0.70);
     }
 
+    /* nav links (own styling: tw.css has no md:flex display utility) */
+    .nav-links { display: none; align-items: center; gap: 1.75rem; }
+    .nav-links a { color:#cbd5e1; font-size:.875rem; font-weight:500; transition: color .2s ease; }
+    .nav-links a:hover { color:#fff; }
+    @media (min-width: 768px) { .nav-links { display: flex; } }
+
+    /* nav-link jumps land below the fixed header */
+    section[id] { scroll-margin-top: 5rem; }
+
     /* soft gradient section dividers instead of hard full-width lines */
     main > section.border-t {
       border-top: 1px solid transparent;
       border-image: linear-gradient(to right, transparent, rgba(148,163,184,0.16), transparent) 1;
+    }
+
+    /* big hero headline – full control via clamp, independent of tw text sizes */
+    .display {
+      font-size: clamp(2.5rem, 5.2vw, 4rem);
+      line-height: 1.07;
+      letter-spacing: -0.025em;
+      font-weight: 800;
     }
 
     /* feature cards: depth + hover lift */
@@ -92,9 +115,22 @@
       box-shadow: 0 18px 50px -18px rgba(99,102,241,0.38);
     }
 
+    /* product pillar cards (a touch larger, with top accent) */
+    .pillar {
+      position: relative;
+      background: linear-gradient(160deg, rgba(99,102,241,0.10) 0%, rgba(18,18,26,0.40) 62%);
+      border: 1px solid rgba(99,102,241,0.18);
+      overflow: hidden;
+    }
+    .pillar::before {
+      content: "";
+      position: absolute; inset: 0 0 auto 0; height: 3px;
+      background: linear-gradient(90deg, #818cf8, #6366f1 60%, transparent);
+    }
+
     /* accordion */
     .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.32s ease; }
-    .accordion-content.open { max-height: 460px; }
+    .accordion-content.open { max-height: 520px; }
     .accordion-chevron { transition: transform 0.32s ease; }
     .accordion-chevron.rotated { transform: rotate(180deg); }
     .accordion-item { transition: border-color .2s ease; }
@@ -114,6 +150,10 @@
     }
     .cta:hover { box-shadow: 0 16px 46px -10px rgba(99,102,241,0.78); transform: translateY(-1px); }
 
+    /* secondary (outline) button */
+    .btn-ghost { border:1px solid #334155; transition: background-color .2s ease, border-color .2s ease; }
+    .btn-ghost:hover { background:#1e293b; border-color:#475569; }
+
     /* gradient text accents */
     .hero-accent { background: linear-gradient(92deg, #a5b4fc, #6366f1 62%); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .stat-num { background: linear-gradient(180deg,#ffffff,#b9bcff); -webkit-background-clip: text; background-clip: text; color: transparent; }
@@ -121,6 +161,16 @@
 
     /* dashboard screenshot frame */
     .shot-frame { box-shadow: 0 40px 90px -30px rgba(99,102,241,0.45), 0 0 0 1px rgba(255,255,255,0.05); }
+
+    /* hero terrarium image */
+    .hero-shot { position: relative; }
+    .hero-shot img {
+      width: 100%; height: auto; display: block;
+      border-radius: 1rem;
+      border: 1px solid rgba(99,102,241,0.22);
+      box-shadow: 0 40px 100px -32px rgba(99,102,241,0.55), 0 0 0 1px rgba(255,255,255,0.04);
+    }
+    .hero-shot figcaption { margin-top: .9rem; }
 
     /* scroll reveal */
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
@@ -153,8 +203,14 @@
   <header class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-slate-800/60">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="/" class="text-white font-bold text-xl tracking-tight hover:opacity-80 transition-opacity">log1k</a>
-      <a href="#audit" class="bg-brand hover:bg-brand-dark text-white text-sm font-semibold px-5 py-2.5 rounded-md transition-colors duration-200">
-        Kostenlose Prozessanalyse
+      <nav class="nav-links">
+        <a href="#opendialogue">OpenDialogue</a>
+        <a href="#midas">MIDAS</a>
+        <a href="#onprem">Warum lokal</a>
+        <a href="#preise">Preise</a>
+      </nav>
+      <a href="https://download.log1k.de/opendialogue/OpenDialogue-Setup.exe" class="bg-brand hover:bg-brand-dark text-white text-sm font-semibold px-5 py-2.5 rounded-md transition-colors duration-200">
+        OpenDialogue laden
       </a>
     </div>
   </header>
@@ -163,23 +219,39 @@
   <!-- HERO -->
   <section class="relative pt-36 pb-24 px-6 overflow-hidden">
     <div class="hero-glow"></div>
-    <div class="relative max-w-4xl mx-auto text-center">
-      <div class="inline-flex items-center gap-2 bg-brand/10 border border-brand/25 text-brand text-xs font-semibold px-4 py-1.5 rounded-full mb-8 tracking-widest uppercase">
-        Workflow Automation f&uuml;r wachsende Unternehmen
+    <div class="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-6 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-brand/10 border border-brand/25 text-brand text-xs font-semibold px-4 py-1.5 rounded-full mb-8 tracking-wider uppercase">
+          <i data-lucide="lock" class="w-3.5 h-3.5"></i>
+          On-Prem KI &middot; Deine Daten bleiben bei dir
+        </div>
+        <h1 class="display text-balance mb-6">
+          Dein eigenes KI-Ökosystem.
+          <span class="block hero-accent mt-2">Nichts verlässt dein Haus.</span>
+        </h1>
+        <p class="text-slate-400 text-lg leading-relaxed max-w-[65ch] mb-9">
+          <strong class="text-slate-200 font-semibold">OpenDialogue</strong> ist deine lokale KI. <strong class="text-slate-200 font-semibold">MIDAS</strong> bündelt deine Zahlen von der Anzeige bis zur Rechnung. Beides läuft bei dir.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center gap-4">
+          <a href="https://download.log1k.de/opendialogue/OpenDialogue-Setup.exe" class="cta inline-flex items-center gap-2.5 text-white font-semibold px-8 py-4 rounded-md text-base">
+            <i data-lucide="download" class="w-4 h-4"></i>
+            OpenDialogue kostenlos laden
+          </a>
+          <a href="#midas" class="btn-ghost inline-flex items-center gap-2.5 text-white font-semibold px-8 py-4 rounded-md text-base">
+            MIDAS ansehen
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+        <p class="text-slate-400 text-sm mt-4">Für Windows 10 &amp; 11 &middot; ca. 150 MB &middot; kostenlos &middot; kein Konto nötig</p>
       </div>
-      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.15] tracking-tight text-balance mb-6">
-        Gewinnen Sie 5+ Stunden pro Woche zur&uuml;ck.
-        <span class="block hero-accent mt-3">Ohne neue Mitarbeiter einzustellen.</span>
-      </h1>
-      <p class="text-slate-400 text-lg md:text-xl leading-relaxed max-w-[65ch] mx-auto mb-10">
-        Ein Lead aus Meta Ads landet ohne Zutun im CRM, die Rechnung entsteht beim Abschluss von selbst. Am Monatsende sehen Sie, welche Kampagne den Kunden gebracht hat.
-      </p>
-      <a href="#audit" class="cta inline-flex items-center gap-2.5 text-white font-semibold px-9 py-4 rounded-md text-base">
-        Kostenlose Prozessanalyse sichern
-        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-      </a>
-      <p class="text-slate-400 text-sm mt-4">15 Minuten. Kein Verkaufsdruck. Nur konkrete Automatisierungspotenziale.</p>
-      <p class="text-slate-400 text-sm mt-3">Oder: <a href="#opendialogue" class="text-brand hover:underline">OpenDialogue kostenlos herunterladen</a></p>
+      <figure class="hero-shot">
+        <img src="assets/images/hero-terrarium.webp"
+             alt="Ein geschlossenes Glas-Terrarium mit einem vollständigen, lebendigen Mini-Ökosystem – Sinnbild für eine abgeschottete, bei dir laufende KI-Umgebung"
+             width="1672" height="941" loading="eager" decoding="async">
+        <figcaption class="text-center text-slate-400 text-sm">
+          Ein geschlossenes Ökosystem – deine Daten verlassen deinen Rechner nie.
+        </figcaption>
+      </figure>
     </div>
   </section>
 
@@ -193,144 +265,119 @@
           <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
           <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
           <i data-lucide="star" class="w-4 h-4 fill-brand text-brand"></i>
-          <span class="text-white font-semibold text-sm ml-2">Bereits erfolgreich umgesetzt f&uuml;r Struktur &amp; Fokus</span>
+          <span class="text-white font-semibold text-sm ml-2">Im echten Betrieb im Einsatz</span>
         </div>
         <div class="flex flex-wrap gap-x-6 gap-y-2">
-          <span class="text-slate-300 text-sm flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand shrink-0"></i>Meta Ads &rarr; Funnelspot &rarr; Lexware</span>
-          <span class="text-slate-300 text-sm flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand shrink-0"></i>CEO-Dashboard in Echtzeit</span>
-          <span class="text-slate-300 text-sm flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand shrink-0"></i>Vollautomatisierte Datenfl&uuml;sse</span>
+          <span class="text-slate-300 text-sm flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand shrink-0"></i>Lokale Modelle über Ollama</span>
+          <span class="text-slate-300 text-sm flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand shrink-0"></i>Daten in der EU</span>
+          <span class="text-slate-300 text-sm flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand shrink-0"></i>Quellcode einsehbar</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROBLEM -->
-  <section class="py-20 px-6 border-t border-slate-800/50">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Das Problem</p>
-        <h2 class="text-3xl md:text-4xl font-bold">Die meisten Unternehmen wachsen schneller als ihre Prozesse.</h2>
-      </div>
-      <div class="grid md:grid-cols-3 gap-6 mb-10">
-        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-7 flex flex-col gap-4">
-          <div class="w-8 h-8 bg-red-500/10 rounded-lg flex items-center justify-center shrink-0">
-            <i data-lucide="x" class="w-4 h-4 text-red-400"></i>
-          </div>
-          <p class="text-slate-300 text-sm leading-relaxed">Ein Lead aus Meta Ads wird abends von Hand in Funnelspot eingetragen. Bis dahin hat der Interessent oft l&auml;ngst woanders angefragt.</p>
-        </div>
-        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-7 flex flex-col gap-4">
-          <div class="w-8 h-8 bg-red-500/10 rounded-lg flex items-center justify-center shrink-0">
-            <i data-lucide="x" class="w-4 h-4 text-red-400"></i>
-          </div>
-          <p class="text-slate-300 text-sm leading-relaxed">Nach jedem Abschluss tippt jemand die Rechnung in Lexware ab und gleicht sie mit dem CRM ab, Zahlendreher inklusive.</p>
-        </div>
-        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-7 flex flex-col gap-4">
-          <div class="w-8 h-8 bg-red-500/10 rounded-lg flex items-center justify-center shrink-0">
-            <i data-lucide="x" class="w-4 h-4 text-red-400"></i>
-          </div>
-          <p class="text-slate-300 text-sm leading-relaxed">Die Werbeausgaben stehen in Meta, der Umsatz in Lexware. Welche Kampagne sich rechnet, sieht niemand ohne manuelles Zusammensuchen.</p>
-        </div>
-      </div>
-      <p class="text-center text-slate-300 font-semibold text-lg">Wir verbinden Ihre Werkzeuge zu einem System, das diese Handgriffe selbst erledigt.</p>
-    </div>
-  </section>
-
-  <!-- FEATURES -->
+  <!-- PRODUKT-PFEILER -->
   <section class="py-20 px-6 border-t border-slate-800/50">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
-        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Was sich f&uuml;r Sie &auml;ndert</p>
-        <h2 class="text-3xl md:text-4xl font-bold">Drei Systeme. Ein sauberer Betrieb.</h2>
+        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Zwei Teile, ein System</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Deine Zahlen und deine KI – unter einem Dach.</h2>
+        <p class="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto">
+          MIDAS hält deine Daten zusammen. OpenDialogue ist die KI, die damit arbeitet.
+        </p>
       </div>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="pillar rounded-xl p-8">
           <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
-            <i data-lucide="trending-up" class="w-5 h-5 text-brand"></i>
+            <i data-lucide="database" class="w-5 h-5 text-brand"></i>
           </div>
-          <h3 class="text-white font-bold text-lg mb-3">Umsatz-Infrastruktur</h3>
-          <p class="text-slate-400 leading-relaxed text-sm">
-            Fr&uuml;her wurde jeder Anzeigen-Lead von Hand ins CRM getippt. Jetzt legt ihn das System im selben Moment an, in dem das Formular abgeschickt wird: in der richtigen Pipeline, ohne Copy-Paste.
+          <h3 class="text-white font-bold text-xl mb-3">MIDAS &middot; Deine Zahlen</h3>
+          <p class="text-slate-400 leading-relaxed text-sm mb-6">
+            Kampagnen, Leads, Angebote und Rechnungen an einer Stelle – von der Anzeige bis zur bezahlten Rechnung.
           </p>
+          <a href="#midas" class="text-brand text-sm font-semibold inline-flex items-center gap-1.5 hover:underline">MIDAS ansehen <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
         </div>
-        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
+        <div class="pillar rounded-xl p-8">
           <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
-            <i data-lucide="file-check-2" class="w-5 h-5 text-brand"></i>
+            <i data-lucide="bot" class="w-5 h-5 text-brand"></i>
           </div>
-          <h3 class="text-white font-bold text-lg mb-3">Finanz-Automatisierung</h3>
-          <p class="text-slate-400 leading-relaxed text-sm">
-            Fr&uuml;her tippte jemand nach jedem Abschluss die Rechnung in Lexware und glich sie mit dem CRM ab. Jetzt entsteht sie automatisch aus den Deal-Daten, sobald der Abschluss im CRM steht.
+          <h3 class="text-white font-bold text-xl mb-3">OpenDialogue &middot; Deine KI</h3>
+          <p class="text-slate-400 leading-relaxed text-sm mb-6">
+            Ein KI-Agent auf deinem Rechner. Per Text und Sprache steuerbar – und liest auf Wunsch deine MIDAS-Zahlen.
           </p>
+          <a href="#opendialogue" class="text-brand text-sm font-semibold inline-flex items-center gap-1.5 hover:underline">OpenDialogue entdecken <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
         </div>
+      </div>
+      <p class="text-slate-300 font-medium text-base mt-10 flex items-center justify-center gap-2">
+        <i data-lucide="sparkles" class="w-4 h-4 text-brand shrink-0"></i>
+        <span>OpenDialogue spricht direkt mit MIDAS – frag deine Zahlen in normaler Sprache.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- OPENDIALOGUE -->
+  <section id="opendialogue" class="py-20 px-6 border-t border-slate-800/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Kostenlos &middot; Dein KI-Agent</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">OpenDialogue: ein Safespace für deinen Agenten.</h2>
+        <p class="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto">
+          Ein geschlossenes Ökosystem auf deinem Rechner. Lokale Modelle über Ollama, optional ChatGPT und Claude. Per Text und Sprache steuerbar.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
         <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
           <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
             <i data-lucide="shield-check" class="w-5 h-5 text-brand"></i>
           </div>
-          <h3 class="text-white font-bold text-lg mb-3">Ausfallsicheres Monitoring</h3>
+          <h3 class="text-white font-bold text-lg mb-3">Lokal und on-prem</h3>
           <p class="text-slate-400 leading-relaxed text-sm">
-            Fr&uuml;her fiel ein stiller Sync-Fehler erst auf, wenn ein Lead fehlte. Jetzt meldet das System die St&ouml;rung sofort und h&auml;lt die betroffenen Daten zur&uuml;ck, bis sie sauber &uuml;bergeben werden.
+            Modelle laufen lokal über Ollama. Deine Daten bleiben auf dem Gerät.
+          </p>
+        </div>
+        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
+          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="mic" class="w-5 h-5 text-brand"></i>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Per Sprache steuerbar</h3>
+          <p class="text-slate-400 leading-relaxed text-sm">
+            Diktieren statt tippen, Antworten werden vorgelesen – Spracherkennung lokal.
+          </p>
+        </div>
+        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
+          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="zap" class="w-5 h-5 text-brand"></i>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Erledigt Aufgaben</h3>
+          <p class="text-slate-400 leading-relaxed text-sm">
+            E-Mail, Telegram, GitHub, Web-Suche, Termine, EAN-Scan. Der Agent arbeitet, statt nur zu antworten.
+          </p>
+        </div>
+        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
+          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+            <i data-lucide="database" class="w-5 h-5 text-brand"></i>
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3">Mit MIDAS verbunden</h3>
+          <p class="text-slate-400 leading-relaxed text-sm">
+            Frag deine Geschäftszahlen in normaler Sprache – direkt aus MIDAS gelesen.
           </p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- TESTIMONIAL -->
-  <section class="py-20 px-6 border-t border-slate-800/50">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-14">
-        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Kundenstimmen</p>
-        <h2 class="text-3xl md:text-4xl font-bold">Was unsere Kunden sagen</h2>
-      </div>
-      <div class="ts-card">
-        <div class="ts-top">
-          <img class="ts-avatar" src="assets/images/julius-stephan.jpg" alt="Julius Stephan">
-          <div>
-            <div class="ts-name">
-              Julius Stephan
-              <svg class="ts-verified" viewBox="0 0 24 24" width="16" height="16"><path fill="#6366f1" d="M12 1l2.4 2.4 3.3-.5.5 3.3L21 9.6l-1.5 3 1.5 3-2.3 2.4-.5 3.3-3.3-.5L12 23l-2.4-2.2-3.3.5-.5-3.3L3 15.6l1.5-3L3 9.6l2.3-2.4.5-3.3 3.3.5z"/><path fill="#fff" d="M10.6 14.6l-2-2-1.1 1.1 3.1 3.1 5.3-5.3-1.1-1.1z"/></svg>
-            </div>
-            <div class="ts-role">Verifizierte Empfehlung &middot; LinkedIn</div>
-          </div>
-          <div class="ts-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="text-center">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://download.log1k.de/opendialogue/OpenDialogue-Setup.exe" class="cta inline-flex items-center gap-2.5 text-white font-semibold px-8 py-4 rounded-md text-base">
+            <i data-lucide="download" class="w-4 h-4"></i>
+            Kostenlos herunterladen
+          </a>
+          <a href="#kontakt" class="btn-ghost inline-flex items-center gap-2.5 text-white font-semibold px-8 py-4 rounded-md text-base">
+            Einrichtung für deine Firma
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
         </div>
-        <p class="ts-quote">
-          &bdquo;Kornelius hat f&uuml;r uns ein ma&szlig;geschneidertes CEO-Dashboard entwickelt, das unsere Daten aus
-          Meta Ads, Funnelspot und Lexware nahtlos an einem zentralen Ort zusammenf&uuml;hrt. Wichtige
-          Kennzahlen wie der CAC und die gesamte Kampagnen-Performance sind f&uuml;r uns jetzt mit nur einem
-          einzigen Blick sichtbar. Die Zusammenarbeit lief &uuml;ber die gesamte Umsetzungsphase absolut
-          reibungslos. Kornelius &uuml;berzeugt durch eine transparente, proaktive Kommunikation, ein
-          beeindruckendes Tempo und 100-prozentige Verl&auml;sslichkeit. Man merkt einfach von Tag eins an,
-          dass hier ein absoluter Experte am Werk ist.&ldquo;
-        </p>
+        <p class="text-slate-400 text-sm mt-4">Für Windows 10 und 11 &middot; etwa 150 MB &middot; kostenlos &middot; <a href="https://download.log1k.de/" class="text-brand hover:underline">Hinweise, Prüfsumme, Quellcode</a></p>
       </div>
-    </div>
-  </section>
-
-  <!-- METRICS -->
-  <section class="py-20 px-6 border-t border-slate-800/50">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-14">
-        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Ergebnisse</p>
-        <h2 class="text-3xl md:text-4xl font-bold">Gebaut f&uuml;r Zahlen, nicht f&uuml;r Versprechen.</h2>
-      </div>
-      <div class="stat-band border border-slate-800 rounded-2xl grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-800">
-        <div class="px-10 py-10 text-center">
-          <p class="stat-num text-5xl font-extrabold mb-1 tracking-tight">3 &rarr; 1</p>
-          <p class="text-brand font-semibold text-sm mb-2">Datenquellen</p>
-          <p class="text-slate-400 text-sm">Meta Ads, Funnelspot und Lexware in einem zentralen Echtzeit-Dashboard vereint.</p>
-        </div>
-        <div class="px-10 py-10 text-center">
-          <p class="stat-num text-5xl font-extrabold mb-1 tracking-tight">&lt; 60 Sek.</p>
-          <p class="text-brand font-semibold text-sm mb-2">Lead-Transferzeit</p>
-          <p class="text-slate-400 text-sm">Von der Lead-Anfrage bis zur &Uuml;bergabe ins CRM.</p>
-        </div>
-        <div class="px-10 py-10 text-center">
-          <p class="stat-num text-5xl font-extrabold mb-1 tracking-tight">99,9 %</p>
-          <p class="text-brand font-semibold text-sm mb-2">Verf&uuml;gbarkeit</p>
-          <p class="text-slate-400 text-sm">Durch Monitoring und automatische Fehlerbehandlung, rund um die Uhr.</p>
-        </div>
-      </div>
-      <p class="text-center text-slate-400 text-sm mt-6">Kennzahlen aus realem Kundenprojekt (CEO-Dashboard, 2026).</p>
     </div>
   </section>
 
@@ -341,7 +388,7 @@
         <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Plattform</p>
         <h2 class="text-3xl md:text-4xl font-bold mb-4">MIDAS: von der Anzeige bis zur Rechnung</h2>
         <p class="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto">
-          Aus den automatisierten Datenfl&uuml;ssen wird eine ganze Plattform. MIDAS f&uuml;hrt Kampagnen-Kennzahlen, Leads, Kunden, Angebote und Rechnungen an einer Stelle zusammen. Sie sehen, was ein Kunde wirklich kostet, und steuern den Weg von der Anzeige bis zur bezahlten Rechnung.
+          Kampagnen, Leads, Kunden, Angebote und Rechnungen an einer Stelle. Du siehst, was ein Kunde wirklich kostet.
         </p>
       </div>
 
@@ -352,7 +399,7 @@
           </div>
           <h3 class="text-white font-bold text-lg mb-3">Kampagnen-Auswertung</h3>
           <p class="text-slate-400 leading-relaxed text-sm">
-            Kundengewinnungskosten und Rohertrag nach Werbekosten je Kampagne. Sie sehen, welcher Kanal tr&auml;gt und welcher nur kostet.
+            CAC und Rohertrag je Kampagne. Du siehst, welcher Kanal trägt und welcher nur kostet.
           </p>
         </div>
         <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
@@ -361,7 +408,7 @@
           </div>
           <h3 class="text-white font-bold text-lg mb-3">Leads &amp; Kunden</h3>
           <p class="text-slate-400 leading-relaxed text-sm">
-            Leads mit Temperatur und vollst&auml;ndige Kundenakten an einem Ort. Vom ersten Kontakt bis zum Abschluss, ohne zweites CRM.
+            Leads und vollständige Kundenakten an einem Ort – ohne zweites CRM.
           </p>
         </div>
         <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
@@ -370,7 +417,7 @@
           </div>
           <h3 class="text-white font-bold text-lg mb-3">Angebote</h3>
           <p class="text-slate-400 leading-relaxed text-sm">
-            Angebote direkt aus den Kundendaten erstellen und als PDF versenden. Ein separates Angebots-Tool entf&auml;llt.
+            Angebote direkt aus den Kundendaten als PDF – kein separates Tool.
           </p>
         </div>
         <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
@@ -379,7 +426,7 @@
           </div>
           <h3 class="text-white font-bold text-lg mb-3">Rechnungen</h3>
           <p class="text-slate-400 leading-relaxed text-sm">
-            Rechnungen mit Positionen und Artikelkatalog, fertig als PDF. Sie entstehen aus dem gewonnenen Deal statt per Abtippen.
+            Rechnungen als PDF, direkt aus dem gewonnenen Deal statt per Abtippen.
           </p>
         </div>
         <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
@@ -388,7 +435,7 @@
           </div>
           <h3 class="text-white font-bold text-lg mb-3">Richtige Zuordnung</h3>
           <p class="text-slate-400 leading-relaxed text-sm">
-            Kosten und Ertrag landen in derselben Periode, zugeordnet auf das Lead-Datum. So stimmt der CAC je Kampagne wirklich.
+            Kosten und Ertrag auf das Lead-Datum zugeordnet. So stimmt der CAC wirklich.
           </p>
         </div>
         <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
@@ -397,7 +444,7 @@
           </div>
           <h3 class="text-white font-bold text-lg mb-3">Daten in der EU</h3>
           <p class="text-slate-400 leading-relaxed text-sm">
-            Datenbank in Irland, Server in Deutschland. Offline nutzbar, Team-Zugriff je Rolle, keine Auswertung au&szlig;erhalb der EU.
+            Datenbank in Irland, Server in Deutschland. Team-Zugriff je Rolle.
           </p>
         </div>
       </div>
@@ -423,151 +470,195 @@
     </div>
   </section>
 
-  <!-- OPENDIALOGUE -->
-  <section id="opendialogue" class="py-20 px-6 border-t border-slate-800/50">
+  <!-- WARUM LOKAL / ON-PREM -->
+  <section id="onprem" class="py-20 px-6 border-t border-slate-800/50">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
-        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">KI-Agent</p>
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">OpenDialogue: Ihr KI-Assistent, lokal auf Ihrem Rechner</h2>
+        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Warum lokal</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Deine Daten gehören dir. Punkt.</h2>
         <p class="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto">
-          Ein KI-Agent, der auf Ihrem eigenen Rechner l&auml;uft, nicht in fremden Clouds. Lokale Modelle oder, wenn Sie wollen, ChatGPT und Claude. Steuerbar per Text und Sprache, mit direkter Anbindung an Ihre MIDAS-Zahlen.
+          Die meisten KI-Tools schicken alles in fremde Clouds. Bei uns bleibt dein Geschäft in deinem Glas.
         </p>
       </div>
-
-      <div class="grid md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
-        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
-          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-7 flex items-start gap-4">
+          <div class="w-10 h-10 bg-brand/10 rounded-lg flex items-center justify-center shrink-0">
+            <i data-lucide="lock" class="w-5 h-5 text-brand"></i>
+          </div>
+          <div>
+            <h3 class="text-white font-bold text-base mb-1.5">Nichts verlässt dein Gerät</h3>
+            <p class="text-slate-400 leading-relaxed text-sm">Lokale Modelle über Ollama. Prompts, Dokumente und Zahlen bleiben auf deinem Rechner.</p>
+          </div>
+        </div>
+        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-7 flex items-start gap-4">
+          <div class="w-10 h-10 bg-brand/10 rounded-lg flex items-center justify-center shrink-0">
+            <i data-lucide="server" class="w-5 h-5 text-brand"></i>
+          </div>
+          <div>
+            <h3 class="text-white font-bold text-base mb-1.5">Kein Cloud-Zwang</h3>
+            <p class="text-slate-400 leading-relaxed text-sm">ChatGPT oder Claude nutzt du nur, wenn du willst – pro Aufgabe, nicht als Standard.</p>
+          </div>
+        </div>
+        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-7 flex items-start gap-4">
+          <div class="w-10 h-10 bg-brand/10 rounded-lg flex items-center justify-center shrink-0">
             <i data-lucide="shield-check" class="w-5 h-5 text-brand"></i>
           </div>
-          <h3 class="text-white font-bold text-lg mb-3">Lokal und on-prem</h3>
-          <p class="text-slate-400 leading-relaxed text-sm">
-            Die Modelle laufen lokal &uuml;ber Ollama, Ihre Daten bleiben auf dem Ger&auml;t. Cloud-Modelle wie ChatGPT oder Claude nur, wenn Sie es wollen.
-          </p>
-        </div>
-        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
-          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
-            <i data-lucide="mic" class="w-5 h-5 text-brand"></i>
+          <div>
+            <h3 class="text-white font-bold text-base mb-1.5">EU &amp; DSGVO</h3>
+            <p class="text-slate-400 leading-relaxed text-sm">MIDAS-Daten liegen in der EU. AV-Vertrag nach Art. 28 DSGVO auf Wunsch.</p>
           </div>
-          <h3 class="text-white font-bold text-lg mb-3">Per Sprache steuerbar</h3>
-          <p class="text-slate-400 leading-relaxed text-sm">
-            Diktieren statt tippen, Antworten werden vorgelesen. Die Spracherkennung l&auml;uft lokal auf Ihrem Rechner.
-          </p>
         </div>
-        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
-          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
-            <i data-lucide="wrench" class="w-5 h-5 text-brand"></i>
+        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-7 flex items-start gap-4">
+          <div class="w-10 h-10 bg-brand/10 rounded-lg flex items-center justify-center shrink-0">
+            <i data-lucide="file-check-2" class="w-5 h-5 text-brand"></i>
           </div>
-          <h3 class="text-white font-bold text-lg mb-3">Erledigt Aufgaben</h3>
-          <p class="text-slate-400 leading-relaxed text-sm">
-            E-Mail, Telegram, GitHub, Web-Suche, Termine und Warenscan per EAN. Der Agent arbeitet, statt nur zu antworten.
-          </p>
-        </div>
-        <div class="gradient-card rounded-xl p-8 transition-colors duration-300">
-          <div class="w-11 h-11 bg-brand/10 rounded-lg flex items-center justify-center mb-6">
-            <i data-lucide="trending-up" class="w-5 h-5 text-brand"></i>
+          <div>
+            <h3 class="text-white font-bold text-base mb-1.5">Nachvollziehbar</h3>
+            <p class="text-slate-400 leading-relaxed text-sm">Quellcode und Prüfsumme einsehbar. Keine Blackbox.</p>
           </div>
-          <h3 class="text-white font-bold text-lg mb-3">Mit MIDAS verbunden</h3>
-          <p class="text-slate-400 leading-relaxed text-sm">
-            Fragen Sie Ihre Gesch&auml;ftszahlen in normaler Sprache. OpenDialogue meldet sich an MIDAS an und liest die Kennzahlen.
-          </p>
         </div>
-      </div>
-
-      <div class="text-center">
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="https://download.log1k.de/opendialogue/OpenDialogue-Setup.exe" class="cta inline-flex items-center gap-2.5 text-white font-semibold px-8 py-4 rounded-md text-base">
-            <i data-lucide="download" class="w-4 h-4"></i>
-            Kostenlos herunterladen
-          </a>
-          <a href="#audit" class="inline-flex items-center gap-2.5 border border-slate-700 hover:bg-slate-700 text-white font-semibold px-8 py-4 rounded-md text-base transition-colors">
-            Einrichtung f&uuml;r Ihre Firma
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </a>
-        </div>
-        <p class="text-slate-400 text-sm mt-4">F&uuml;r Windows 10 und 11 &middot; etwa 150 MB &middot; kostenlos &middot; <a href="https://download.log1k.de/" class="text-brand hover:underline">Hinweise, Pr&uuml;fsumme, Quellcode</a></p>
       </div>
     </div>
   </section>
 
-  <!-- PRICING -->
+  <!-- TESTIMONIAL -->
+  <section class="py-20 px-6 border-t border-slate-800/50">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Kundenstimmen</p>
+        <h2 class="text-3xl md:text-4xl font-bold">Was Kunden sagen</h2>
+      </div>
+      <div class="ts-card">
+        <div class="ts-top">
+          <img class="ts-avatar" src="assets/images/julius-stephan.jpg" alt="Julius Stephan">
+          <div>
+            <div class="ts-name">
+              Julius Stephan
+              <svg class="ts-verified" viewBox="0 0 24 24" width="16" height="16"><path fill="#6366f1" d="M12 1l2.4 2.4 3.3-.5.5 3.3L21 9.6l-1.5 3 1.5 3-2.3 2.4-.5 3.3-3.3-.5L12 23l-2.4-2.2-3.3.5-.5-3.3L3 15.6l1.5-3L3 9.6l2.3-2.4.5-3.3 3.3.5z"/><path fill="#fff" d="M10.6 14.6l-2-2-1.1 1.1 3.1 3.1 5.3-5.3-1.1-1.1z"/></svg>
+            </div>
+            <div class="ts-role">Verifizierte Empfehlung &middot; LinkedIn</div>
+          </div>
+          <div class="ts-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+        <p class="ts-quote">
+          &bdquo;Kornelius hat für uns ein maßgeschneidertes CEO-Dashboard entwickelt, das unsere Daten aus
+          Meta Ads, Funnelspot und Lexware nahtlos an einem zentralen Ort zusammenführt. Wichtige
+          Kennzahlen wie der CAC und die gesamte Kampagnen-Performance sind für uns jetzt mit nur einem
+          einzigen Blick sichtbar. Die Zusammenarbeit lief über die gesamte Umsetzungsphase absolut
+          reibungslos. Kornelius überzeugt durch eine transparente, proaktive Kommunikation, ein
+          beeindruckendes Tempo und 100-prozentige Verlässlichkeit. Man merkt einfach von Tag eins an,
+          dass hier ein absoluter Experte am Werk ist.&ldquo;
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICS -->
   <section class="py-20 px-6 border-t border-slate-800/50">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
-        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Partnerschaftsmodelle</p>
-        <h2 class="text-3xl md:text-4xl font-bold">Die richtige L&ouml;sung f&uuml;r Ihre Wachstumsphase</h2>
+        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Ergebnisse</p>
+        <h2 class="text-3xl md:text-4xl font-bold">Gebaut für Zahlen, nicht für Versprechen.</h2>
+      </div>
+      <div class="stat-band border border-slate-800 rounded-2xl grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-800">
+        <div class="px-10 py-10 text-center">
+          <p class="stat-num text-5xl font-extrabold mb-1 tracking-tight">3 &rarr; 1</p>
+          <p class="text-brand font-semibold text-sm mb-2">Datenquellen</p>
+          <p class="text-slate-400 text-sm">Meta Ads, Funnelspot und Lexware in einem zentralen Echtzeit-Dashboard vereint.</p>
+        </div>
+        <div class="px-10 py-10 text-center">
+          <p class="stat-num text-5xl font-extrabold mb-1 tracking-tight">&lt; 60 Sek.</p>
+          <p class="text-brand font-semibold text-sm mb-2">Lead-Transferzeit</p>
+          <p class="text-slate-400 text-sm">Von der Lead-Anfrage bis zur Übergabe ins CRM.</p>
+        </div>
+        <div class="px-10 py-10 text-center">
+          <p class="stat-num text-5xl font-extrabold mb-1 tracking-tight">99,9 %</p>
+          <p class="text-brand font-semibold text-sm mb-2">Verfügbarkeit</p>
+          <p class="text-slate-400 text-sm">Durch Monitoring und automatische Fehlerbehandlung, rund um die Uhr.</p>
+        </div>
+      </div>
+      <p class="text-center text-slate-400 text-sm mt-6">Kennzahlen aus realem Kundenprojekt (CEO-Dashboard, 2026).</p>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="preise" class="py-20 px-6 border-t border-slate-800/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Preise</p>
+        <h2 class="text-3xl md:text-4xl font-bold">Starte kostenlos. Wachse, wenn du willst.</h2>
       </div>
       <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <!-- OpenDialogue: gratis -->
         <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-8 flex flex-col">
           <div class="mb-6 md:min-h-[7rem]">
-            <h3 class="text-white font-bold text-xl mb-1">Automation Setup</h3>
-            <p class="text-slate-400 text-sm">Einmaliges Projekt &middot; Schl&uuml;sselfertig</p>
+            <h3 class="text-white font-bold text-xl mb-1">OpenDialogue</h3>
+            <p class="text-slate-400 text-sm">Dein KI-Agent &middot; lokal auf deinem Rechner</p>
           </div>
           <div class="mb-6 pb-6 border-b border-slate-800">
-            <p class="text-white"><span class="text-3xl font-extrabold tracking-tight">6.900 &euro;</span> <span class="text-slate-400 text-sm">einmalig</span></p>
-            <p class="text-slate-400 text-xs mt-2">Keine laufenden Kosten.</p>
+            <p class="text-white"><span class="text-3xl font-extrabold tracking-tight">Kostenlos</span></p>
+            <p class="text-slate-400 text-xs mt-2">Download, kein Konto nötig.</p>
           </div>
           <ul class="space-y-3 mb-8 flex-1">
-            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Analyse bestehender Prozesse</li>
-            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Architektur &amp; Automatisierungs-Blueprint</li>
-            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Aufbau aller Kern-Workflows</li>
-            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Testing &amp; Qualit&auml;tssicherung</li>
-            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Dokumentation</li>
-            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>30 Tage Support</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Lokale Modelle über Ollama</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Steuerung per Text und Sprache</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>E-Mail, Telegram, GitHub, Web-Suche</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Optional ChatGPT &amp; Claude</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Quellcode &amp; Prüfsumme einsehbar</li>
           </ul>
-          <a href="#audit" class="block text-center bg-slate-800 hover:bg-slate-700 text-white font-semibold px-6 py-3.5 rounded-md transition-colors duration-200 text-sm">
-            F&uuml;r Setup bewerben
+          <a href="https://download.log1k.de/opendialogue/OpenDialogue-Setup.exe" class="block text-center bg-slate-800 hover:bg-slate-700 text-white font-semibold px-6 py-3.5 rounded-md transition-colors duration-200 text-sm">
+            Herunterladen
           </a>
         </div>
+        <!-- MIDAS: hervorgehoben -->
         <div class="relative bg-brand/5 border border-brand/30 rounded-xl p-8 flex flex-col">
           <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
             <span class="bg-brand text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap shadow-lg shadow-brand/30">
-              Meistgefragt f&uuml;r wachsende Unternehmen
+              Das Umsatzprodukt
             </span>
           </div>
           <div class="mb-6 md:min-h-[7rem]">
-            <h3 class="text-white font-bold text-xl mb-1">Managed Architecture Retainer</h3>
-            <p class="text-slate-400 text-sm">Laufende Betreuung &middot; Dedizierte Kapazit&auml;t</p>
-          </div>
-          <div class="mb-6 pb-6 border-b border-slate-800">
-            <p class="text-white"><span class="text-3xl font-extrabold tracking-tight">1.900 &euro;</span> <span class="text-slate-400 text-sm">/ Monat</span></p>
-            <p class="text-slate-400 text-xs mt-2">zzgl. einmalige Einrichtung: 6.900 &euro;</p>
-          </div>
-          <ul class="space-y-3 mb-8 flex-1">
-            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Alle MIDAS-Leistungen inklusive</li>
-            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Kontinuierliche Systemoptimierung</li>
-            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Neue Integrationen &amp; APIs</li>
-            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Workflow-Erweiterungen</li>
-            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Priorisierter Support</li>
-            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Performance-Monitoring</li>
-            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Monatliches Reporting</li>
-            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>12 Monate Mindestlaufzeit</li>
-          </ul>
-          <a href="#audit" class="cta block text-center text-white font-semibold px-6 py-3.5 rounded-md text-sm">
-            F&uuml;r Partnerschaft bewerben
-          </a>
-        </div>
-        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-8 flex flex-col">
-          <div class="mb-6 md:min-h-[7rem]">
             <h3 class="text-white font-bold text-xl mb-1">MIDAS</h3>
-            <p class="text-slate-400 text-sm">Abonnement &middot; Marketing- &amp; Umsatzkennzahlen</p>
+            <p class="text-slate-400 text-sm">Plattform &middot; Marketing- &amp; Umsatzkennzahlen</p>
           </div>
           <div class="mb-6 pb-6 border-b border-slate-800">
             <p class="text-white"><span class="text-3xl font-extrabold tracking-tight">690 &euro;</span> <span class="text-slate-400 text-sm">/ Monat</span></p>
             <p class="text-slate-400 text-xs mt-2">zzgl. einmalige Einrichtung: 6.900 &euro;</p>
           </div>
           <ul class="space-y-3 mb-8 flex-1">
-            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Einrichtung &amp; Anbindung Ihrer Datenquellen</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Einrichtung &amp; Anbindung deiner Datenquellen</li>
             <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Kundengewinnungskosten &amp; Rohertrag je Kampagne</li>
-            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Laufender Betrieb &amp; Datenaktualisierung</li>
-            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Daten in der EU (Irland / Deutschland)</li>
-            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>12 Monate Mindestlaufzeit</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Leads, Kunden, Angebote &amp; Rechnungen an einem Ort</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Anbindung an OpenDialogue</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Daten in der EU &middot; 12 Monate Mindestlaufzeit</li>
           </ul>
-          <a href="#audit" class="block text-center bg-slate-800 hover:bg-slate-700 text-white font-semibold px-6 py-3.5 rounded-md transition-colors duration-200 text-sm">
-            Gespr&auml;ch vereinbaren
+          <a href="#kontakt" class="cta block text-center text-white font-semibold px-6 py-3.5 rounded-md text-sm">
+            Gespräch vereinbaren
+          </a>
+        </div>
+        <!-- Done-for-you: Agentur-Service -->
+        <div class="bg-slate-900/30 border border-slate-800 rounded-xl p-8 flex flex-col">
+          <div class="mb-6 md:min-h-[7rem]">
+            <h3 class="text-white font-bold text-xl mb-1">Wir bauen's für dich</h3>
+            <p class="text-slate-400 text-sm">Setup &amp; laufende Betreuung</p>
+          </div>
+          <div class="mb-6 pb-6 border-b border-slate-800">
+            <p class="text-white"><span class="text-3xl font-extrabold tracking-tight">ab 6.900 &euro;</span> <span class="text-slate-400 text-sm">einmalig</span></p>
+            <p class="text-slate-400 text-xs mt-2">Betreuung optional ab 1.900 &euro; / Monat.</p>
+          </div>
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Analyse deiner bestehenden Prozesse</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Aufbau aller Kern-Workflows (n8n)</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Testing, Dokumentation &amp; Support</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Laufende Betreuung &amp; neue Integrationen</li>
+            <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Priorisierter Support &amp; Monitoring</li>
+          </ul>
+          <a href="#kontakt" class="block text-center bg-slate-800 hover:bg-slate-700 text-white font-semibold px-6 py-3.5 rounded-md transition-colors duration-200 text-sm">
+            Prozessanalyse anfragen
           </a>
         </div>
       </div>
-      <p class="text-center text-slate-400 text-xs mt-8">Alle Preise ohne Umsatzsteuer (Kleinunternehmer nach &sect; 19 UStG). Die einmalige Einrichtung (6.900 &euro;) ist Grundlage jedes Pakets.</p>
+      <p class="text-center text-slate-400 text-xs mt-8">Alle Preise ohne Umsatzsteuer (Kleinunternehmer nach &sect; 19 UStG). Die einmalige Einrichtung (6.900 &euro;) ist Grundlage von MIDAS und jedem Setup.</p>
     </div>
   </section>
 
@@ -575,26 +666,44 @@
   <section class="py-20 px-6 border-t border-slate-800/50">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-14">
-        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">H&auml;ufige Fragen</p>
-        <h2 class="text-3xl md:text-4xl font-bold">Die Fragen, die vor jedem Projekt kommen.</h2>
+        <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Häufige Fragen</p>
+        <h2 class="text-3xl md:text-4xl font-bold">Die Fragen, die immer kommen.</h2>
       </div>
       <div class="space-y-3" id="faqAccordion">
         <div class="accordion-item border border-slate-800 rounded-xl overflow-hidden">
           <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-900/40 transition-colors">
-            <span class="font-semibold text-white pr-4 text-sm leading-snug">Was passiert, wenn eine API ausf&auml;llt?</span>
+            <span class="font-semibold text-white pr-4 text-sm leading-snug">Bleiben meine Daten bei OpenDialogue wirklich lokal?</span>
             <i data-lucide="chevron-down" class="accordion-chevron w-5 h-5 text-slate-400 shrink-0"></i>
           </button>
           <div class="accordion-content">
-            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">Jeder Workflow hat eine eingebaute Fehlerbehandlung. F&auml;llt eine Schnittstelle aus, h&auml;lt das System die betroffenen Daten zur&uuml;ck, meldet die St&ouml;rung sofort und nimmt den Vorgang wieder auf, sobald sie behoben ist. Nichts geht verloren, nichts l&auml;uft still im Hintergrund weiter.</p>
+            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">Ja. Die Modelle laufen über Ollama lokal auf deinem Rechner, auch die Spracherkennung. Deine Prompts und Dokumente verlassen das Gerät nicht. Cloud-Modelle wie ChatGPT oder Claude werden nur dann angesprochen, wenn du es für eine Aufgabe ausdrücklich aktivierst.</p>
           </div>
         </div>
         <div class="accordion-item border border-slate-800 rounded-xl overflow-hidden">
           <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-900/40 transition-colors">
-            <span class="font-semibold text-white pr-4 text-sm leading-snug">Wie sicher sind unsere Daten?</span>
+            <span class="font-semibold text-white pr-4 text-sm leading-snug">Brauche ich für OpenDialogue auch MIDAS?</span>
             <i data-lucide="chevron-down" class="accordion-chevron w-5 h-5 text-slate-400 shrink-0"></i>
           </button>
           <div class="accordion-content">
-            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">Die Datenbank steht in Irland, die Server bei einem deutschen Anbieter. Die Mandantentrennung erfolgt auf Datenbankebene, sodass Ihre Daten von denen anderer Kunden getrennt sind. Einen Auftragsverarbeitungsvertrag nach Art. 28 DSGVO stellen wir Ihnen zur Verf&uuml;gung.</p>
+            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">Nein. OpenDialogue funktioniert eigenständig als lokaler KI-Agent. Zusammen mit MIDAS kannst du zusätzlich deine Geschäftszahlen in normaler Sprache abfragen – der Agent meldet sich an MIDAS an und liest die Kennzahlen. Beides wächst zusammen, muss es aber nicht.</p>
+          </div>
+        </div>
+        <div class="accordion-item border border-slate-800 rounded-xl overflow-hidden">
+          <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-900/40 transition-colors">
+            <span class="font-semibold text-white pr-4 text-sm leading-snug">Wie sicher sind meine MIDAS-Daten?</span>
+            <i data-lucide="chevron-down" class="accordion-chevron w-5 h-5 text-slate-400 shrink-0"></i>
+          </button>
+          <div class="accordion-content">
+            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">Die Datenbank steht in Irland, die Server bei einem deutschen Anbieter. Die Mandantentrennung erfolgt auf Datenbankebene, sodass deine Daten von denen anderer Kunden getrennt sind. Einen Auftragsverarbeitungsvertrag nach Art. 28 DSGVO stellen wir dir zur Verfügung.</p>
+          </div>
+        </div>
+        <div class="accordion-item border border-slate-800 rounded-xl overflow-hidden">
+          <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-900/40 transition-colors">
+            <span class="font-semibold text-white pr-4 text-sm leading-snug">Was passiert, wenn eine API ausfällt?</span>
+            <i data-lucide="chevron-down" class="accordion-chevron w-5 h-5 text-slate-400 shrink-0"></i>
+          </button>
+          <div class="accordion-content">
+            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">Jeder Workflow hat eine eingebaute Fehlerbehandlung. Fällt eine Schnittstelle aus, hält das System die betroffenen Daten zurück, meldet die Störung sofort und nimmt den Vorgang wieder auf, sobald sie behoben ist. Nichts geht verloren, nichts läuft still im Hintergrund weiter.</p>
           </div>
         </div>
         <div class="accordion-item border border-slate-800 rounded-xl overflow-hidden">
@@ -603,30 +712,30 @@
             <i data-lucide="chevron-down" class="accordion-chevron w-5 h-5 text-slate-400 shrink-0"></i>
           </button>
           <div class="accordion-content">
-            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">F&uuml;r einen einfachen Schritt reicht Zapier. Ein Beispiel, an dem es aufh&ouml;rt: Ein Lead soll nur dann eine Rechnung ausl&ouml;sen, wenn der Deal in Funnelspot auf &bdquo;gewonnen&ldquo; steht, der Betrag &uuml;ber einer Schwelle liegt und der Kunde noch keine offene Rechnung hat, und wenn Lexware kurz nicht antwortet, muss der Vorgang warten und es sp&auml;ter erneut versuchen, statt die Rechnung zu verlieren. Diese mehrstufige Bedingung samt Fehlerbehandlung und Wiederholung bildet ein Standardwerkzeug nicht mehr ab; genau daf&uuml;r bauen wir die Logik in n8n.</p>
+            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">Für einen einfachen Schritt reicht Zapier. Ein Beispiel, an dem es aufhört: Ein Lead soll nur dann eine Rechnung auslösen, wenn der Deal in Funnelspot auf &bdquo;gewonnen&ldquo; steht, der Betrag über einer Schwelle liegt und der Kunde noch keine offene Rechnung hat, und wenn Lexware kurz nicht antwortet, muss der Vorgang warten und es später erneut versuchen, statt die Rechnung zu verlieren. Diese mehrstufige Bedingung samt Fehlerbehandlung und Wiederholung bildet ein Standardwerkzeug nicht mehr ab; genau dafür bauen wir die Logik in n8n.</p>
           </div>
         </div>
         <div class="accordion-item border border-slate-800 rounded-xl overflow-hidden">
           <button class="accordion-trigger w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-900/40 transition-colors">
-            <span class="font-semibold text-white pr-4 text-sm leading-snug">Wie viel Zeit m&uuml;ssen wir intern investieren?</span>
+            <span class="font-semibold text-white pr-4 text-sm leading-snug">Wie viel Zeit muss ich intern investieren?</span>
             <i data-lucide="chevron-down" class="accordion-chevron w-5 h-5 text-slate-400 shrink-0"></i>
           </button>
           <div class="accordion-content">
-            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">In der Regel reichen ein Discovery-Call und punktuelles Feedback w&auml;hrend der Implementierung. Die technische Umsetzung &uuml;bernehmen wir.</p>
+            <p class="px-6 pb-6 text-slate-400 leading-relaxed text-sm">In der Regel reichen ein Discovery-Call und punktuelles Feedback während der Implementierung. Die technische Umsetzung übernehmen wir.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- AUDIT FORM -->
-  <section class="py-20 px-6 border-t border-slate-800/50" id="audit">
+  <!-- KONTAKT / AUDIT FORM -->
+  <section class="py-20 px-6 border-t border-slate-800/50" id="kontakt">
     <div class="max-w-2xl mx-auto">
       <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-10">
         <div class="text-center mb-8">
-          <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Audit anfordern</p>
-          <h2 class="text-3xl font-bold mb-3">Finden Sie heraus, wo Ihr Unternehmen Zeit verliert.</h2>
-          <p class="text-slate-400 text-sm">Kostenlose 15-Minuten-Analyse Ihrer aktuellen Prozesslandschaft.</p>
+          <p class="text-brand text-xs font-semibold tracking-widest uppercase mb-3">Kontakt</p>
+          <h2 class="text-3xl font-bold mb-3">Setup für deine Firma? Lass uns reden.</h2>
+          <p class="text-slate-400 text-sm">Kostenlose 15-Minuten-Analyse – ob OpenDialogue, MIDAS oder eine komplette Automatisierung zu dir passt.</p>
         </div>
         <form id="auditForm" class="space-y-4">
           <div>
@@ -635,19 +744,19 @@
               class="w-full bg-slate-800/60 border border-slate-700 rounded-md px-4 py-3 text-white placeholder-slate-500 text-sm transition-all">
           </div>
           <div>
-            <label class="block text-sm font-medium text-slate-300 mb-1.5">Gesch&auml;fts-E-Mail</label>
+            <label class="block text-sm font-medium text-slate-300 mb-1.5">E-Mail</label>
             <input type="email" name="email" placeholder="max@unternehmen.de" required
               class="w-full bg-slate-800/60 border border-slate-700 rounded-md px-4 py-3 text-white placeholder-slate-500 text-sm transition-all">
           </div>
           <div>
-            <label class="block text-sm font-medium text-slate-300 mb-1.5">Aktueller Flaschenhals</label>
+            <label class="block text-sm font-medium text-slate-300 mb-1.5">Worum geht's?</label>
             <textarea name="message" rows="3"
-              placeholder="Leads werden manuell &uuml;bertragen, Rechnungen werden doppelt erfasst oder Daten liegen in mehreren Systemen."
+              placeholder="Ich will OpenDialogue in meiner Firma einrichten, meine Zahlen in MIDAS zusammenführen oder Prozesse automatisieren."
               class="w-full bg-slate-800/60 border border-slate-700 rounded-md px-4 py-3 text-white placeholder-slate-500 text-sm transition-all resize-none"></textarea>
           </div>
           <button type="submit" id="auditSubmit"
             class="cta w-full text-white font-semibold py-4 rounded-md flex items-center justify-center gap-2">
-            Kostenlose Prozessanalyse anfordern
+            Kostenloses Gespräch anfragen
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
           <p id="auditMsg" class="text-sm text-center hidden"></p>
@@ -664,7 +773,7 @@
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
         <p class="text-white font-semibold">Kornelius E. Thelen</p>
-        <p class="text-slate-400 text-sm">log1k.de &middot; Workflow Automation f&uuml;r wachsende Unternehmen</p>
+        <p class="text-slate-400 text-sm">log1k.de &middot; Deine KI und deine Zahlen – lokal bei dir</p>
       </div>
       <div class="flex items-center gap-6">
         <a href="/impressum" class="text-slate-400 hover:text-slate-300 text-sm transition-colors">Impressum</a>
@@ -719,8 +828,8 @@
             body: JSON.stringify({
               name: data.get('name'),
               email: data.get('email'),
-              message: 'Prozessanalyse-Anfrage\n\nFlaschenhals: ' + data.get('message'),
-              subject: 'Kostenlose Prozessanalyse'
+              message: 'Anfrage über log1k.de\n\nWorum geht es: ' + data.get('message'),
+              subject: 'Kontaktanfrage log1k.de'
             })
           });
           if (res.ok) {
@@ -729,12 +838,12 @@
             this.reset();
           } else { throw new Error(); }
         } catch (_) {
-          msg.textContent = 'Fehler beim Senden. Bitte versuchen Sie es erneut.';
+          msg.textContent = 'Fehler beim Senden. Bitte versuch es erneut.';
           msg.className = 'text-sm text-center text-red-400';
         } finally {
           msg.classList.remove('hidden');
           btn.disabled = false;
-          btn.textContent = 'Kostenlose Prozessanalyse anfordern';
+          btn.textContent = 'Kostenloses Gespräch anfragen';
           lucide.createIcons();
         }
       });
