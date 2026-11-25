@@ -64,27 +64,45 @@
     })();
   </script>
   <style>
-    :root { --brand:#6366f1; --brand-2:#818cf8; --brand-dark:#4f46e5; }
+    /* ---- Calm theme · muted violet accent (brand-consistent with OpenDialogue) ---- */
+    :root {
+      --bg:#0a0a0d;
+      --accent:#9b8ce0;       /* muted, calm violet */
+      --accent-2:#b0a4ee;     /* hover */
+      --accent-ink:#14101f;   /* dark text on the violet button */
+      --line:rgba(196,196,214,0.12);
+    }
     body {
       font-family: 'Inter', system-ui, sans-serif;
-      background-color:#08080b;
-      background-image:
-        radial-gradient(55rem 50rem at 50% -8%, rgba(99,102,241,0.13), transparent 60%),
-        radial-gradient(45rem 40rem at 100% 10%, rgba(99,102,241,0.06), transparent 55%),
-        radial-gradient(42rem 46rem at 0% 52%, rgba(99,102,241,0.05), transparent 55%);
+      background-color:var(--bg);
+      /* one faint, calm ambient instead of several glows */
+      background-image: radial-gradient(60rem 48rem at 82% 4%, rgba(155,140,224,0.06), transparent 60%);
       background-attachment: fixed;
     }
     .nav-blur {
-      backdrop-filter: blur(16px) saturate(140%);
-      -webkit-backdrop-filter: blur(16px) saturate(140%);
-      background: rgba(8, 8, 11, 0.70);
+      backdrop-filter: blur(16px) saturate(130%);
+      -webkit-backdrop-filter: blur(16px) saturate(130%);
+      background: rgba(10, 10, 13, 0.72);
     }
 
-    /* nav links (own styling: tw.css has no md:flex display utility) */
-    .nav-links { display: none; align-items: center; gap: 1.75rem; }
-    .nav-links a { color:#cbd5e1; font-size:.875rem; font-weight:500; transition: color .2s ease; }
-    .nav-links a:hover { color:#fff; }
-    @media (min-width: 768px) { .nav-links { display: flex; } }
+    /* violet logo mark = shared brand anchor with the OpenDialogue app */
+    .logo-mark {
+      width: 26px; height: 26px; border-radius: 8px;
+      background: linear-gradient(145deg, #332f45, #1a1820);
+      border: 1px solid rgba(155,140,224,0.45);
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .logo-mark::after { content:""; width:9px; height:9px; border-radius:3px; background: var(--accent); }
+
+    /* retheme Tailwind brand utilities (tw.css ships indigo) to the calm violet */
+    .text-brand { color: var(--accent); }
+    .bg-brand { background-color: var(--accent); }
+    .bg-brand\/10 { background-color: rgba(155,140,224,0.10); }
+    .bg-brand\/5 { background-color: rgba(155,140,224,0.05); }
+    .border-brand\/25 { border-color: rgba(155,140,224,0.28); }
+    .border-brand\/30 { border-color: rgba(155,140,224,0.32); }
+    .fill-brand { fill: var(--accent); }
+    .hover\:bg-brand-dark:hover { background-color: var(--accent-2); }
 
     /* nav-link jumps land below the fixed header */
     section[id] { scroll-margin-top: 5rem; }
@@ -92,10 +110,10 @@
     /* soft gradient section dividers instead of hard full-width lines */
     main > section.border-t {
       border-top: 1px solid transparent;
-      border-image: linear-gradient(to right, transparent, rgba(148,163,184,0.16), transparent) 1;
+      border-image: linear-gradient(to right, transparent, rgba(196,196,214,0.12), transparent) 1;
     }
 
-    /* big hero headline – full control via clamp, independent of tw text sizes */
+    /* big hero headline – full control via clamp */
     .display {
       font-size: clamp(2.5rem, 5.2vw, 4rem);
       line-height: 1.07;
@@ -103,29 +121,28 @@
       font-weight: 800;
     }
 
-    /* feature cards: depth + hover lift */
+    /* feature cards: calm, subtle, no colored glow */
     .gradient-card {
-      background: linear-gradient(160deg, rgba(99,102,241,0.09) 0%, rgba(18,18,26,0.35) 60%);
-      border: 1px solid rgba(99,102,241,0.16);
-      transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+      background: linear-gradient(160deg, rgba(155,140,224,0.05) 0%, rgba(18,18,24,0.35) 60%);
+      border: 1px solid var(--line);
+      transition: transform .28s ease, border-color .28s ease;
     }
     .gradient-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(99,102,241,0.5);
-      box-shadow: 0 18px 50px -18px rgba(99,102,241,0.38);
+      transform: translateY(-4px);
+      border-color: rgba(155,140,224,0.35);
     }
 
-    /* product pillar cards (a touch larger, with top accent) */
+    /* product pillar cards */
     .pillar {
       position: relative;
-      background: linear-gradient(160deg, rgba(99,102,241,0.10) 0%, rgba(18,18,26,0.40) 62%);
-      border: 1px solid rgba(99,102,241,0.18);
+      background: linear-gradient(160deg, rgba(155,140,224,0.06) 0%, rgba(18,18,24,0.40) 62%);
+      border: 1px solid var(--line);
       overflow: hidden;
     }
     .pillar::before {
       content: "";
-      position: absolute; inset: 0 0 auto 0; height: 3px;
-      background: linear-gradient(90deg, #818cf8, #6366f1 60%, transparent);
+      position: absolute; inset: 0 0 auto 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
     }
 
     /* accordion */
@@ -134,41 +151,42 @@
     .accordion-chevron { transition: transform 0.32s ease; }
     .accordion-chevron.rotated { transform: rotate(180deg); }
     .accordion-item { transition: border-color .2s ease; }
-    .accordion-item:hover { border-color: rgba(99,102,241,0.35); }
+    .accordion-item:hover { border-color: rgba(155,140,224,0.3); }
 
     input:focus, textarea:focus {
       outline: none;
-      border-color: var(--brand);
-      box-shadow: 0 0 0 2px rgba(99,102,241,0.18);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(155,140,224,0.18);
     }
 
-    /* primary CTA: gradient + glow */
+    /* primary button: calm, flat violet (no glow) */
     .cta {
-      background-image: linear-gradient(180deg, #6366f1, #4f46e5);
-      box-shadow: 0 12px 34px -10px rgba(99,102,241,0.55);
-      transition: box-shadow .25s ease, transform .2s ease;
+      background: var(--accent);
+      color: var(--accent-ink);
+      transition: background-color .2s ease, transform .2s ease;
     }
-    .cta:hover { box-shadow: 0 16px 46px -10px rgba(99,102,241,0.78); transform: translateY(-1px); }
+    .cta:hover { background: var(--accent-2); transform: translateY(-1px); }
 
     /* secondary (outline) button */
-    .btn-ghost { border:1px solid #334155; transition: background-color .2s ease, border-color .2s ease; }
-    .btn-ghost:hover { background:#1e293b; border-color:#475569; }
+    .btn-ghost { border:1px solid var(--line); transition: background-color .2s ease, border-color .2s ease; }
+    .btn-ghost:hover { background:rgba(255,255,255,0.03); border-color:rgba(196,196,214,0.24); }
+
+    /* small pill badge */
+    .badge-accent { background: var(--accent); color: var(--accent-ink); }
 
     /* gradient text accents */
-    .hero-accent { background: linear-gradient(92deg, #a5b4fc, #6366f1 62%); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .stat-num { background: linear-gradient(180deg,#ffffff,#b9bcff); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .stat-band { background: linear-gradient(135deg, rgba(99,102,241,0.11), rgba(99,102,241,0.02)); }
+    .hero-accent { background: linear-gradient(92deg, #c6bcf3, #9b8ce0 62%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .stat-num { background: linear-gradient(180deg,#ffffff,#d6cff2); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .stat-band { background: linear-gradient(135deg, rgba(155,140,224,0.09), rgba(155,140,224,0.02)); }
 
-    /* dashboard screenshot frame */
-    .shot-frame { box-shadow: 0 40px 90px -30px rgba(99,102,241,0.45), 0 0 0 1px rgba(255,255,255,0.05); }
-
-    /* hero terrarium image */
+    /* image frames: calm neutral depth, subtle violet edge */
+    .shot-frame { box-shadow: 0 40px 90px -34px rgba(0,0,0,0.78), 0 0 0 1px rgba(255,255,255,0.04); }
     .hero-shot { position: relative; }
     .hero-shot img {
       width: 100%; height: auto; display: block;
       border-radius: 1rem;
-      border: 1px solid rgba(99,102,241,0.22);
-      box-shadow: 0 40px 100px -32px rgba(99,102,241,0.55), 0 0 0 1px rgba(255,255,255,0.04);
+      border: 1px solid rgba(155,140,224,0.16);
+      box-shadow: 0 50px 95px -42px rgba(0,0,0,0.82);
     }
     .hero-shot figcaption { margin-top: .9rem; }
 
@@ -177,7 +195,7 @@
     .reveal.in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce){ .reveal { opacity: 1 !important; transform: none !important; transition: none; } }
 
-    .ts-card{max-width:680px;margin:0 auto;background:linear-gradient(160deg,rgba(99,102,241,0.07),rgba(14,14,17,0.6));border:1px solid #27272a;border-radius:18px;padding:34px;}
+    .ts-card{max-width:680px;margin:0 auto;background:linear-gradient(160deg,rgba(155,140,224,0.05),rgba(14,14,18,0.6));border:1px solid #23232a;border-radius:18px;padding:34px;}
     .ts-top{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
     .ts-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;border:1px solid #27272a;}
     .ts-name{display:flex;align-items:center;gap:6px;font-weight:600;color:#fafafa;font-size:16px;}
@@ -185,16 +203,12 @@
     .ts-role{color:#a1a1aa;font-size:13px;margin-top:2px;}
     .ts-stars{margin-left:auto;color:#fbbf24;letter-spacing:2px;font-size:15px;}
     .ts-quote{color:#d4d4d8;font-size:16px;line-height:1.78;margin:0;}
-    .hero-glow {
-      position: absolute;
-      width: 820px;
-      height: 820px;
-      background: radial-gradient(circle, rgba(99,102,241,0.14) 0%, transparent 68%);
-      pointer-events: none;
-      left: 50%;
-      transform: translateX(-50%);
-      top: -120px;
-    }
+
+    /* nav links (own styling: tw.css has no md:flex display utility) */
+    .nav-links { display: none; align-items: center; gap: 1.75rem; }
+    .nav-links a { color:#c6c6d0; font-size:.875rem; font-weight:500; transition: color .2s ease; }
+    .nav-links a:hover { color:#fff; }
+    @media (min-width: 768px) { .nav-links { display: flex; } }
   </style>
 </head>
 <body class="bg-zinc-950 text-white antialiased">
@@ -202,14 +216,17 @@
   <!-- NAV -->
   <header class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-slate-800/60">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="/" class="text-white font-bold text-xl tracking-tight hover:opacity-80 transition-opacity">log1k</a>
+      <a href="/" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+        <span class="logo-mark"></span>
+        <span class="text-white font-bold text-xl tracking-tight">log1k</span>
+      </a>
       <nav class="nav-links">
         <a href="#opendialogue">OpenDialogue</a>
         <a href="#midas">MIDAS</a>
         <a href="#onprem">Warum lokal</a>
         <a href="#preise">Preise</a>
       </nav>
-      <a href="https://download.log1k.de/opendialogue/OpenDialogue-Setup.exe" class="bg-brand hover:bg-brand-dark text-white text-sm font-semibold px-5 py-2.5 rounded-md transition-colors duration-200">
+      <a href="https://download.log1k.de/opendialogue/OpenDialogue-Setup.exe" class="cta text-sm font-semibold px-5 py-2.5 rounded-md">
         OpenDialogue laden
       </a>
     </div>
@@ -218,7 +235,6 @@
   <main>
   <!-- HERO -->
   <section class="relative pt-36 pb-24 px-6 overflow-hidden">
-    <div class="hero-glow"></div>
     <div class="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-6 items-center">
       <div>
         <div class="inline-flex items-center gap-2 bg-brand/10 border border-brand/25 text-brand text-xs font-semibold px-4 py-1.5 rounded-full mb-8 tracking-wider uppercase">
@@ -233,7 +249,7 @@
           <strong class="text-slate-200 font-semibold">OpenDialogue</strong> ist deine lokale KI. <strong class="text-slate-200 font-semibold">MIDAS</strong> bündelt deine Zahlen von der Anzeige bis zur Rechnung. Beides läuft bei dir.
         </p>
         <div class="flex flex-col sm:flex-row items-center gap-4">
-          <a href="https://download.log1k.de/opendialogue/OpenDialogue-Setup.exe" class="cta inline-flex items-center gap-2.5 text-white font-semibold px-8 py-4 rounded-md text-base">
+          <a href="https://download.log1k.de/opendialogue/OpenDialogue-Setup.exe" class="cta inline-flex items-center gap-2.5 font-semibold px-8 py-4 rounded-md text-base">
             <i data-lucide="download" class="w-4 h-4"></i>
             OpenDialogue kostenlos laden
           </a>
@@ -367,7 +383,7 @@
 
       <div class="text-center">
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="https://download.log1k.de/opendialogue/OpenDialogue-Setup.exe" class="cta inline-flex items-center gap-2.5 text-white font-semibold px-8 py-4 rounded-md text-base">
+          <a href="https://download.log1k.de/opendialogue/OpenDialogue-Setup.exe" class="cta inline-flex items-center gap-2.5 font-semibold px-8 py-4 rounded-md text-base">
             <i data-lucide="download" class="w-4 h-4"></i>
             Kostenlos herunterladen
           </a>
@@ -534,7 +550,7 @@
           <div>
             <div class="ts-name">
               Julius Stephan
-              <svg class="ts-verified" viewBox="0 0 24 24" width="16" height="16"><path fill="#6366f1" d="M12 1l2.4 2.4 3.3-.5.5 3.3L21 9.6l-1.5 3 1.5 3-2.3 2.4-.5 3.3-3.3-.5L12 23l-2.4-2.2-3.3.5-.5-3.3L3 15.6l1.5-3L3 9.6l2.3-2.4.5-3.3 3.3.5z"/><path fill="#fff" d="M10.6 14.6l-2-2-1.1 1.1 3.1 3.1 5.3-5.3-1.1-1.1z"/></svg>
+              <svg class="ts-verified" viewBox="0 0 24 24" width="16" height="16"><path fill="#9b8ce0" d="M12 1l2.4 2.4 3.3-.5.5 3.3L21 9.6l-1.5 3 1.5 3-2.3 2.4-.5 3.3-3.3-.5L12 23l-2.4-2.2-3.3.5-.5-3.3L3 15.6l1.5-3L3 9.6l2.3-2.4.5-3.3 3.3.5z"/><path fill="#fff" d="M10.6 14.6l-2-2-1.1 1.1 3.1 3.1 5.3-5.3-1.1-1.1z"/></svg>
             </div>
             <div class="ts-role">Verifizierte Empfehlung &middot; LinkedIn</div>
           </div>
@@ -613,7 +629,7 @@
         <!-- MIDAS: hervorgehoben -->
         <div class="relative bg-brand/5 border border-brand/30 rounded-xl p-8 flex flex-col">
           <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
-            <span class="bg-brand text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap shadow-lg shadow-brand/30">
+            <span class="badge-accent text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap shadow-lg">
               Das Umsatzprodukt
             </span>
           </div>
@@ -632,7 +648,7 @@
             <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Anbindung an OpenDialogue</li>
             <li class="flex items-start gap-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-brand mt-0.5 shrink-0"></i>Daten in der EU &middot; 12 Monate Mindestlaufzeit</li>
           </ul>
-          <a href="#kontakt" class="cta block text-center text-white font-semibold px-6 py-3.5 rounded-md text-sm">
+          <a href="#kontakt" class="cta block text-center font-semibold px-6 py-3.5 rounded-md text-sm">
             Gespräch vereinbaren
           </a>
         </div>
@@ -755,7 +771,7 @@
               class="w-full bg-slate-800/60 border border-slate-700 rounded-md px-4 py-3 text-white placeholder-slate-500 text-sm transition-all resize-none"></textarea>
           </div>
           <button type="submit" id="auditSubmit"
-            class="cta w-full text-white font-semibold py-4 rounded-md flex items-center justify-center gap-2">
+            class="cta w-full font-semibold py-4 rounded-md flex items-center justify-center gap-2">
             Kostenloses Gespräch anfragen
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
