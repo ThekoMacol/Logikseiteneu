@@ -16,13 +16,14 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/jpeg">
   <link rel="stylesheet" href="/fonts/fonts.css">
-  <link rel="stylesheet" href="/tw.css?v=4">
+  <link rel="stylesheet" href="/tw.css?v=5">
   <script>
     // Minimal self-hosted icon renderer (replaces external Lucide CDN).
     // Only the icons actually used on this page are included.
     (function () {
       var ICONS = {
         'arrow-right': '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+        'download': '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>',
         'trending-up': '<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>',
         'file-check-2': '<path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m3 15 2 2 4-4"/>',
         'shield-check': '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
@@ -178,6 +179,7 @@
         <i data-lucide="arrow-right" class="w-4 h-4"></i>
       </a>
       <p class="text-slate-400 text-sm mt-4">15 Minuten. Kein Verkaufsdruck. Nur konkrete Automatisierungspotenziale.</p>
+      <p class="text-slate-400 text-sm mt-3">Oder: <a href="#opendialogue" class="text-brand hover:underline">OpenDialogue kostenlos herunterladen</a></p>
     </div>
   </section>
 
@@ -472,11 +474,17 @@
       </div>
 
       <div class="text-center">
-        <a href="#audit" class="cta inline-flex items-center gap-2.5 text-white font-semibold px-8 py-4 rounded-md text-base">
-          Gespr&auml;ch vereinbaren
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
-        <p class="text-slate-400 text-sm mt-4">On-Premise, auf Anfrage.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://download.log1k.de/opendialogue/OpenDialogue-Setup.exe" class="cta inline-flex items-center gap-2.5 text-white font-semibold px-8 py-4 rounded-md text-base">
+            <i data-lucide="download" class="w-4 h-4"></i>
+            Kostenlos herunterladen
+          </a>
+          <a href="#audit" class="inline-flex items-center gap-2.5 border border-slate-700 hover:bg-slate-700 text-white font-semibold px-8 py-4 rounded-md text-base transition-colors">
+            Einrichtung f&uuml;r Ihre Firma
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+        <p class="text-slate-400 text-sm mt-4">F&uuml;r Windows 10 und 11 &middot; etwa 150 MB &middot; kostenlos &middot; <a href="https://download.log1k.de/" class="text-brand hover:underline">Hinweise, Pr&uuml;fsumme, Quellcode</a></p>
       </div>
     </div>
   </section>
